@@ -81,9 +81,10 @@ site/
 
 **폰트** — Pretendard(CDN) + Marcellus(Google Fonts)를 불러옵니다. 외부 요청이 막힌 환경에서는 시스템 폰트로 대체되며 레이아웃은 유지됩니다.
 
-## 페이지 구성 (2026-11-19 분리)
+## 페이지 구성 (2026-11-20 개편)
 
-- `index.html` — 홈
+- `index.html` — 홈 (히어로 → 사후관리 밴드 → 전기 GLC·CLA 계약 → 상담 영역으로 마무리)
+- `new-cars.html` — 신차·사전예약 (페이지 최상단에서 바로 시작, 사전예약 7종 + 전기 GLC·CLA, 상담 CTA)
 - `models.html` / `model.html` — 차종별 가이드
 - `glc-electric.html` — GLC Electric
 - `promotion.html` — 11월 프로모션 (차종 탭 · 권장가/현금/MBF/실구매가)
@@ -99,7 +100,7 @@ site/
 
 - 임정빈 차장 네이버 예약 상품: `https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175`
   (업체 `HS효성더클래스 메르세데스 벤츠 분당정자 전시장`, 상품 `임정빈 차장`, 리뷰 2건)
-- 버튼 위치: 메인 히어로 + 메인 `#contact`(`.contact-line`) / `promotion`·`stock`·`report`·`cards`·`mou`는 `.cta-band` / `models`·`model`·`glc-electric`은 `#contact`(`.contact-line`).
+- 버튼 위치: 메인 히어로 + 메인 `#contact`(`.contact-line`) + `new-cars.html` `.cta-band` / `promotion`·`stock`·`report`·`cards`·`mou`는 `.cta-band` / `models`·`model`·`glc-electric`은 `#contact`(`.contact-line`).
 - `promotion/stock/report/cards/mou`의 버튼은 `_build/build.py`의 `NAVER_BOOKING` 상수와 `cta_band()`에서 생성되므로, 주소를 바꿀 때는 `build.py`를 고치고 다시 빌드한다. 나머지 페이지는 HTML에 직접 적혀 있다.
 - 모든 버튼은 `target="_blank" rel="noopener"`로 새 창에서 네이버 예약을 연다.
 

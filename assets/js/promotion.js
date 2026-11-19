@@ -44,5 +44,5 @@
   /* 처음 열 때: 해시로 그룹을 지정할 수 있게 (#glc, #e ... / 구 링크 #promotion 대비) */
   var h = (location.hash || "").replace("#", "");
   var known = ["all", "e", "glc", "s", "gle", "c", "acla", "cle", "amg", "maybach", "v", "eq", "etc"];
-  apply(known.indexOf(h) >= 0 ? h : "e", false);
+  apply(known.indexOf(h) >= 0 ? h : "all", false);
 })();

@@ -7,19 +7,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 def wr(p, s): open(os.path.join(ROOT, p), 'w', encoding='utf-8').write(s)
 
-CSSV = '20261119r'
+CSSV = '20261120a'
 NAVER_BOOKING = 'https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175'
 
 NAV = [
     ('index.html', '홈', 'index'),
-    ('index.html#launches', '신차·사전예약', 'launches'),
+    ('new-cars.html', '신차·사전예약', 'launches'),
     ('models.html', '차종별 가이드', 'models'),
     ('promotion.html', '가격·프로모션', 'promotion'),
     ('stock.html', '전국 재고', 'stock'),
     ('report.html', '구매전략리포트', 'report'),
     ('cards.html', '카드혜택', 'cards'),
     ('mou.html', 'MOU 확인', 'mou'),
-    ('index.html#after-care', '사후관리', 'care'),
 ]
 
 PHONE = '010-8792-1080'
@@ -105,7 +104,7 @@ def foot(scripts, extra_js=''):
     return f'''
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p class="footer-brand">HS효성더클래스 분당지점 · 임정빈 차장 · {PHONE}</p>
+    <p class="footer-brand">HS효성더클래스 분당지점 · 임정빈 차장 · C-sales 공식 인증사원 · {PHONE}</p>
     <p class="footer-note">
       가격은 메르세데스-벤츠 코리아 공식 차량 가격표(2026.11.17) 기준 권장소비자가격이며,
       프로모션·금융 조건은 본사 및 카드사 정책에 따라 변경됩니다. 확정 금액은 상담 시점에 안내해 드립니다.
@@ -263,8 +262,8 @@ for gid, gtitle in TAB_ORDER:
     if not grs: continue
     sections += group_section(gid, gtitle, grs)
 
-tabs = ['      <button class="tab" type="button" role="tab" aria-selected="true" aria-controls="g-e" data-grp="e">E-Class <small>%d</small></button>' % len(by['e'])]
-tabs.append('      <button class="tab" type="button" role="tab" aria-selected="false" data-grp="all">전체 <small>%d</small></button>' % len(rows))
+tabs = ['      <button class="tab" type="button" role="tab" aria-selected="true" data-grp="all">전체 <small>%d</small></button>' % len(rows)]
+tabs.append('      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="g-e" data-grp="e">E-Class <small>%d</small></button>' % len(by['e']))
 for gid, label in TAB_ORDER:
     if gid == 'e' or gid not in by: continue
     tabs.append('      <button class="tab" type="button" role="tab" aria-selected="false" data-grp="%s">%s <small>%d</small></button>' % (gid, GLABEL.get(gid, label), len(by[gid])))

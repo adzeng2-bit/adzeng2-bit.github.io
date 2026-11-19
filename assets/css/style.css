@@ -140,6 +140,16 @@ table{border-collapse:collapse;width:100%}
   color:rgba(243,240,234,.72);text-wrap:balance;
 }
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+/* C-sales 인증 · 경력 배지 */
+.hero-cert{
+  display:inline-flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:16px;
+  padding:7px 13px;border:1px solid rgba(199,174,138,.46);border-radius:2px;
+  font-size:11px;line-height:1.4;letter-spacing:.02em;color:rgba(243,240,234,.86);
+}
+.hero-cert b{
+  font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--brass-2);
+}
+.hero-cert-sep{color:rgba(199,174,138,.6);margin:0 1px}
 .hero-facts{
   display:grid;gap:10px;margin-top:34px;padding-top:24px;
   border-top:1px solid var(--line-light);
@@ -1381,9 +1391,10 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .pbar-num{font-family:var(--serif);font-weight:400;font-size:1.16em;color:var(--brass);margin:0 .1em}
 .pbar-call{font-size:11.5px;letter-spacing:.05em;color:var(--ink);border-bottom:1px solid var(--brass);padding-bottom:2px;white-space:nowrap}
 .pbar-tabs{position:sticky;top:var(--header-h);z-index:53;background:rgba(246,244,239,.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:9px 0}
-.pbar-note{display:block;font-size:11.5px;line-height:1.6;color:var(--muted);padding:9px 0 11px}
+.pbar-note{display:block;font-size:11.5px;line-height:1.6;color:var(--muted);padding-block:9px 11px}
 .promo-tabs{margin:0}
 .promo-body{padding-top:6px}
+.newcars-body{padding-top:clamp(20px,3.4vw,30px)}
 .promo-body .pv-seg{margin-top:26px}
 .promo-body .pv-seg:first-of-type{margin-top:16px}
 
@@ -1435,6 +1446,12 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
   .cta-band-actions{width:100%}
   .cta-band-actions .btn{flex:1 1 auto;justify-content:center;text-align:center}
   .hero-actions .btn--naver,.cta-band-actions .btn--naver{flex:1 1 100%}
+}
+@media (max-width:600px){
+  /* 전화·문자 두 버튼을 반씩 채워 아래 네이버 바와 좌우 폭을 맞춤 */
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hero-actions .btn{width:100%;justify-content:center;padding:0 12px}
+  .hero-actions .btn--naver{grid-column:1 / -1}
 }
 .note--lead{margin-top:24px;background:#fff;border:1px solid var(--line-strong);border-left:2px solid var(--brass)}
 .note--lead p{font-size:13px;line-height:1.9;color:var(--muted)}
