@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="임정빈 차장 안내">
+  <rect width="64" height="64" fill="#0E161D"/>
+  <circle cx="32" cy="32" r="19" fill="none" stroke="#C7AE8A" stroke-width="1"/>
+  <path d="M32 8v6M32 50v6M8 32h6M50 32h6" stroke="#C7AE8A" stroke-width="1" stroke-linecap="round" opacity=".55"/>
+  <circle cx="32" cy="32" r="2.4" fill="#C7AE8A"/>
+</svg>
