@@ -16,7 +16,20 @@
   var qInput = document.getElementById("st-q");
 
   function normQ(s) {
-    return String(s || "").toLowerCase().replace(/\s+/g, "");
+    return String(s || "").toLowerCase()
+      .normalize ? String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
+      : String(s || "").toLowerCase().replace(/\s+/g, "");
+  }
+
+  /* 한글 검색어를 차종 표기(영문)와 이어 준다 */
+  function alias(r) {
+    var n = String(r[0]);
+    var out = "";
+    if (/Coup[e\u00e9]/i.test(n)) out += " 쿠페";
+    if (/Cabriolet/i.test(n)) out += " 카브리올레 카브리오";
+    if (/electric/i.test(n)) out += " 전기 전기차";
+    if (/AMG/i.test(n)) out += " AMG";
+    return out;
   }
 
   function esc(s) {
@@ -79,7 +92,7 @@
     var q = qInput ? normQ(qInput.value) : "";
     return D.items.filter(function (r) {
       if (q) {
-        var hay = normQ([r[0], r[1], r[2], r[3], r[4], r[5]].join(" "));
+        var hay = normQ([r[0], r[1], r[2], r[3], r[4], r[5]].join(" ") + alias(r));
         if (hay.indexOf(q) < 0) return false;
       }
       if (m && r[0] !== m) return false;

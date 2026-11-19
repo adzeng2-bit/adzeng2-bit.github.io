@@ -403,7 +403,7 @@ page += header('stock') + drawer('stock') + stock_body
 page += foot([
     'assets/js/stock-data.js?v=20261119a',
     'assets/js/site.js',
-    'assets/js/stock.js?v=20261119c',
+    'assets/js/stock.js?v=20261119d',
 ])
 wr('stock.html', page)
 
