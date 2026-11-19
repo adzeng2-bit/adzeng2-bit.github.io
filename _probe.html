@@ -5,38 +5,68 @@
 <meta name="robots" content="noindex">
 <title>layout probe</title>
 <style>
-  html,body{margin:0;background:#ddd;font:12px/1.4 monospace}
-  iframe{display:block;border:0;height:1000px;background:#fff}
-  .m{padding:4px}
+  html,body{margin:0;background:#ddd;font:11px/1.4 monospace}
+  iframe{display:block;border:0;height:900px;background:#fff}
+  #out{padding:6px;white-space:pre-wrap}
 </style>
 </head>
 <body>
-<div class="m" id="out">loading…</div>
-<iframe id="f390" style="width:390px"></iframe>
-<iframe id="f1440" style="width:1440px"></iframe>
+<div id="out">loading…</div>
+<div id="frames"></div>
 <script>
-  var p = new URLSearchParams(location.search).get("p") || "promotion.html";
-  var out = document.getElementById("out");
-  var frames = [["390", document.getElementById("f390")], ["1440", document.getElementById("f1440")]];
-  var done = 0, results = {};
-  frames.forEach(function (pair) {
-    var w = pair[0], f = pair[1];
-    f.src = p + "?" + Date.now();
-    f.onload = function () {
+  var PAGES = ["index.html", "promotion.html", "stock.html", "report.html", "cards.html", "mou.html"];
+  var WIDTHS = [390, 1440];
+  var CHECK = {
+    "promotion.html": function (d) {
+      var vis = [].filter.call(d.querySelectorAll(".pv-seg"), function (s) { return !s.hidden; });
+      return "visibleGroups=" + vis.length + " rows=" + vis.reduce(function (a, s) { return a + s.querySelectorAll("tbody tr").length; }, 0);
+    },
+    "stock.html": function (d) { return "stockRows=" + d.querySelectorAll("#stock-list .stock-row").length; },
+    "mou.html": function (d) { return "mouItems=" + d.querySelectorAll("#mou-grid > *").length; },
+    "cards.html": function (d) { return "cardPick=" + d.querySelectorAll("#card-pick > *").length + " simResults=" + d.querySelectorAll("#sim-results > *").length; },
+    "report.html": function (d) { return "tables=" + d.querySelectorAll("table").length + " h2=" + d.querySelectorAll("h2").length; },
+    "index.html": function (d) { return "sections=" + d.querySelectorAll("section").length; }
+  };
+  var results = {}, jobs = [];
+  var host = document.getElementById("frames");
+  PAGES.forEach(function (p) {
+    WIDTHS.forEach(function (w) {
+      var f = document.createElement("iframe");
+      f.style.width = w + "px";
+      f.src = p + "?" + Date.now();
+      host.appendChild(f);
+      jobs.push({ p: p, w: w, f: f });
+    });
+  });
+  var pending = jobs.length;
+  jobs.forEach(function (j) {
+    j.f.onload = function () {
       setTimeout(function () {
+        var r = {};
         try {
-          var d = f.contentDocument, de = d.documentElement;
-          var wide = [];
+          var d = j.f.contentDocument, de = d.documentElement;
+          var over = [];
           d.querySelectorAll("body *").forEach(function (el) {
-            var r = el.getBoundingClientRect();
-            if (r.width > 0 && (r.right > de.clientWidth + 1 || r.left < -1)) {
-              wide.push(el.tagName + "." + String(el.className || "").slice(0, 32) + " [" + Math.round(r.left) + "," + Math.round(r.right) + "]");
-            }
+            if (el.closest(".drawer,.drawer-scrim")) return;
+            var b = el.getBoundingClientRect();
+            if (b.width > 0 && (b.right > de.clientWidth + 1 || b.left < -1)) over.push(el.tagName + "." + String(el.className || "").slice(0, 28));
           });
-          results[w] = { clientW: de.clientWidth, scrollW: de.scrollWidth, overflowCount: wide.length, sample: wide.slice(0, 6) };
-        } catch (e) { results[w] = "ERR " + e.message; }
-        if (++done === frames.length) out.textContent = JSON.stringify(results);
-      }, 900);
+          r.clientW = de.clientWidth;
+          r.scrollW = de.scrollWidth;
+          r.overflow = over.length;
+          r.overflowSample = over.slice(0, 4);
+          r.check = CHECK[j.p] ? CHECK[j.p](d) : "";
+        } catch (e) { r.error = e.message; }
+        results[j.p + "@" + j.w] = r;
+        if (--pending === 0) {
+          var lines = [];
+          Object.keys(results).forEach(function (k) {
+            var v = results[k];
+            lines.push(k.padEnd(26) + " scrollW=" + v.scrollW + "/" + v.clientW + " overflow=" + v.overflow + " " + (v.check || "") + (v.error ? " ERR " + v.error : "") + (v.overflow ? " " + JSON.stringify(v.overflowSample) : ""));
+          });
+          document.getElementById("out").textContent = lines.join("\n");
+        }
+      }, 1200);
     };
   });
 </script>
