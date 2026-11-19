@@ -1457,6 +1457,7 @@ body[data-drawer="open"]{overflow:hidden}
   .promo-tabs{flex-wrap:wrap;overflow:visible}
 }
 @media (min-width:761px){
+  .promo-tabs{gap:4px}
   .promo-tabs .tab{padding:8px 11px;font-size:11.5px}
   .promo-tabs .tab small{font-size:9.5px;margin-left:3px}
 }
