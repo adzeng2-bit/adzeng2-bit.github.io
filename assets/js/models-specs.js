@@ -425,5 +425,21 @@ window.MB_SPECS = {
   "wheelbase": "2,890mm",
   "trans": "AMG SPEEDSHIFT TCT 9단",
   "src": "메르세데스-벤츠 코리아 보도자료(2024.12.13) AMG G 63 제원"
+ },
+ "maybach-gls": {
+  "cats": [
+   "Maybach GLS 600 4MATIC"
+  ],
+  "engine": "V형 8기통 가솔린 (M177, 48V)",
+  "disp": "3,982cc",
+  "power": "557ps / 6,000~6,500rpm",
+  "torque": "78.5kgf·m / 2,500~4,500rpm",
+  "accel": "4.9초",
+  "top": "250km/h",
+  "eff": "복합 6.1km/ℓ",
+  "size": "5,210 × 2,030 × 1,840mm",
+  "wheelbase": "3,135mm",
+  "trans": "9G-TRONIC (자동 9단)",
+  "src": "메르세데스-벤츠 코리아 보도자료(2024.04.11) 마이바흐 GLS 600 제원"
  }
 };
