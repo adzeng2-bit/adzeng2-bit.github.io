@@ -94,3 +94,12 @@ site/
 - `benefits.html` — 예전 링크 호환용(자동 이동)
 
 `_build/` 는 프로모션 표 생성 스크립트이며 배포 대상이 아니다.
+
+## 네이버 예약 직링크 (2026-11-19 연결)
+
+- 임정빈 차장 네이버 예약 상품: `https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175`
+  (업체 `HS효성더클래스 메르세데스 벤츠 분당정자 전시장`, 상품 `임정빈 차장`, 리뷰 2건)
+- 버튼 위치: 메인 히어로 + 메인 `#contact`(`.contact-line`) / `promotion`·`stock`·`report`·`cards`·`mou`는 `.cta-band` / `models`·`model`·`glc-electric`은 `#contact`(`.contact-line`).
+- `promotion/stock/report/cards/mou`의 버튼은 `_build/build.py`의 `NAVER_BOOKING` 상수와 `cta_band()`에서 생성되므로, 주소를 바꿀 때는 `build.py`를 고치고 다시 빌드한다. 나머지 페이지는 HTML에 직접 적혀 있다.
+- 모든 버튼은 `target="_blank" rel="noopener"`로 새 창에서 네이버 예약을 연다.
+
