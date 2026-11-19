@@ -1037,11 +1037,11 @@ body[data-drawer="open"]{overflow:hidden}
 /* ── 차종 상세: 제원·색상 (official spec data) ── */
 .spec-wrap{margin-top:28px;border-top:1px solid var(--line)}
 .spec-row{display:grid;grid-template-columns:1fr;gap:6px;padding:14px 0;border-bottom:1px solid var(--line)}
-.spec-key{font-size:10.5px;letter-spacing:.06em;color:var(--muted-2);text-transform:uppercase}
+.spec-key{font-size:10.5px;letter-spacing:.04em;color:var(--muted-2)}
 .spec-vals{display:grid;gap:10px}
 .spec-val{display:grid;gap:2px}
 .sv-cat{font-size:10px;letter-spacing:.02em;color:var(--brass)}
-.sv-num{font-size:13.5px;letter-spacing:-.02em;line-height:1.55}
+.sv-num{font-size:13.5px;letter-spacing:-.02em;line-height:1.55;font-variant-numeric:tabular-nums}
 .spec-empty{border:1px solid var(--line);background:#fff;padding:20px;margin-top:28px;font-size:12.5px;line-height:1.85;color:var(--muted)}
 .spec-subhead{margin-top:36px;font-size:10.5px;letter-spacing:.08em;color:var(--muted-2);text-transform:uppercase}
 .color-grid{display:grid;gap:18px;margin-top:14px}
