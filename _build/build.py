@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 def wr(p, s): open(os.path.join(ROOT, p), 'w', encoding='utf-8').write(s)
 
-CSSV = '20261119n'
+CSSV = '20261119p'
 
 NAV = [
     ('index.html', '홈', 'index'),
@@ -19,23 +19,6 @@ NAV = [
     ('cards.html', '카드혜택', 'cards'),
     ('mou.html', 'MOU 확인', 'mou'),
     ('index.html#after-care', '사후관리', 'care'),
-]
-
-DRAWER = [
-    ('g', '둘러보기'),
-    ('index.html', '홈', '임정빈 차장', 'index'),
-    ('index.html#launches', '신차·사전예약', '신형·론칭 모델', 'launches'),
-    ('models.html', '차종별 가이드', '전체 45종', 'models'),
-    ('index.html#after-care', '전담 사후관리', '점검·입고·보증', 'care'),
-    ('g', '구매 정보'),
-    ('promotion.html', '가격·프로모션', '이달의 조건', 'promotion'),
-    ('stock.html', '전국 재고', '즉시 출고·배정 확인', 'stock'),
-    ('report.html', '구매전략리포트', '이달의 판단 기준', 'report'),
-    ('cards.html', '카드혜택', '신한카드 3종 비교', 'cards'),
-    ('mou.html', 'MOU 확인', '676곳 즉시 검색', 'mou'),
-    ('g', '바로 상담'),
-    ('index.html#consult', '상담 신청서', '문자 자동 완성', ''),
-    ('glc-electric.html', 'GLC Electric', '전기 SUV 가이드', ''),
 ]
 
 PHONE = '010-8792-1080'
@@ -53,6 +36,12 @@ def head(title, desc, page):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://adzeng2-bit.github.io/assets/photo/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="임정빈 차장 · HS효성더클래스 분당">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adzeng2-bit.github.io/assets/photo/og-share.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,47 +67,18 @@ def header(page):
       <span class="brand-kicker">MERCEDES-BENZ · HS효성더클래스</span>
       <span class="brand-name">임정빈 차장 · HS효성더클래스 분당</span>
     </a>
-    <button class="nav-toggle" type="button" data-drawer-toggle aria-expanded="false" aria-controls="drawer">
-      <span class="bars" aria-hidden="true"></span> 메뉴
-    </button>
     <a class="header-call" href="tel:{PHONE}" aria-label="전화 상담 {PHONE}">
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 3.5c.7-.2 1.4.2 1.7.8l1.2 2.6c.3.6.1 1.3-.4 1.7l-1.1.9c-.3.3-.4.7-.2 1 .9 1.7 2.4 3.2 4.1 4.1.3.2.7.1 1-.2l.9-1.1c.4-.5 1.1-.7 1.7-.4l2.6 1.2c.6.3 1 1 .8 1.7l-.5 2c-.2.8-.9 1.4-1.7 1.4C9.9 19.7 4.3 14.1 4.3 7.7c0-.8.6-1.5 1.4-1.7l.9-.5Z" fill="currentColor"/></svg>
       <span>전화</span>
     </a>
   </div>
 
-  <nav class="navbar" aria-label="주요 메뉴">
-    <ul class="navbar-inner">
+  <nav class="navbar" aria-label="주요 메뉴" data-nav>
+    <ul class="navbar-inner" data-nav-list>
 {nav}
     </ul>
   </nav>
 </header>
-'''
-
-def drawer(page):
-    rows = []
-    for item in DRAWER:
-        if item[0] == 'g':
-            rows.append(f'    <p class="drawer-group">{item[1]}</p>')
-        else:
-            href, label, small, key = item
-            cur = ' aria-current="page"' if key == page else ''
-            rows.append(f'    <a class="drawer-link" href="{href}"{cur}>{label} <small>{small}</small></a>')
-    body = '\n'.join(rows)
-    return f'''
-<div class="drawer-scrim" data-drawer-scrim></div>
-<aside class="drawer" id="drawer" data-drawer aria-label="전체 메뉴">
-  <div class="drawer-head">
-    <span class="drawer-title">MENU · HS효성더클래스 분당</span>
-    <button class="drawer-close" type="button" data-drawer-close>닫기</button>
-  </div>
-  <nav class="drawer-nav">
-{body}
-  </nav>
-  <div class="drawer-foot">
-    <a href="tel:{PHONE}">전화 상담 · {PHONE}</a>
-  </div>
-</aside>
 '''
 
 def cta_band(title, text):
@@ -346,7 +306,7 @@ promo_body = f'''<main class="promo">
 page = head('11월 가격·프로모션 | 임정빈 차장 · HS효성더클래스 분당',
             '2026년 11월 메르세데스-벤츠 차종별 권장 소비자가와 현금·MBF 금융 할인, 실구매가를 차종 탭으로 한눈에. HS효성더클래스 분당 임정빈 차장 010-8792-1080.',
             'promotion')
-page += header('promotion') + drawer('promotion') + promo_body
+page += header('promotion') + promo_body
 page += foot([
     'assets/js/site.js',
     'assets/js/promotion.js?v=20261119a',
@@ -399,7 +359,7 @@ stock_body = f'''<main>
 page = head('전국 재고 조회 | 임정빈 차장 · HS효성더클래스 분당',
             '효성더클래스 전 지점 판매 가능 재고 180대를 차종·연식·외장·내장 색상·전시장으로 바로 조회. 2026-11-19 기준. 임정빈 차장 010-8792-1080.',
             'stock')
-page += header('stock') + drawer('stock') + stock_body
+page += header('stock') + stock_body
 page += foot([
     'assets/js/stock-data.js?v=20261119a',
     'assets/js/site.js',
@@ -630,7 +590,7 @@ report_body = f'''<main class="report">
 page = head('11월 구매전략리포트 | 임정빈 차장 · HS효성더클래스 분당',
             '2026년 11월 벤츠 구매전략리포트 — E200 MY27 색상 선택, 무이자 대상 차종, GLC·대형 SUV·신형 S클래스·마이바흐 조건을 실전 기준으로 정리했습니다. 임정빈 차장 010-8792-1080.',
             'report')
-page += header('report') + drawer('report') + report_body
+page += header('report') + report_body
 page += foot([
     'assets/js/site.js',
 ])
@@ -731,7 +691,7 @@ cards_body = f'''<main>
 page = head('카드혜택 · 결제 계산기 | 임정빈 차장 · HS효성더클래스 분당',
             '메르세데스-벤츠 신한카드 3종(아방가르드·익스클루시브·마누팍투어) 혜택 비교와 차량 잔금 결제 시뮬레이터, 카드 할부 금리 요약. 임정빈 차장 010-8792-1080.',
             'cards')
-page += header('cards') + drawer('cards') + cards_body
+page += header('cards') + cards_body
 page += foot([
     'assets/js/site.js',
     'assets/js/cards-data.js?v=20261119b',
@@ -785,7 +745,7 @@ mou_body = f'''<main>
 page = head('MOU 혜택 확인 | 임정빈 차장 · HS효성더클래스 분당',
             '벤츠코리아 MOU 체결 기업 676곳 실시간 검색 — 회사명·초성·업종·가나다로 바로 확인. 임직원 추가할인 2% 대상 여부 확인. 임정빈 차장 010-8792-1080.',
             'mou')
-page += header('mou') + drawer('mou') + mou_body
+page += header('mou') + mou_body
 page += foot([
     'assets/js/mou-data.js?v=20261119c',
     'assets/js/site.js',

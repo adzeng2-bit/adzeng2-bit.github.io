@@ -151,7 +151,7 @@ table{border-collapse:collapse;width:100%}
   border:1px solid rgba(243,240,234,.16);
   display:flex;align-items:center;justify-content:center;
 }
-.profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
 .profile-placeholder{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center}
 .profile-monogram{
   display:flex;flex-direction:column;align-items:center;gap:14px;
@@ -283,20 +283,22 @@ table{border-collapse:collapse;width:100%}
 .step-title{font-size:16px;letter-spacing:-.02em}
 .step-desc{font-size:13px;line-height:1.82;color:var(--muted);max-width:40em}
 
-/* ---------- care strip ---------- */
-.carestrip{background:var(--paper-3);border-bottom:1px solid var(--line)}
-.carestrip-inner{
-  display:flex;align-items:center;justify-content:space-between;gap:14px 24px;
-  padding:15px 0;flex-wrap:wrap;
-}
+/* ---------- care strip (출고 후 사후관리 · 상단 통합) ---------- */
+.carestrip{background:var(--paper-3);border-bottom:1px solid var(--line);padding:clamp(20px,3vw,30px) 0}
+.carestrip-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
 .carestrip-label{font-size:9px;letter-spacing:.22em;color:var(--brass);flex:0 0 auto}
-.carestrip-text{font-size:12.5px;color:var(--ink-soft);flex:1 1 auto;letter-spacing:-.012em;line-height:1.6}
-.carestrip-text b{font-weight:600}
+.carestrip-title{font-size:clamp(15px,2.2vw,18px);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
 .carestrip-link{
-  font-size:11.5px;font-weight:600;color:var(--ink);flex:0 0 auto;
+  margin-left:auto;font-size:11.5px;font-weight:600;color:var(--ink);flex:0 0 auto;
   border-bottom:1px solid var(--brass);padding-bottom:2px;
 }
 .carestrip-link span{color:var(--brass)}
+.carestrip-grid{display:grid;gap:12px 26px;margin-top:18px}
+.carestrip-grid li{display:grid;gap:3px;padding-top:11px;border-top:1px solid var(--line-soft)}
+.carestrip-grid b{font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.carestrip-grid span{font-size:11.5px;line-height:1.72;color:var(--muted)}
+@media (min-width:620px){ .carestrip-grid{grid-template-columns:1fr 1fr} }
+@media (min-width:980px){ .carestrip-grid{grid-template-columns:repeat(4,1fr)} }
 
 /* ---------- care cards ---------- */
 .care-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
@@ -767,59 +769,15 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
    v2 — 전체 라인업 · 상담 · 구매가이드 확장
    ========================================================================== */
 
-/* ---------- header (확장 내비게이션) ---------- */
+/* ---------- header (상단 메뉴 상시 노출) ---------- */
 .nav--wide{gap:22px;font-size:12.5px}
-.nav-toggle{
-  display:none;align-items:center;gap:8px;height:38px;padding:0 12px;
-  border:1px solid var(--line-strong);font-size:11.5px;font-weight:600;letter-spacing:.02em;
-}
-.nav-toggle span.bars{display:block;width:14px;height:1.5px;background:var(--ink);position:relative}
-.nav-toggle span.bars::before,.nav-toggle span.bars::after{
-  content:"";position:absolute;left:0;width:14px;height:1.5px;background:var(--ink);
-}
-.nav-toggle span.bars::before{top:-5px}
-.nav-toggle span.bars::after{top:5px}
-.drawer{
-  position:fixed;top:0;right:0;bottom:0;width:min(86vw,360px);z-index:90;
-  background:var(--paper);border-left:1px solid var(--line);
-  transform:translateX(102%);transition:transform .38s var(--ease);
-  display:flex;flex-direction:column;overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-}
-.drawer[data-open="true"]{transform:translateX(0)}
-.drawer-head{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:18px 20px;border-bottom:1px solid var(--line);
-}
-.drawer-title{font-size:9.5px;letter-spacing:.2em;color:var(--muted)}
-.drawer-close{font-size:12px;font-weight:600;padding:6px 2px}
-.drawer-nav{padding:8px 0 26px}
-.drawer-group{padding:14px 20px 6px;font-size:9px;letter-spacing:.2em;color:var(--brass);text-transform:uppercase}
-.drawer-link{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:14px 20px;font-size:15px;font-weight:600;letter-spacing:-.02em;
-  border-bottom:1px solid var(--line-soft);
-}
-.drawer-link small{font-size:10.5px;font-weight:400;color:var(--muted-2);letter-spacing:0}
-.drawer-link[aria-current="page"]{color:var(--brass)}
-.drawer-foot{margin-top:auto;padding:18px 20px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
-.drawer-foot a{display:flex;align-items:center;justify-content:center;height:48px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600}
-.drawer-scrim{
-  position:fixed;top:0;right:0;bottom:0;left:0;z-index:85;background:rgba(12,18,23,.42);
-  opacity:0;pointer-events:none;transition:opacity .3s var(--ease);
-}
-.drawer-scrim[data-open="true"]{opacity:1;pointer-events:auto}
-body[data-drawer="open"]{overflow:hidden}
 
+/* 좁은 화면: 브랜드 줄 높이를 줄여 상단 메뉴 바가 들어설 자리를 만든다 */
 @media (max-width:900px){
-  .nav--wide{display:none}
-  .nav-toggle{display:inline-flex}
-}
-@media (max-width:900px){
-  :root{--header-h:66px}
-}
-@media (min-width:1081px){
-  .drawer,.drawer-scrim{display:none}
+  :root{--header-h:101px}
+  .header-inner{height:56px;gap:12px}
+  .brand-name{font-size:12.5px;overflow:hidden;text-overflow:ellipsis}
+  .header-call{height:32px;padding:0 11px;font-size:11.5px}
 }
 
 /* ---------- page head ---------- */
@@ -1232,13 +1190,23 @@ body[data-drawer="open"]{overflow:hidden}
 .lim-link--info .lim-t{color:var(--ink)}
 @media (min-width:760px){ .limit-links{grid-template-columns:1fr 1fr;column-gap:34px} }
 
-/* ---------- header: 2단 메뉴 (9개 항목) ---------- */
-.navbar{display:none;border-top:1px solid var(--line-soft);background:rgba(246,244,239,.92)}
+/* ---------- header: 2단 메뉴 (9개 항목, 전 화면 상시 노출) ---------- */
+.navbar{
+  display:block;position:relative;
+  border-top:1px solid var(--line-soft);background:rgba(246,244,239,.92);
+}
+.navbar::after{
+  content:"";position:absolute;top:0;right:0;bottom:0;width:36px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(246,244,239,0),rgba(246,244,239,.97) 62%);
+  opacity:0;transition:opacity .25s var(--ease);
+}
+.navbar[data-more="true"]::after{opacity:1}
 .navbar-inner{
   display:flex;align-items:center;gap:18px;margin:0 auto;height:41px;
   max-width:var(--maxw);padding:0 var(--gut);list-style:none;
   font-size:12.5px;letter-spacing:-.01em;color:var(--ink-soft);white-space:nowrap;
-  overflow-x:auto;scrollbar-width:none;
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
 }
 .navbar-inner::-webkit-scrollbar{display:none}
 .navbar-inner li{flex:0 0 auto}
@@ -1250,8 +1218,24 @@ body[data-drawer="open"]{overflow:hidden}
 }
 .navbar-inner a:hover::after,.navbar-inner a[aria-current="page"]::after{right:0}
 .navbar-inner a[aria-current="page"]{color:var(--ink);font-weight:600}
-@media (min-width:901px){ .navbar{display:block} }
+.navbar-inner a:focus-visible{outline-offset:-2px}
 @media (max-width:1080px){ .navbar-inner{gap:16px;font-size:12px} }
+
+/* 좁은 화면: 얇은 가로 스크롤 바 + 현재 페이지 알약 강조 */
+@media (max-width:900px){
+  .navbar-inner{height:44px;gap:4px;font-size:12.5px;color:var(--ink-soft)}
+  .navbar-inner a{
+    display:inline-flex;align-items:center;height:32px;padding:0 11px;
+    border-radius:999px;letter-spacing:-.02em;
+    transition:background .22s var(--ease),color .22s var(--ease);
+  }
+  .navbar-inner a::after{display:none}
+  .navbar-inner a:active{background:rgba(18,22,27,.06)}
+  .navbar-inner a[aria-current="page"]{
+    background:var(--ink);color:var(--paper);font-weight:600;
+  }
+  .navbar-inner .navbar-tel{display:none}
+}
 
 /* ---------- 신차 쇼케이스 보조 ---------- */
 .show-more{margin-top:16px;font-size:11.5px;line-height:1.8;color:var(--muted)}
@@ -1460,4 +1444,29 @@ body[data-drawer="open"]{overflow:hidden}
   .promo-tabs{gap:4px}
   .promo-tabs .tab{padding:8px 11px;font-size:11.5px}
   .promo-tabs .tab small{font-size:9.5px;margin-left:3px}
+}
+
+/* ==========================================================================
+   v3 — 상단 사후관리 밴드 · 전기 GLC/CLA 사진 카드
+   ========================================================================== */
+/* 전기 계약 카드 2열 */
+.elec-duo{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,20px);margin-top:clamp(20px,3vw,28px)}
+@media (min-width:900px){ .elec-duo{grid-template-columns:1fr 1fr} }
+.elec-duo .feature{grid-template-columns:1fr}
+.elec-duo .feature-paint{aspect-ratio:16/10;min-height:0}
+.elec-duo .feature-body{padding:clamp(20px,3vw,28px)}
+.elec-duo .feature-title{font-size:clamp(20px,2.6vw,26px)}
+.elec-duo .feature-desc{margin-top:12px;font-size:12.5px;line-height:1.8}
+.elec-duo .feature-specs{margin-top:18px}
+.elec-duo .feature-specs b{font-size:20px}
+.elec-duo .feature-link{margin-top:18px;font-size:12.5px}
+
+/* 공식 차량 사진을 쓰는 feature 카드 */
+.feature-paint--photo{background:#DEDAD2}
+.feature-paint--photo>img{
+  position:absolute;top:0;right:0;bottom:0;left:0;
+  width:100%;height:100%;object-fit:cover;object-position:center 58%;
+}
+.feature-paint--photo::after{
+  background:linear-gradient(to top,rgba(10,14,19,.62),rgba(10,14,19,.12) 48%,rgba(10,14,19,0) 72%);
 }

@@ -7,8 +7,8 @@
 
 ```
 site/
-├─ index.html            메인 (프로필·GLC Electric·신차/사전예약·라인업·상담신청·사후관리·상담안내)
-├─ models.html           전체 라인업 45종 (분류 탭 + 실시간 검색)
+├─ index.html            메인 (프로필·전기 GLC/CLA 계약·신차/사전예약·차종별 가이드·상담 연결)
+├─ models.html           차종별 가이드 (분류 탭 + 실시간 검색)
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
 ├─ benefits.html         가격·프로모션 / 전국 재고 조회 / 카드혜택·금융 / MOU 확인
 ├─ glc-electric.html     GLC 300 4MATIC Electric 상세 가이드
@@ -71,7 +71,7 @@ site/
 ## 확인해 둔 동작
 
 - 카카오톡 인앱 브라우저(iOS WKWebView / Android WebView) 기준으로 `position: sticky`, `aspect-ratio`, CSS 변수, `IntersectionObserver`만 사용했습니다. (모듈·fetch·외부 API 없음)
-- 폭 1080px 이하에서 상단 메뉴가 햄버거 드로어로 바뀌고, 760px 이하에서 하단 고정 상담 바(전화/문자)가 나타납니다. `env(safe-area-inset-bottom)`으로 아이폰 홈 인디케이터를 피합니다.
+- 상단 메뉴(9개 항목)는 모바일에서도 항상 노출되며, 폭이 좁으면 바 안에서만 가로 스크롤됩니다(현재 페이지는 알약형으로 강조). 760px 이하에서 하단 고정 상담 바(전화/문자)가 나타납니다. `env(safe-area-inset-bottom)`으로 아이폰 홈 인디케이터를 피합니다.
 - 390 / 768 / 1440px 세 폭에서 가로 스크롤 0, 이미지 깨짐 0을 확인했습니다.
 - 상담 신청서는 서버로 전송하지 않습니다. `sms:010-87921080` 링크(iOS는 `&body=`, 안드로이드는 `?body=`)로 문자 본문을 채우고, 복사 버튼은 `navigator.clipboard` → `execCommand('copy')` 순서로 시도합니다.
 - 자바스크립트가 꺼져 있으면 라인업·상세 목록이 보이지 않으므로, 각 페이지에 안내 문구(`noscript`)를 넣어 두었습니다.

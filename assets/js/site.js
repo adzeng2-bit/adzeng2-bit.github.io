@@ -52,42 +52,30 @@
     }
   };
 
-  /* ---------- 드로어 메뉴 ---------- */
-  MB.initDrawer = function () {
-    var toggle = document.querySelector("[data-drawer-toggle]");
-    var drawer = document.querySelector("[data-drawer]");
-    var scrim = document.querySelector("[data-drawer-scrim]");
-    if (!toggle || !drawer) return;
+  /* ---------- 상단 메뉴 바 (가로 스크롤 · 현재 페이지 위치 노출) ---------- */
+  MB.initNavBar = function () {
+    var nav = document.querySelector("[data-nav]");
+    var list = document.querySelector("[data-nav-list]");
+    if (!nav || !list) return;
 
-    var open = function () {
-      drawer.setAttribute("data-open", "true");
-      if (scrim) scrim.setAttribute("data-open", "true");
-      document.body.setAttribute("data-drawer", "open");
-      toggle.setAttribute("aria-expanded", "true");
-    };
-    var close = function () {
-      drawer.setAttribute("data-open", "false");
-      if (scrim) scrim.setAttribute("data-open", "false");
-      document.body.removeAttribute("data-drawer");
-      toggle.setAttribute("aria-expanded", "false");
+    var sync = function () {
+      var more = list.scrollWidth - list.clientWidth - list.scrollLeft > 2;
+      nav.setAttribute("data-more", more ? "true" : "false");
     };
 
-    toggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (drawer.getAttribute("data-open") === "true") close(); else open();
-    });
-    if (scrim) scrim.addEventListener("click", close);
-    var closeBtn = drawer.querySelector("[data-drawer-close]");
-    if (closeBtn) closeBtn.addEventListener("click", close);
-    Array.prototype.forEach.call(drawer.querySelectorAll("a"), function (a) {
-      a.addEventListener("click", close);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") close();
-    });
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 1080) close();
-    });
+    var reveal = function () {
+      if (list.scrollWidth <= list.clientWidth + 2) return;
+      var cur = list.querySelector('[aria-current="page"]');
+      if (!cur) return;
+      var offset = cur.getBoundingClientRect().left - list.getBoundingClientRect().left;
+      var centered = offset - (list.clientWidth - cur.offsetWidth) / 2;
+      list.scrollLeft = Math.max(0, Math.min(centered, list.scrollWidth - list.clientWidth));
+    };
+
+    list.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", function () { reveal(); sync(); });
+    reveal();
+    sync();
   };
 
   /* ---------- 등장 애니메이션 ---------- */
@@ -123,7 +111,7 @@
   };
 
   MB.init = function () {
-    MB.initDrawer();
+    MB.initNavBar();
     MB.initReveal();
     MB.initYear();
     MB.initCallLinks();
