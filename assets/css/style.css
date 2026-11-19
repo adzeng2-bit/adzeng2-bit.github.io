@@ -1285,3 +1285,4 @@ body[data-drawer="open"]{overflow:hidden}
 .navbar-inner .navbar-tel{margin-left:auto}
 .navbar-inner .navbar-tel a{font-family:var(--serif);font-size:13px;letter-spacing:.03em;color:var(--ink)}
 .navbar-inner .navbar-tel a::after{display:none}
+[hidden]{display:none!important}

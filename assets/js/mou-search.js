@@ -178,7 +178,7 @@
       } else {
         parts.push('전체 <b>' + items.length + "</b>개 기업");
       }
-      countEl.innerHTML = parts.join(" ");
+      countEl.innerHTML = parts.join(" · ");
     }
 
     if (emptyEl) emptyEl.hidden = list.length > 0;
