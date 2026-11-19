@@ -1291,3 +1291,51 @@ body[data-drawer="open"]{overflow:hidden}
 .sim{overflow:hidden}
 .sim *{min-width:0}
 .sim-input input{width:100%}
+
+/* ── 02 전국 재고 목록 (STS 지점 위탁 재고) ───────────────────── */
+.stock-tool{margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.stock-head{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+.stock-title{font-size:clamp(19px,2.4vw,25px);letter-spacing:-.03em;margin-top:6px}
+.stock-title b{font-family:var(--serif);font-weight:400;color:var(--brass);font-size:1.18em}
+.stock-call{font-size:11.5px;letter-spacing:.06em;color:var(--ink);border-bottom:1px solid var(--brass);padding-bottom:2px;white-space:nowrap}
+.stock-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:22px;align-items:end}
+.stock-field{display:grid;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.stock-field select{
+  appearance:none;-webkit-appearance:none;width:100%;height:42px;padding:0 30px 0 12px;
+  border:1px solid var(--line-strong);background:#fff;font-family:inherit;font-size:12.5px;color:var(--ink);
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 16px) 18px,calc(100% - 11px) 18px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+}
+.stock-check{display:flex;align-items:center;gap:8px;height:42px;font-size:12px;color:var(--ink-soft);white-space:nowrap}
+.stock-check input{width:16px;height:16px;accent-color:var(--brass)}
+.stock-reset{height:42px;padding:0 16px;font-size:11.5px;letter-spacing:.06em;white-space:nowrap}
+.stock-count{font-size:11.5px;letter-spacing:.04em;color:var(--muted);margin-top:18px}
+.stock-count b{color:var(--ink);font-weight:600}
+.stock-list{margin-top:10px;border-top:1px solid var(--line)}
+.stock-row{display:grid;grid-template-columns:1fr auto;gap:10px 18px;padding:14px 0;border-bottom:1px solid var(--line-soft);align-items:center}
+.stock-row-main h4{font-size:13.5px;letter-spacing:-.02em;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.stock-my{font-size:10px;letter-spacing:.1em;color:var(--brass);border:1px solid var(--brass-2);padding:1px 6px;border-radius:2px;font-weight:600}
+.stock-colors{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.6}
+.stock-chip{display:inline-block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin:0 6px 0 12px}
+.stock-chip:first-child{margin-left:0}
+.stock-tone{color:var(--muted-2)}
+.stock-row-side{display:flex;align-items:center;gap:10px;font-size:12px;white-space:nowrap}
+.stock-loc{color:var(--ink-soft);letter-spacing:-.01em}
+.stock-qty{font-family:var(--serif);font-size:15px;color:var(--ink)}
+.stock-hold{font-size:10px;color:#8a5a3a;border:1px solid rgba(138,90,58,.35);padding:1px 6px;border-radius:2px}
+.stock-sms{font-size:11px;letter-spacing:.06em;color:var(--ink);border:1px solid var(--line-strong);padding:6px 10px}
+.stock-sms:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.stock-note{margin-top:18px}
+@media(max-width:640px){
+  .stock-row{grid-template-columns:1fr}
+  .stock-row-side{justify-content:flex-start;flex-wrap:wrap}
+}
+
+/* ── 01 이달의 공식 프로모션 ──────────────────────────────── */
+.promo-official{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.promo-head{max-width:52em}
+.promo-title{font-size:clamp(19px,2.4vw,25px);letter-spacing:-.03em;margin-top:6px}
+.promo-lead{margin-top:10px;font-size:12.5px;line-height:1.85;color:var(--muted)}
+.promo-official .info-grid{margin-top:26px}
+.promo-note{margin-top:18px}
+.promo-note a{border-bottom:1px solid var(--brass)}
