@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&amp;display=swap">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20261119b">
 <script>document.documentElement.className += ' js';</script>
 </head>
 <body>
@@ -26,14 +26,6 @@
       <span class="brand-kicker">MERCEDES-BENZ · HS효성더클래스</span>
       <span class="brand-name">임정빈 차장 · HS효성더클래스 분당</span>
     </a>
-    <nav class="nav nav--wide" aria-label="주요 메뉴">
-      <a href="index.html" aria-current="page">홈</a>
-      <a href="#new-models">신차·사전예약</a>
-      <a href="models.html">차종별 가이드</a>
-      <a href="#after-care">전담 사후관리</a>
-      <a href="benefits.html">가격·구매가이드</a>
-      <a class="nav-call" href="tel:010-8792-1080">010-8792-1080</a>
-    </nav>
     <button class="nav-toggle" type="button" data-drawer-toggle aria-expanded="false" aria-controls="drawer">
       <span class="bars" aria-hidden="true"></span> 메뉴
     </button>
@@ -42,6 +34,21 @@
       <span>전화</span>
     </a>
   </div>
+
+  <nav class="navbar" aria-label="주요 메뉴">
+    <ul class="navbar-inner">
+      <li><a href="index.html" aria-current="page">홈</a></li>
+      <li><a href="index.html#launches">신차·사전예약</a></li>
+      <li><a href="models.html">차종별 가이드</a></li>
+      <li><a href="benefits.html#promotion">가격·프로모션</a></li>
+      <li><a href="benefits.html#stock">전국 재고</a></li>
+      <li><a href="benefits.html#report">구매전략리포트</a></li>
+      <li><a href="benefits.html#cards">카드혜택</a></li>
+      <li><a href="benefits.html#mou">MOU 확인</a></li>
+      <li><a href="index.html#after-care">사후관리</a></li>
+      <li class="navbar-tel"><a href="tel:010-8792-1080">010-8792-1080</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="drawer-scrim" data-drawer-scrim></div>
@@ -53,14 +60,15 @@
   <nav class="drawer-nav">
     <p class="drawer-group">둘러보기</p>
     <a class="drawer-link" href="index.html" aria-current="page">홈 <small>임정빈 차장</small></a>
-    <a class="drawer-link" href="#new-models">신차·사전예약 <small>신형·론칭 모델</small></a>
+    <a class="drawer-link" href="index.html#launches">신차·사전예약 <small>신형·론칭 모델</small></a>
     <a class="drawer-link" href="models.html">차종별 가이드 <small>전체 45종</small></a>
-    <a class="drawer-link" href="#after-care">전담 사후관리 <small>점검·입고·보증</small></a>
-    <p class="drawer-group">구매 준비</p>
-    <a class="drawer-link" href="benefits.html#promo">가격·프로모션 <small>이달의 조건</small></a>
-    <a class="drawer-link" href="benefits.html#stock">전국 재고 조회 <small>STS 실시간 확인</small></a>
-    <a class="drawer-link" href="benefits.html#finance">카드혜택·금융 <small>할부·리스·렌트</small></a>
-    <a class="drawer-link" href="benefits.html#mou">MOU 확인 <small>직장인·법인 제휴</small></a>
+    <a class="drawer-link" href="index.html#after-care">전담 사후관리 <small>점검·입고·보증</small></a>
+    <p class="drawer-group">구매 정보</p>
+    <a class="drawer-link" href="benefits.html#promotion">가격·프로모션 <small>이달의 조건</small></a>
+    <a class="drawer-link" href="benefits.html#stock">전국 재고 <small>STS 실시간 확인</small></a>
+    <a class="drawer-link" href="benefits.html#report">구매전략리포트 <small>이달의 판단 기준</small></a>
+    <a class="drawer-link" href="benefits.html#cards">카드혜택 <small>신한카드 3종 비교</small></a>
+    <a class="drawer-link" href="benefits.html#mou">MOU 확인 <small>603곳 즉시 검색</small></a>
     <p class="drawer-group">바로 상담</p>
     <a class="drawer-link" href="#consult">상담 신청서 <small>문자 자동 완성</small></a>
     <a class="drawer-link" href="glc-electric.html">GLC Electric <small>전기 SUV 가이드</small></a>
@@ -168,7 +176,8 @@
   </section>
 
   <!-- 02 NEW MODELS -->
-  <section class="section section--tint" id="new-models">
+  <section class="section section--tint" id="launches">
+    <a id="new-models" class="sr-only" aria-hidden="true"></a>
     <div class="wrap sec-grid">
       <div class="sec-aside reveal">
         <p class="eyebrow">02 — 신차·사전예약</p>
@@ -183,10 +192,20 @@
         <div class="showcase">
           <a class="show-card show-card--dark reveal" href="glc-electric.html">
             <div class="show-inner">
-              <p class="show-tag">MY27 · 계약 가능</p>
+              <p class="show-tag">MY27 · 사전계약</p>
               <h3 class="show-name serif">GLC 300 4MATIC<br>Electric</h3>
               <p class="show-desc">800V 충전, 448km. 전용 전기 SUV. AMG Line 9,000만원부터.</p>
               <span class="show-link">상세 보기 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="show-card reveal" href="model.html?id=v-class">
+            <img src="assets/img/models/v-class-card.jpg" alt="메르세데스-벤츠 V-Class 공식 차량 이미지" loading="lazy" decoding="async">
+            <div class="show-inner">
+              <p class="show-tag">MY27 · 7인승</p>
+              <h3 class="show-name serif">The new<br>V-Class</h3>
+              <p class="show-desc">V 300 d 4MATIC EXCLUSIVE, 1억 2,400만원부터. 색상·실내 옵션을 살펴보세요.</p>
+              <span class="show-link">가격·트림 보기 <span aria-hidden="true">→</span></span>
             </div>
           </a>
 
@@ -194,8 +213,8 @@
             <img src="assets/img/models/gle-new-card.jpg" alt="메르세데스-벤츠 GLE 신형 공식 차량 이미지" loading="lazy" decoding="async">
             <div class="show-inner">
               <p class="show-tag">27년식 · NEW</p>
-              <h3 class="show-name serif">GLE</h3>
-              <p class="show-desc">신형 GLE. GLE 450 4MATIC AMG Line 1억 3,670만원.</p>
+              <h3 class="show-name serif">The new<br>GLE</h3>
+              <p class="show-desc">GLE 450 4MATIC AMG Line 1억 3,670만원부터. 옵션과 색상을 비교하세요.</p>
               <span class="show-link">가격·트림 보기 <span aria-hidden="true">→</span></span>
             </div>
           </a>
@@ -204,12 +223,59 @@
             <img src="assets/img/models/gls-new-card.jpg" alt="메르세데스-벤츠 GLS 신형 공식 차량 이미지" loading="lazy" decoding="async">
             <div class="show-inner">
               <p class="show-tag">27년식 · NEW</p>
-              <h3 class="show-name serif">GLS</h3>
-              <p class="show-desc">신형 GLS. 450·580 두 가지, 6인승·7인승 운영.</p>
+              <h3 class="show-name serif">The new<br>GLS</h3>
+              <p class="show-desc">GLS 450·580, 6인승·7인승. 1억 5,850만원부터.</p>
               <span class="show-link">가격·트림 보기 <span aria-hidden="true">→</span></span>
             </div>
           </a>
+
+          <a class="show-card show-card--dark reveal" href="#consult">
+            <div class="show-inner">
+              <p class="show-tag">140주년 에디션 II</p>
+              <h3 class="show-name serif">GLE &amp; GLS<br>140주년 에디션 II</h3>
+              <p class="show-desc">GLE·GLE Coupé·GLS 140주년 기념 에디션. 가격·컬러·사양은 상담으로 확인해 드립니다.</p>
+              <span class="show-link">사전예약 상담 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="show-card reveal" href="#consult">
+            <div class="show-inner">
+              <p class="show-tag">사전예약 · 국내 사양</p>
+              <h3 class="show-name serif">The all-new<br>electric CLA</h3>
+              <p class="show-desc">전기 CLA. 국내 트림과 옵션, 출시 일정은 확정되는 대로 안내드립니다.</p>
+              <span class="show-link">사전예약 상담 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="show-card reveal" href="#consult">
+            <div class="show-inner">
+              <p class="show-tag">사전예약 · 신규 모델</p>
+              <h3 class="show-name serif">GLB 250+<br>electric</h3>
+              <p class="show-desc">GLB 전동화 라인업. 국내 사양과 가격은 확정되는 대로 안내드립니다.</p>
+              <span class="show-link">사전예약 상담 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="show-card reveal" href="#consult">
+            <div class="show-inner">
+              <p class="show-tag">MY27 · 사전 상담</p>
+              <h3 class="show-name serif">The new<br>G-Class MY27</h3>
+              <p class="show-desc">디젤·전기·AMG. 27년식 라인업과 출고 일정은 상담으로 확인해 드립니다.</p>
+              <span class="show-link">사전예약 상담 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a class="show-card reveal" href="#consult">
+            <div class="show-inner">
+              <p class="show-tag">신형 S-Class · 사전계약</p>
+              <h3 class="show-name serif">The new S-Class<br>MY27 Facelift</h3>
+              <p class="show-desc">변경된 디자인과 런칭 에디션. 국내 라인업이 확정되면 우선 안내드립니다.</p>
+              <span class="show-link">사전예약 상담 <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         </div>
+
+        <p class="show-more reveal">신차 소식·사전예약 문의는 전화 한 통이면 정리해 드립니다. <a href="tel:010-8792-1080">010-8792-1080</a></p>
 
         <div class="form-actions reveal">
           <a class="btn" href="models.html">전체 라인업 보기</a>

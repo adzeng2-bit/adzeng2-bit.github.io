@@ -20,6 +20,21 @@
     });
   }
 
+  /* 구매전략리포트 문자 CTA */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-sms-report]"), function (a) {
+    var body = [
+      "[벤츠 구매전략 리포트] 임정빈 차장님께",
+      "",
+      "관심 차종: ",
+      "구매 시기: (11월 / 12월 / 1월 중)",
+      "궁금한 점: ",
+      "",
+      "성함: ",
+      "연락처: "
+    ].join("\n");
+    a.setAttribute("href", window.MB && MB.smsHref ? MB.smsHref(body) : "sms:01087921080");
+  });
+
   /* 목차 현재 위치 */
   var nav = document.getElementById("bnav");
   if (nav && "IntersectionObserver" in window) {
