@@ -394,5 +394,20 @@ window.MB_SPECS = {
   "wheelbase": "2,890mm",
   "trans": "9G-TRONIC (자동 9단)",
   "src": "메르세데스-벤츠 코리아 보도자료(2023.12.11) GLC 쿠페 주요 제원"
+ },
+ "maybach-s-class": {
+  "cats": [
+   "Maybach S 580"
+  ],
+  "engine": "V형 8기통 가솔린",
+  "disp": "3,982cc",
+  "power": "503hp / 5,500rpm",
+  "torque": "71.4kgf·m / 2,000~4,500rpm",
+  "accel": "4.8초",
+  "top": "250km/h",
+  "eff": "복합 8.1km/ℓ",
+  "size": "5,470 × 1,920 × 1,510mm",
+  "trans": "9G-TRONIC (자동 9단)",
+  "src": "메르세데스-벤츠 코리아 보도자료(2023.01.17) 마이바흐 S 580 4MATIC 제원 (S 680은 별도 확인)"
  }
 };
