@@ -1379,3 +1379,4 @@ body[data-drawer="open"]{overflow:hidden}
   .pv-price{display:inline;font-size:13px}
   .pv-sub{flex-basis:100%;margin-top:2px}
 }
+.pv-new{display:inline-block;margin-left:4px;font-size:9px;letter-spacing:.02em;color:#7a5b21;border:1px solid rgba(150,120,60,.35);padding:0 4px;border-radius:2px;vertical-align:1px}
