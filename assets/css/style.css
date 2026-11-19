@@ -99,6 +99,14 @@ table{border-collapse:collapse;width:100%}
 .btn--outline-light{background:transparent;border-color:rgba(243,240,234,.42);color:#F3F0EA}
 .btn--outline-light:hover{border-color:#F3F0EA;background:rgba(243,240,234,.08)}
 
+/* 네이버 예약 — 버튼 톤은 사이트 규칙 유지, 초록 N 마크만 포인트 */
+.naver-n{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:18px;height:18px;border-radius:4px;background:#03C75A;color:#fff;
+  font-family:var(--sans);font-size:11px;font-weight:800;line-height:1;letter-spacing:0;
+}
+.contact-line .naver-n{width:17px;height:17px;font-size:10.5px;margin-right:8px;vertical-align:2px}
+
 /* ---------- hero (index) ---------- */
 .hero{
   position:relative;background:var(--navy);color:#F3F0EA;overflow:hidden;
@@ -1426,6 +1434,7 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
   .pbar-title{font-size:20px}
   .cta-band-actions{width:100%}
   .cta-band-actions .btn{flex:1 1 auto;justify-content:center;text-align:center}
+  .hero-actions .btn--naver,.cta-band-actions .btn--naver{flex:1 1 100%}
 }
 .note--lead{margin-top:24px;background:#fff;border:1px solid var(--line-strong);border-left:2px solid var(--brass)}
 .note--lead p{font-size:13px;line-height:1.9;color:var(--muted)}

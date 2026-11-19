@@ -7,7 +7,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 def wr(p, s): open(os.path.join(ROOT, p), 'w', encoding='utf-8').write(s)
 
-CSSV = '20261119q'
+CSSV = '20261119r'
+NAVER_BOOKING = 'https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175'
 
 NAV = [
     ('index.html', '홈', 'index'),
@@ -93,6 +94,7 @@ def cta_band(title, text):
     <div class="cta-band-actions">
       <a class="btn" href="tel:{PHONE}">전화 상담 {PHONE}</a>
       <a class="btn btn--outline-light" href="sms:01087921080" data-sms-default>문자로 차종 보내기</a>
+      <a class="btn btn--outline-light btn--naver" href="{NAVER_BOOKING}" target="_blank" rel="noopener"><span class="naver-n" aria-hidden="true">N</span>네이버 방문·시승 예약</a>
     </div>
   </div>
 </section>
