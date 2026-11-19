@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>layout probe</title>
+<style>
+  html,body{margin:0;background:#ddd;font:12px/1.4 monospace}
+  iframe{display:block;border:0;height:1000px;background:#fff}
+  .m{padding:4px}
+</style>
+</head>
+<body>
+<div class="m" id="out">loading…</div>
+<iframe id="f390" style="width:390px"></iframe>
+<iframe id="f1440" style="width:1440px"></iframe>
+<script>
+  var p = new URLSearchParams(location.search).get("p") || "promotion.html";
+  var out = document.getElementById("out");
+  var frames = [["390", document.getElementById("f390")], ["1440", document.getElementById("f1440")]];
+  var done = 0, results = {};
+  frames.forEach(function (pair) {
+    var w = pair[0], f = pair[1];
+    f.src = p + "?" + Date.now();
+    f.onload = function () {
+      setTimeout(function () {
+        try {
+          var d = f.contentDocument, de = d.documentElement;
+          var wide = [];
+          d.querySelectorAll("body *").forEach(function (el) {
+            var r = el.getBoundingClientRect();
+            if (r.width > 0 && (r.right > de.clientWidth + 1 || r.left < -1)) {
+              wide.push(el.tagName + "." + String(el.className || "").slice(0, 32) + " [" + Math.round(r.left) + "," + Math.round(r.right) + "]");
+            }
+          });
+          results[w] = { clientW: de.clientWidth, scrollW: de.scrollWidth, overflowCount: wide.length, sample: wide.slice(0, 6) };
+        } catch (e) { results[w] = "ERR " + e.message; }
+        if (++done === frames.length) out.textContent = JSON.stringify(results);
+      }, 900);
+    };
+  });
+</script>
+</body>
+</html>

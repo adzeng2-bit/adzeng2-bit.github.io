@@ -1453,3 +1453,6 @@ body[data-drawer="open"]{overflow:hidden}
 @media (max-width:1080px){
   .pbar-tabs{top:var(--header-h)}
 }
+@media (min-width:761px){
+  .promo-tabs{flex-wrap:wrap;overflow:visible}
+}
