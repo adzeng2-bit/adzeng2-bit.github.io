@@ -774,7 +774,7 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 
 /* 좁은 화면: 브랜드 줄 높이를 줄여 상단 메뉴 바가 들어설 자리를 만든다 */
 @media (max-width:900px){
-  :root{--header-h:101px}
+  :root{--header-h:102px}
   .header-inner{height:56px;gap:12px}
   .brand-name{font-size:12.5px;overflow:hidden;text-overflow:ellipsis}
   .header-call{height:32px;padding:0 11px;font-size:11.5px}
@@ -1458,7 +1458,10 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .elec-duo .feature-title{font-size:clamp(20px,2.6vw,26px)}
 .elec-duo .feature-desc{margin-top:12px;font-size:12.5px;line-height:1.8}
 .elec-duo .feature-specs{margin-top:18px}
-.elec-duo .feature-specs b{font-size:20px}
+.elec-duo .feature-specs li{flex:1 1 33.33%;min-width:0;padding-right:10px}
+.elec-duo .feature-specs li+li{padding-left:12px}
+.elec-duo .feature-specs b{font-size:18px}
+.elec-duo .feature-specs span{font-size:10px;letter-spacing:-.03em;line-height:1.45}
 .elec-duo .feature-link{margin-top:18px;font-size:12.5px}
 
 /* 공식 차량 사진을 쓰는 feature 카드 */
