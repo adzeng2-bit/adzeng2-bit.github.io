@@ -1286,3 +1286,8 @@ body[data-drawer="open"]{overflow:hidden}
 .navbar-inner .navbar-tel a{font-family:var(--serif);font-size:13px;letter-spacing:.03em;color:var(--ink)}
 .navbar-inner .navbar-tel a::after{display:none}
 [hidden]{display:none!important}
+
+/* 시뮬레이터: 좁은 화면에서 내부 넘침 방지 */
+.sim{overflow:hidden}
+.sim *{min-width:0}
+.sim-input input{width:100%}
