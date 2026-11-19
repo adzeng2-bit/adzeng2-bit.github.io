@@ -166,7 +166,7 @@
     });
 
     if (rows.length) {
-      var html = '<div class="spec-wrap"><div class="spec-list">';
+      var html = '<div class="spec-wrap"><div class="spec-rows">';
       rows.forEach(function (r) {
         html += '<div class="spec-row"><div class="spec-key">' + esc(r.label) + '</div><div class="spec-vals">';
         r.values.forEach(function (v, i) {
