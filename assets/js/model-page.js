@@ -106,6 +106,109 @@
       "옵션·색상·구매 방법에 따라 실제 조건이 달라지며, 최종 가격은 계약 시점 기준으로 다시 확인해 드립니다.";
   }
 
+  /* 제원·색상 */
+  var SPECS = window.MB_SPECS || {};
+  var spec = SPECS[model.id];
+  var specEl = $("#m-spec");
+  var colorsEl = $("#m-colors");
+  var specNote = $("#m-spec-note");
+
+  var SPEC_ROWS = [
+    ["engine", "엔진·모터"],
+    ["disp", "배기량"],
+    ["battery", "배터리 용량"],
+    ["power", "최고출력"],
+    ["torque", "최대토크"],
+    ["trans", "변속기"],
+    ["drive", "구동 방식"],
+    ["accel", "0 → 100km/h"],
+    ["top", "최고속도"],
+    ["eff", "복합연비"],
+    ["cityHigh", "도심 / 고속 연비"],
+    ["range", "1회 충전 주행거리"],
+    ["co2", "CO₂ 배출"],
+    ["weight", "공차중량"],
+    ["size", "전장 × 전폭 × 전고"],
+    ["wheelbase", "휠베이스"]
+  ];
+
+  function splitToCats(value, cats) {
+    if (value == null) return null;
+    var parts = String(value).split(" · ");
+    return parts.length === cats.length ? parts : [String(value)];
+  }
+
+  if (specEl) {
+    var cats = (spec && spec.cats && spec.cats.length) ? spec.cats : [];
+    var rows = [];
+
+    SPEC_ROWS.forEach(function (row) {
+      var key = row[0];
+      var label = row[1];
+      var values = null;
+
+      if (key === "cityHigh" && spec) {
+        var cities = splitToCats(spec.city, cats.length ? cats : [""]);
+        var highs = splitToCats(spec.high, cats.length ? cats : [""]);
+        if (cities && highs) {
+          values = cities.map(function (c, i) {
+            var h = highs[i] == null ? "—" : String(highs[i]).replace(/\s*km\/ℓ/, "");
+            return String(c).replace(/\s*km\/ℓ/, "") + " / " + h + "km/ℓ";
+          });
+        }
+      } else if (spec && spec[key] != null && String(spec[key]).length) {
+        values = splitToCats(spec[key], cats.length ? cats : [""]);
+      }
+
+      if (!values || !values.length) return;
+      rows.push({ label: label, values: values });
+    });
+
+    if (rows.length) {
+      var html = '<div class="spec-wrap"><div class="spec-list">';
+      rows.forEach(function (r) {
+        html += '<div class="spec-row"><div class="spec-key">' + esc(r.label) + '</div><div class="spec-vals">';
+        r.values.forEach(function (v, i) {
+          var catName = (cats.length === r.values.length && cats[i]) ? cats[i] : "";
+          html += '<div class="spec-val">' + (catName ? '<span class="sv-cat">' + esc(catName) + '</span>' : "") +
+            '<span class="sv-num">' + esc(v) + "</span></div>";
+        });
+        html += "</div></div>";
+      });
+      html += "</div></div>";
+      specEl.innerHTML = html;
+    } else {
+      specEl.innerHTML = '<div class="spec-empty">이 차종의 세부 제원은 메르세데스-벤츠 코리아 공식 카탈로그·보도자료에서 확인되지 않았습니다.<br>' +
+        "최신 제원표는 상담 시 문자로 보내드립니다.</div>";
+    }
+
+    if (specNote) {
+      specNote.textContent = (spec && spec.src)
+        ? "출처 · " + spec.src + ". 인증용 차량 기준 제원으로 실제 출고 차량과 다를 수 있으며, 연식·트림에 따라 달라집니다."
+        : "제원은 계약 시점의 공식 자료로 다시 확인해 드립니다.";
+    }
+  }
+
+  if (colorsEl) {
+    var ext = (spec && spec.colorsExt && spec.colorsExt.length) ? spec.colorsExt : null;
+    var int = (spec && spec.colorsInt && spec.colorsInt.length) ? spec.colorsInt : null;
+    if (ext || int) {
+      var ch = '<h3 class="spec-subhead">주요 색상</h3><div class="color-grid">';
+      if (ext) {
+        ch += '<div class="color-col"><h4>외장</h4><ul class="color-list">';
+        ext.forEach(function (c) { ch += "<li>" + esc(c) + "</li>"; });
+        ch += "</ul></div>";
+      }
+      if (int) {
+        ch += '<div class="color-col"><h4>내장</h4><ul class="color-list">';
+        int.forEach(function (c) { ch += "<li>" + esc(c) + "</li>"; });
+        ch += "</ul></div>";
+      }
+      ch += "</div>";
+      colorsEl.innerHTML = ch;
+    }
+  }
+
   /* 차종 포인트 */
   var pointsEl = $("#m-points");
   if (pointsEl) {
