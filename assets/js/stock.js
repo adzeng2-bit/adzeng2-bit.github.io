@@ -13,6 +13,11 @@
   var countEl = document.getElementById("stock-count");
   var totalEl = document.getElementById("stock-total");
   var resetBtn = document.getElementById("st-reset");
+  var qInput = document.getElementById("st-q");
+
+  function normQ(s) {
+    return String(s || "").toLowerCase().replace(/\s+/g, "");
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -71,7 +76,12 @@
     var t = intSel ? intSel.value : "";
     var l = locSel ? locSel.value : "";
     var availOnly = onlyAvail ? onlyAvail.checked : true;
+    var q = qInput ? normQ(qInput.value) : "";
     return D.items.filter(function (r) {
+      if (q) {
+        var hay = normQ([r[0], r[1], r[2], r[3], r[4], r[5]].join(" "));
+        if (hay.indexOf(q) < 0) return false;
+      }
       if (m && r[0] !== m) return false;
       if (y && r[1] !== y) return false;
       if (e && r[2] !== e) return false;
@@ -124,7 +134,8 @@
     listEl.innerHTML = html || '<div class="empty-state"><b>조건에 맞는 재고가 없습니다</b>색상·전시장 조건을 바꾸거나, 원하시는 사양을 문자로 남겨 주시면 전국에서 다시 찾아 드립니다.</div>';
 
     if (countEl) {
-      var filtered = modelSel.value || yearSel.value || extSel.value || intSel.value || locSel.value;
+      var filtered = modelSel.value || yearSel.value || extSel.value || intSel.value || locSel.value ||
+        (qInput && qInput.value ? true : false);
       var availTotal = D.items.filter(function (r) { return !r[7]; }).reduce(function (a, r) { return a + r[6]; }, 0);
       if (filtered) {
         countEl.innerHTML = "전체 <b>" + D.total + "</b>대 중 조건에 맞는 재고 <b>" + units + "</b>대";
@@ -142,8 +153,13 @@
     });
   });
   if (onlyAvail) onlyAvail.addEventListener("change", render);
+  if (qInput) {
+    qInput.addEventListener("input", render);
+    qInput.addEventListener("search", render);
+  }
   if (resetBtn) resetBtn.addEventListener("click", function () {
     [modelSel, yearSel, extSel, intSel, locSel].forEach(function (el) { if (el) el.value = ""; });
+    if (qInput) qInput.value = "";
     if (onlyAvail) onlyAvail.checked = true;
     refreshDependent();
     render();

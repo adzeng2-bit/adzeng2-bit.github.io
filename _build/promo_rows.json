@@ -1,0 +1,2738 @@
+[
+ {
+  "seg": "pv-acla",
+  "seg_title": "A · CLA · GLA · GLB",
+  "my": "27",
+  "name": "GLA 250 4MATIC AMG Line",
+  "new": null,
+  "msrp": "70,800,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−6,380,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−9,210,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "64,420,000원",
+  "consult": false,
+  "cash_price": 64420000,
+  "fin_price": 61590000
+ },
+ {
+  "seg": "pv-acla",
+  "seg_title": "A · CLA · GLA · GLB",
+  "my": "27",
+  "name": "CLA 220",
+  "new": null,
+  "msrp": "59,900,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "59,900,000원",
+  "consult": false,
+  "cash_price": 59900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-acla",
+  "seg_title": "A · CLA · GLA · GLB",
+  "my": "27",
+  "name": "CLA 220 AMG Line",
+  "new": null,
+  "msrp": "62,900,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "62,900,000원",
+  "consult": false,
+  "cash_price": 62900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-acla",
+  "seg_title": "A · CLA · GLA · GLB",
+  "my": "26",
+  "name": "A 220",
+  "new": null,
+  "msrp": "48,700,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−4,880,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "43,820,000원",
+  "consult": false,
+  "cash_price": 43820000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-acla",
+  "seg_title": "A · CLA · GLA · GLB",
+  "my": "26",
+  "name": "GLB 250 4MATIC",
+  "new": null,
+  "msrp": "72,000,000원",
+  "cash": {
+   "rate": "13%",
+   "amt": "−9,370,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−12,250,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "62,630,000원",
+  "consult": false,
+  "cash_price": 62630000,
+  "fin_price": 59750000
+ },
+ {
+  "seg": "pv-c",
+  "seg_title": "C-Class",
+  "my": "26",
+  "name": "C 200 AVANTGARDE",
+  "new": null,
+  "msrp": "65,100,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−6,510,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−9,120,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "58,590,000원",
+  "consult": false,
+  "cash_price": 58590000,
+  "fin_price": 55980000
+ },
+ {
+  "seg": "pv-c",
+  "seg_title": "C-Class",
+  "my": "26",
+  "name": "C 200 AMG Line",
+  "new": null,
+  "msrp": "68,300,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−6,830,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−9,570,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "61,470,000원",
+  "consult": false,
+  "cash_price": 61470000,
+  "fin_price": 58730000
+ },
+ {
+  "seg": "pv-c",
+  "seg_title": "C-Class",
+  "my": "26",
+  "name": "C 200 Special Edition",
+  "new": null,
+  "msrp": "66,300,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−6,640,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−9,290,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "59,660,000원",
+  "consult": false,
+  "cash_price": 59660000,
+  "fin_price": 57010000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 200 EXCLUSIVE",
+  "new": null,
+  "msrp": "77,500,000원",
+  "cash": {
+   "rate": "14%",
+   "amt": "−10,850,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−13,950,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "66,650,000원",
+  "consult": false,
+  "cash_price": 66650000,
+  "fin_price": 63550000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 200 AMG Line",
+  "new": null,
+  "msrp": "81,000,000원",
+  "cash": {
+   "rate": "14%",
+   "amt": "−11,340,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 3%",
+   "amt": "−13,770,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "69,660,000원",
+  "consult": false,
+  "cash_price": 69660000,
+  "fin_price": 67230000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 300 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "94,800,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−7,590,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−11,380,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "87,210,000원",
+  "consult": false,
+  "cash_price": 87210000,
+  "fin_price": 83420000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 300 4MATIC AMG Line",
+  "new": null,
+  "msrp": "100,100,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−8,010,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−12,020,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "92,090,000원",
+  "consult": false,
+  "cash_price": 92090000,
+  "fin_price": 88080000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 450 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "129,500,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−12,950,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "116,550,000원",
+  "consult": false,
+  "cash_price": 116550000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 450 4MATIC AMG Line KR9",
+  "new": null,
+  "msrp": "112,200,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−11,220,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "100,980,000원",
+  "consult": false,
+  "cash_price": 100980000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "27",
+  "name": "E 450 4MATIC AMG Line KR7",
+  "new": null,
+  "msrp": "117,200,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−11,720,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "105,480,000원",
+  "consult": false,
+  "cash_price": 105480000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 200 AVANTGARDE",
+  "new": null,
+  "msrp": "77,500,000원",
+  "cash": {
+   "rate": "16%",
+   "amt": "−12,400,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "65,100,000원",
+  "consult": false,
+  "cash_price": 65100000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 200 EXCLUSIVE",
+  "new": null,
+  "msrp": "77,500,000원",
+  "cash": {
+   "rate": "15%",
+   "amt": "−11,630,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 5%",
+   "amt": "−15,500,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "65,870,000원",
+  "consult": false,
+  "cash_price": 65870000,
+  "fin_price": 62000000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 200 AMG Line RoF Ed.",
+  "new": null,
+  "msrp": "81,000,000원",
+  "cash": {
+   "rate": "15%",
+   "amt": "−12,150,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−15,400,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "68,850,000원",
+  "consult": false,
+  "cash_price": 68850000,
+  "fin_price": 65600000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 220 d 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "87,200,000원",
+  "cash": {
+   "rate": "12%",
+   "amt": "−10,470,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "76,730,000원",
+  "consult": false,
+  "cash_price": 76730000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 300 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "94,800,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−9,480,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−13,280,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "85,320,000원",
+  "consult": false,
+  "cash_price": 85320000,
+  "fin_price": 81520000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 300 4MATIC AMG Line 140주년 Ed.",
+  "new": null,
+  "msrp": "99,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−9,900,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−13,860,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "89,100,000원",
+  "consult": false,
+  "cash_price": 89100000,
+  "fin_price": 85140000
+ },
+ {
+  "seg": "pv-e",
+  "seg_title": "E-Class",
+  "my": "26",
+  "name": "E 350 e 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "100,000,000원",
+  "cash": {
+   "rate": "14%",
+   "amt": "−14,000,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "86,000,000원",
+  "consult": false,
+  "cash_price": 86000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "27",
+  "name": "CLE 200 Coupé",
+  "new": null,
+  "msrp": "77,600,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−1,560,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "76,040,000원",
+  "consult": false,
+  "cash_price": 76040000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "27",
+  "name": "CLE 450 4MATIC Coupé",
+  "new": null,
+  "msrp": "100,800,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−2,020,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "98,780,000원",
+  "consult": false,
+  "cash_price": 98780000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "27",
+  "name": "CLE 200 Cabriolet",
+  "new": null,
+  "msrp": "84,100,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−1,690,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "82,410,000원",
+  "consult": false,
+  "cash_price": 82410000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "27",
+  "name": "CLE 450 4MATIC Cabriolet",
+  "new": null,
+  "msrp": "105,200,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−2,110,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "103,090,000원",
+  "consult": false,
+  "cash_price": 103090000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "26",
+  "name": "CLE 200 Cabriolet AMG Line 140주년 Ed.",
+  "new": null,
+  "msrp": "83,100,000원",
+  "cash": {
+   "rate": "4%",
+   "amt": "−3,330,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "79,770,000원",
+  "consult": false,
+  "cash_price": 79770000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-cle",
+  "seg_title": "CLE",
+  "my": "26",
+  "name": "CLE 450 4MATIC Cabriolet AMG Line",
+  "new": null,
+  "msrp": "104,000,000원",
+  "cash": {
+   "rate": "6%",
+   "amt": "−6,240,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "97,760,000원",
+  "consult": false,
+  "cash_price": 97760000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 350 d 4MATIC",
+  "new": null,
+  "msrp": "154,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "154,000,000원",
+  "consult": false,
+  "cash_price": 154000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 450 4MATIC",
+  "new": null,
+  "msrp": "162,400,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "162,400,000원",
+  "consult": false,
+  "cash_price": 162400000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 450 4MATIC Long AMG Line",
+  "new": null,
+  "msrp": "195,400,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "195,400,000원",
+  "consult": false,
+  "cash_price": 195400000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 450 4MATIC Long Exclusive",
+  "new": null,
+  "msrp": "175,400,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "175,400,000원",
+  "consult": false,
+  "cash_price": 175400000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 500 4MATIC Long",
+  "new": null,
+  "msrp": "220,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "220,000,000원",
+  "consult": false,
+  "cash_price": 220000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "27",
+  "name": "S 580 4MATIC Long",
+  "new": null,
+  "msrp": "270,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "270,000,000원",
+  "consult": false,
+  "cash_price": 270000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "26",
+  "name": "S 450 4MATIC",
+  "new": null,
+  "msrp": "193,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−19,310,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "173,690,000원",
+  "consult": false,
+  "cash_price": 173690000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-s",
+  "seg_title": "S-Class",
+  "my": "26",
+  "name": "S 450 4MATIC (CY25/2)",
+  "new": null,
+  "msrp": "195,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−19,510,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "175,490,000원",
+  "consult": false,
+  "cash_price": 175490000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC",
+  "new": null,
+  "msrp": "77,000,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−5,390,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−6,160,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "71,610,000원",
+  "consult": false,
+  "cash_price": 71610000,
+  "fin_price": 70840000
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC AVANTGARDE",
+  "new": null,
+  "msrp": "82,500,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−5,780,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−6,600,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "76,720,000원",
+  "consult": false,
+  "cash_price": 76720000,
+  "fin_price": 75900000
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC AMG Line",
+  "new": null,
+  "msrp": "95,500,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−6,690,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−7,640,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "88,810,000원",
+  "consult": false,
+  "cash_price": 88810000,
+  "fin_price": 87860000
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC Coupé AVANTGARDE",
+  "new": null,
+  "msrp": "86,600,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−6,070,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−6,930,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "80,530,000원",
+  "consult": false,
+  "cash_price": 80530000,
+  "fin_price": 79670000
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC Coupé AMG Line",
+  "new": null,
+  "msrp": "97,900,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−6,860,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−7,840,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "91,040,000원",
+  "consult": false,
+  "cash_price": 91040000,
+  "fin_price": 90060000
+ },
+ {
+  "seg": "pv-glc",
+  "seg_title": "GLC",
+  "my": "27",
+  "name": "GLC 300 4MATIC Coupé AMG Line (MY27 초기 생산분)",
+  "new": null,
+  "msrp": "96,900,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−6,790,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−7,760,000원",
+   "zero": "무이자 24개월",
+   "none": null
+  },
+  "price": "90,110,000원",
+  "consult": false,
+  "cash_price": 90110000,
+  "fin_price": 89140000
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 350 4MATIC",
+  "new": null,
+  "msrp": "118,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−11,810,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "106,190,000원",
+  "consult": false,
+  "cash_price": 106190000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 300 d 4MATIC",
+  "new": null,
+  "msrp": "119,200,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−9,540,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "109,660,000원",
+  "consult": false,
+  "cash_price": 109660000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 450 4MATIC",
+  "new": null,
+  "msrp": "129,000,000원",
+  "cash": {
+   "rate": "12%",
+   "amt": "−15,490,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−20,650,000원",
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "113,510,000원",
+  "consult": false,
+  "cash_price": 113510000,
+  "fin_price": 108350000
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 450 4MATIC AMG Line",
+  "new": null,
+  "msrp": "139,000,000원",
+  "cash": {
+   "rate": "12%",
+   "amt": "−16,690,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−22,250,000원",
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "122,310,000원",
+  "consult": false,
+  "cash_price": 122310000,
+  "fin_price": 116750000
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 450 d 4MATIC Coupé AMG Line",
+  "new": null,
+  "msrp": "134,000,000원",
+  "cash": {
+   "rate": "12%",
+   "amt": "−16,080,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "117,920,000원",
+  "consult": false,
+  "cash_price": 117920000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-gle",
+  "seg_title": "GLE",
+  "my": "26",
+  "name": "GLE 450 4MATIC Coupé AMG Line",
+  "new": null,
+  "msrp": "142,500,000원",
+  "cash": {
+   "rate": "15%",
+   "amt": "−21,380,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−27,080,000원",
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "121,120,000원",
+  "consult": false,
+  "cash_price": 121120000,
+  "fin_price": 115420000
+ },
+ {
+  "seg": "pv-gls",
+  "seg_title": "GLS",
+  "my": "26",
+  "name": "GLS 450 4MATIC AMG Line",
+  "new": null,
+  "msrp": "154,000,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−12,320,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "141,680,000원",
+  "consult": false,
+  "cash_price": 141680000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-gls",
+  "seg_title": "GLS",
+  "my": "26",
+  "name": "GLS 450 4MATIC AMG Line Premium",
+  "new": null,
+  "msrp": "158,500,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−12,680,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "145,820,000원",
+  "consult": false,
+  "cash_price": 145820000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-gls",
+  "seg_title": "GLS",
+  "my": "26",
+  "name": "GLS 580 4MATIC AMG Line",
+  "new": null,
+  "msrp": "193,400,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−17,410,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "175,990,000원",
+  "consult": false,
+  "cash_price": 175990000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "27",
+  "name": "AMG CLE 53 4MATIC+ Cabriolet",
+  "new": null,
+  "msrp": "116,600,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−2,340,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "114,260,000원",
+  "consult": false,
+  "cash_price": 114260000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "27",
+  "name": "AMG CLE 53 4MATIC+ Coupé",
+  "new": null,
+  "msrp": "110,600,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−2,220,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "108,380,000원",
+  "consult": false,
+  "cash_price": 108380000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "27",
+  "name": "AMG GT 43",
+  "new": null,
+  "msrp": "149,500,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−11,970,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "137,530,000원",
+  "consult": false,
+  "cash_price": 137530000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "27",
+  "name": "AMG GT 55 4MATIC+",
+  "new": null,
+  "msrp": "212,600,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−4,260,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "208,340,000원",
+  "consult": false,
+  "cash_price": 208340000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "27",
+  "name": "AMG SL 43",
+  "new": null,
+  "msrp": "161,800,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−12,950,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "148,850,000원",
+  "consult": false,
+  "cash_price": 148850000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GLB 35 4MATIC",
+  "new": null,
+  "msrp": "79,500,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−7,160,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 4%",
+   "amt": "−10,340,000원",
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "72,340,000원",
+  "consult": false,
+  "cash_price": 72340000,
+  "fin_price": 69160000
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG CLA 45 S 4MATIC+",
+  "new": null,
+  "msrp": "91,800,000원",
+  "cash": {
+   "rate": "5%",
+   "amt": "−4,600,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "87,200,000원",
+  "consult": false,
+  "cash_price": 87200000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG CLA 45 S 4MATIC+ Final Edition",
+  "new": null,
+  "msrp": "97,000,000원",
+  "cash": {
+   "rate": "5%",
+   "amt": "−4,850,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "92,150,000원",
+  "consult": false,
+  "cash_price": 92150000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG E 53 HYBRID 4MATIC+ KR3",
+  "new": null,
+  "msrp": "143,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−14,300,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "128,700,000원",
+  "consult": false,
+  "cash_price": 128700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG E 53 HYBRID 4MATIC+ KR4",
+  "new": null,
+  "msrp": "148,400,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−14,850,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "133,550,000원",
+  "consult": false,
+  "cash_price": 133550000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG S 63 E Performance",
+  "new": null,
+  "msrp": "299,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−29,910,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "269,090,000원",
+  "consult": false,
+  "cash_price": 269090000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG SL 63 4MATIC+",
+  "new": null,
+  "msrp": "250,000,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−22,510,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "227,490,000원",
+  "consult": false,
+  "cash_price": 227490000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GT 43 4MATIC+",
+  "new": null,
+  "msrp": "164,000,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−14,760,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "149,240,000원",
+  "consult": false,
+  "cash_price": 149240000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GT 55 4MATIC+",
+  "new": null,
+  "msrp": "210,000,000원",
+  "cash": {
+   "rate": "3%",
+   "amt": "−6,300,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "203,700,000원",
+  "consult": false,
+  "cash_price": 203700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GLC 43 4MATIC",
+  "new": null,
+  "msrp": "103,600,000원",
+  "cash": {
+   "rate": "7%",
+   "amt": "−7,260,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "96,340,000원",
+  "consult": false,
+  "cash_price": 96340000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GLE 53 4MATIC+",
+  "new": null,
+  "msrp": "166,000,000원",
+  "cash": {
+   "rate": "8%",
+   "amt": "−13,290,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "152,710,000원",
+  "consult": false,
+  "cash_price": 152710000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-amg",
+  "seg_title": "Mercedes-AMG",
+  "my": "26",
+  "name": "AMG GLS 63 4MATIC+",
+  "new": null,
+  "msrp": "210,000,000원",
+  "cash": {
+   "rate": "1%",
+   "amt": "−2,100,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "207,900,000원",
+  "consult": false,
+  "cash_price": 207900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "27",
+  "name": "Maybach S 580",
+  "new": null,
+  "msrp": "317,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "317,000,000원",
+  "consult": false,
+  "cash_price": 317000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "27",
+  "name": "Maybach S 580 MANUFAKTUR",
+  "new": null,
+  "msrp": "336,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "336,000,000원",
+  "consult": false,
+  "cash_price": 336000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "27",
+  "name": "Maybach S 680",
+  "new": null,
+  "msrp": "407,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "407,000,000원",
+  "consult": false,
+  "cash_price": 407000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach S 580",
+  "new": null,
+  "msrp": "317,000,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−28,540,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "288,460,000원",
+  "consult": false,
+  "cash_price": 288460000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach S 680",
+  "new": null,
+  "msrp": "403,000,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−36,280,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "366,720,000원",
+  "consult": false,
+  "cash_price": 366720000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach S 680 \"V12 Edition\"",
+  "new": null,
+  "msrp": "479,400,000원",
+  "cash": {
+   "rate": "9%",
+   "amt": "−43,150,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "436,250,000원",
+  "consult": false,
+  "cash_price": 436250000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach SL 680",
+  "new": null,
+  "msrp": "344,000,000원",
+  "cash": {
+   "rate": "2%",
+   "amt": "−6,880,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "337,120,000원",
+  "consult": false,
+  "cash_price": 337120000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach GLS 600",
+  "new": null,
+  "msrp": "295,000,000원",
+  "cash": {
+   "rate": "5%",
+   "amt": "−14,750,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "280,250,000원",
+  "consult": false,
+  "cash_price": 280250000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-maybach",
+  "seg_title": "Mercedes-Maybach",
+  "my": "26",
+  "name": "Maybach GLS 600 MANUFAKTUR",
+  "new": null,
+  "msrp": "337,000,000원",
+  "cash": {
+   "rate": "5%",
+   "amt": "−16,860,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "320,140,000원",
+  "consult": false,
+  "cash_price": 320140000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-v",
+  "seg_title": "V-Class",
+  "my": "27",
+  "name": "V300d 4MATIC EXCLUSIVE",
+  "new": "11/16 추가",
+  "msrp": "124,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": "MBM 2%",
+   "amt": "−2,480,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "124,000,000원",
+  "consult": false,
+  "cash_price": 124000000,
+  "fin_price": 121520000
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "EQA 250 Progressive",
+  "new": null,
+  "msrp": "70,800,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "11월 할인 종료"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "70,800,000원",
+  "consult": false,
+  "cash_price": 70800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "EQA 250 AMG Line",
+  "new": null,
+  "msrp": "76,700,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "11월 할인 종료"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "76,700,000원",
+  "consult": false,
+  "cash_price": 76700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "CLA 200 electric Essential",
+  "new": null,
+  "msrp": "52,900,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "51,800,000원",
+  "consult": false,
+  "cash_price": 52900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "CLA 200 electric Advanced",
+  "new": null,
+  "msrp": "55,800,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "54,700,000원",
+  "consult": false,
+  "cash_price": 55800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "CLA 200 electric AMG Line",
+  "new": null,
+  "msrp": "58,900,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "57,800,000원",
+  "consult": false,
+  "cash_price": 58900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "CLA 250+ electric",
+  "new": null,
+  "msrp": "63,700,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "62,600,000원",
+  "consult": false,
+  "cash_price": 63700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "CLA 250+ electric AMG Line",
+  "new": null,
+  "msrp": "67,700,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "66,600,000원",
+  "consult": false,
+  "cash_price": 67700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "GLB 250+ electric",
+  "new": null,
+  "msrp": "69,900,000원",
+  "cash": {
+   "rate": "100만원",
+   "amt": null,
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "68,800,000원",
+  "consult": false,
+  "cash_price": 69900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "GLC 300 4MATIC electric AMG Line (Launch Edition)",
+  "new": null,
+  "msrp": "90,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "90,000,000원",
+  "consult": false,
+  "cash_price": 90000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "27",
+  "name": "GLC 300 4MATIC electric AMG Line+ (Launch Edition)",
+  "new": null,
+  "msrp": "94,800,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "94,800,000원",
+  "consult": false,
+  "cash_price": 94800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "26",
+  "name": "EQE 350+ SUV",
+  "new": null,
+  "msrp": "106,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−10,610,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "95,390,000원",
+  "consult": false,
+  "cash_price": 95390000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "26",
+  "name": "EQE 500 4MATIC SUV",
+  "new": null,
+  "msrp": "141,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−14,100,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "126,900,000원",
+  "consult": false,
+  "cash_price": 126900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "26",
+  "name": "EQS 450 4MATIC SUV",
+  "new": null,
+  "msrp": "166,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−16,610,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "149,390,000원",
+  "consult": false,
+  "cash_price": 149390000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "26",
+  "name": "EQS 580 4MATIC SUV",
+  "new": null,
+  "msrp": "192,000,000원",
+  "cash": {
+   "rate": "10%",
+   "amt": "−19,200,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": "무이자 24/36개월",
+   "none": null
+  },
+  "price": "172,800,000원",
+  "consult": false,
+  "cash_price": 172800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-eq",
+  "seg_title": "EQ · 전기차",
+  "my": "26",
+  "name": "Maybach EQS 680 SUV",
+  "new": null,
+  "msrp": "235,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "235,000,000원",
+  "consult": false,
+  "cash_price": 235000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "GLA 250 4MATIC",
+  "new": null,
+  "msrp": "70,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 70000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "E 220 d 4MATIC AVANTGARDE",
+  "new": null,
+  "msrp": "87,500,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 87500000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "E 350 e 4MATIC EXCLUSIVE",
+  "new": null,
+  "msrp": "101,100,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 101100000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "GLC 220 d 4MATIC",
+  "new": null,
+  "msrp": "82,200,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 82200000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "GLC 300 4MATIC Coupé",
+  "new": null,
+  "msrp": "80,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 80000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG A 45 S 4MATIC+",
+  "new": null,
+  "msrp": "82,300,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 82300000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG E 53 HYBRID 4MATIC+",
+  "new": null,
+  "msrp": "149,900,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 149900000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG GLC 53 4MATIC+",
+  "new": null,
+  "msrp": "105,100,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 105100000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG GLC 53 4MATIC+ Coupé",
+  "new": null,
+  "msrp": "109,800,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 109800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG GT 63 S E Performance",
+  "new": null,
+  "msrp": "283,100,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 283100000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG SL 63 4MATIC+",
+  "new": null,
+  "msrp": "252,800,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 252800000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "G 450 d",
+  "new": null,
+  "msrp": "199,700,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 199700000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "G 450 d MANUFAKTUR",
+  "new": null,
+  "msrp": "228,200,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 228200000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "G 580 with EQ Technology",
+  "new": null,
+  "msrp": "219,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 219000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "G 580 with EQ Technology MANUFAKTUR",
+  "new": null,
+  "msrp": "238,500,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 238500000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG G 63",
+  "new": null,
+  "msrp": "275,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 275000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "27",
+  "name": "AMG G 63 MANUFAKTUR",
+  "new": null,
+  "msrp": "301,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 301000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "26",
+  "name": "AMG GLC 43 4MATIC Coupé",
+  "new": null,
+  "msrp": "108,300,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 108300000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "26",
+  "name": "AMG GLE 53 4MATIC+ Coupé",
+  "new": null,
+  "msrp": "170,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 170000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "26",
+  "name": "AMG G 63",
+  "new": null,
+  "msrp": "262,000,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 262000000,
+  "fin_price": null
+ },
+ {
+  "seg": "pv-etc",
+  "seg_title": "개별 견적 차종",
+  "my": "26",
+  "name": "AMG G 63 MANUFAKTUR",
+  "new": null,
+  "msrp": "289,800,000원",
+  "cash": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "fin": {
+   "rate": null,
+   "amt": null,
+   "zero": null,
+   "none": "—"
+  },
+  "price": "개별 견적 상담",
+  "consult": true,
+  "cash_price": 289800000,
+  "fin_price": null
+ }
+]

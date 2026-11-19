@@ -80,3 +80,17 @@ site/
 사진은 세로 4:5 비율(예: 800×1000px)을 권장합니다.
 
 **폰트** — Pretendard(CDN) + Marcellus(Google Fonts)를 불러옵니다. 외부 요청이 막힌 환경에서는 시스템 폰트로 대체되며 레이아웃은 유지됩니다.
+
+## 페이지 구성 (2026-11-19 분리)
+
+- `index.html` — 홈
+- `models.html` / `model.html` — 차종별 가이드
+- `glc-electric.html` — GLC Electric
+- `promotion.html` — 11월 프로모션 (차종 탭 · 권장가/현금/MBF/실구매가)
+- `stock.html` — 전국 재고 (검색 · 차종/연식/색상/전시장 필터)
+- `report.html` — 11월 구매전략리포트
+- `cards.html` — 신한카드 3종 비교 · 결제 계산기
+- `mou.html` — MOU 676개 기업 검색
+- `benefits.html` — 예전 링크 호환용(자동 이동)
+
+`_build/` 는 프로모션 표 생성 스크립트이며 배포 대상이 아니다.
