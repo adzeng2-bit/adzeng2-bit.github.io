@@ -25,15 +25,16 @@
   }
 
   function wonShort(n) {
-    var v = Math.round(n);
+    var v = Math.round(n / 1000) * 1000;
     if (v >= 100000000) {
       var eok = Math.floor(v / 100000000);
       var man = Math.round((v % 100000000) / 10000);
       return eok + "억" + (man ? " " + man.toLocaleString("ko-KR") + "만" : "") + "원";
     }
     if (v >= 10000) {
-      var m = Math.round(v / 10000);
-      return m.toLocaleString("ko-KR") + "만원";
+      var m = Math.floor(v / 10000);
+      var rest = v % 10000;
+      return m.toLocaleString("ko-KR") + "만" + (rest ? " " + rest.toLocaleString("ko-KR") + "원" : "원");
     }
     return v.toLocaleString("ko-KR") + "원";
   }
@@ -52,7 +53,7 @@
         '<p class="cp-desc">' + esc(c.desc) + "</p>" +
         '<dl class="cp-spec">' +
           "<div><dt>연회비</dt><dd>" + feeText(c) + "</dd></div>" +
-          "<div><dt>국내 할인</dt><dd>첫 달 " + c.rate.first + "% → 최대 " + c.rate.max + "%</dd></div>" +
+          "<div><dt>국내 할인</dt><dd>첫 달 " + c.rate.first.toFixed(1) + "% → 최대 " + c.rate.max.toFixed(1) + "%</dd></div>" +
           "<div><dt>스카이패스</dt><dd>" + (c.mile ? "1,500원당 1마일" : "할인형만 운영") + "</dd></div>" +
           "<div><dt>연간 기프트</dt><dd>" + esc(c.gift) + "</dd></div>" +
         "</dl>" +
@@ -70,7 +71,7 @@
       return '<div class="cbt-row"><span class="cbt-k">' + esc(b.label) +
         (b.sub ? '<i>' + esc(b.sub) + "</i>" : "") + "</span>" +
         b.v.map(function (v) {
-          return "<span" + (v == null ? ' class="cbt-none"' : "") + ">" + (v == null ? "—" : v + "%") + "</span>";
+          return "<span" + (v == null ? ' class="cbt-none"' : "") + ">" + (v == null ? "—" : v.toFixed(1) + "%") + "</span>";
         }).join("") + "</div>";
     }).join("");
     bracketEl.innerHTML = head + body;
@@ -99,9 +100,9 @@
     rows.push(row("국내전용", D.cards.map(function (c) { return won(c.fee.domestic); })));
 
     rows.push(group("기본 서비스 · 국내 할인율"));
-    rows.push(row("발급 첫 달", D.cards.map(function (c) { return c.rate.first + "%"; }), "is-key"));
-    rows.push(row("150만~300만원", D.cards.map(function (c) { return c.rate.mid + "%"; })));
-    rows.push(row("300만원 이상", D.cards.map(function (c) { return "<b>" + c.rate.max + "%</b>"; }), "is-key"));
+    rows.push(row("발급 첫 달", D.cards.map(function (c) { return c.rate.first.toFixed(1) + "%"; }), "is-key"));
+    rows.push(row("150만~300만원", D.cards.map(function (c) { return c.rate.mid.toFixed(1) + "%"; })));
+    rows.push(row("300만원 이상", D.cards.map(function (c) { return "<b>" + c.rate.max.toFixed(1) + "%</b>"; }), "is-key"));
     rows.push(row("해외 일시불", D.cards.map(function (c) { return "최대 " + c.rate.abroad + "%"; })));
     rows.push(row("할인 한도", D.cards.map(function () { return "없음"; })));
 
@@ -116,7 +117,7 @@
     rows.push(row("2차 주기 조건", D.cards.map(function (c) { return esc(c.giftSecond); })));
 
     rows.push(group("주유 · 충전"));
-    rows.push(row("주유", D.cards.map(function (c) { return esc(c.fuel) + "/L"; })));
+    rows.push(row("주유", D.cards.map(function (c) { return esc(c.fuel); })));
     rows.push(row("전기차 충전", D.cards.map(function (c) { return "최대 " + esc(c.charge); })));
     rows.push(row("Energy 월 한도", D.cards.map(function (c) { return esc(c.energyCap); })));
 
@@ -191,8 +192,8 @@
         '<header class="sim-card-h"><h4>' + esc(c.ko) + "</h4>" +
           '<p class="sim-fee">연회비 ' + wonShort(c.fee.overseas) + "</p>" + badge + "</header>" +
         '<dl class="sim-stats">' +
-          '<div class="sim-stat sim-stat--main"><dt>발급 첫 달 할인 <i>' + c.rate.first + "%</i></dt><dd>" + won(r.first) + "</dd></div>" +
-          "<div class=\"sim-stat\"><dt>최대 할인 <i>300만원 이상 " + c.rate.max + "%</i></dt><dd>" + won(r.max) + "</dd></div>" +
+          '<div class="sim-stat sim-stat--main"><dt>발급 첫 달 할인 <i>' + c.rate.first.toFixed(1) + "%</i></dt><dd>" + won(r.first) + "</dd></div>" +
+          "<div class=\"sim-stat\"><dt>최대 할인 <i>300만원 이상 " + c.rate.max.toFixed(1) + "%</i></dt><dd>" + won(r.max) + "</dd></div>" +
           (c.mile
             ? '<div class="sim-stat"><dt>스카이패스형 <i>1,500원당 1마일</i></dt><dd>' + r.miles.toLocaleString("ko-KR") + "마일" +
               '<span class="sim-sub">참고 환산 약 ' + wonShort(r.mileWon) + "</span></dd></div>"
