@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>probe 2026-11-20</title>
+<style>
+  body{margin:0;background:#1b1b1b;color:#eee;font:12px/1.5 -apple-system,sans-serif}
+  .row{display:flex;flex-wrap:wrap;gap:14px;padding:12px}
+  .cell{background:#2b2b2b;padding:6px}
+  .cell p{margin:0 0 5px;font-size:11px;color:#9df}
+  iframe{border:0;background:#fff;display:block}
+  pre{padding:10px;background:#0d0d0d;color:#8f8;font-size:11px;white-space:pre-wrap;margin:10px}
+</style>
+</head>
+<body>
+<div id="wrap" class="row"></div>
+<pre id="out">measuring…</pre>
+<script>
+(function () {
+  var specs = [
+    ['home-top', 'index.html', 0],
+    ['home-glc-cla-end', 'index.html', 'bottom'],
+    ['home-contact', 'index.html', 'sel:.contact'],
+    ['new-cars-top', 'new-cars.html', 0],
+    ['promo-tabs', 'promotion.html', 'sel:.pbar'],
+    ['report-note', 'report.html', 'sel:.pbar'],
+    ['models-top', 'models.html', 0],
+    ['glc-top', 'glc-electric.html', 0]
+  ];
+  var wrap = document.getElementById('wrap');
+  var frames = [];
+  specs.forEach(function (sp) {
+    var cell = document.createElement('div');
+    cell.className = 'cell';
+    var label = document.createElement('p');
+    label.textContent = sp[0] + ' · 390×844';
+    var f = document.createElement('iframe');
+    f.width = 390; f.height = 844; f.src = sp[1] + '?probe=1'; f.id = 'f-' + sp[0];
+    cell.appendChild(label); cell.appendChild(f);
+    wrap.appendChild(cell);
+    frames.push({ name: sp[0], f: f, mode: sp[2] });
+  });
+
+  var lines = [];
+  function rect(el, w) {
+    var r = el.getBoundingClientRect();
+    return { l: Math.round(r.left), r: Math.round(r.right), w: Math.round(r.width), t: Math.round(r.top + w.pageYOffset) };
+  }
+  function measure() {
+    frames.forEach(function (fr) {
+      var w = fr.f.contentWindow, d = fr.f.contentDocument;
+      if (!d || !d.body) { lines.push(fr.name + ': no doc'); return; }
+      var vw = w.innerWidth;
+      var sw = Math.max(d.documentElement.scrollWidth, d.body.scrollWidth);
+      lines.push('── ' + fr.name + ' | innerWidth=' + vw + ' scrollWidth=' + sw + ' overflow=' + (sw - vw) + 'px  height=' + Math.round(d.body.scrollHeight));
+      var over = [];
+      [].slice.call(d.querySelectorAll('main *, header *, footer *')).forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.width > 0 && r.right > vw + 1 && !el.closest('.navbar-inner') && !el.closest('.tabs')) {
+          var cs = w.getComputedStyle(el);
+          if (cs.position === 'fixed' || cs.overflow === 'hidden' || cs.overflowX === 'hidden') return;
+          over.push((el.tagName.toLowerCase() + '.' + (el.className || '').toString().split(' ')[0]) + ':+' + Math.round(r.right - vw));
+        }
+      });
+      lines.push('   overflowEls: ' + (over.length ? over.slice(0, 6).join(', ') : '0'));
+      var navs = [].slice.call(d.querySelectorAll('.navbar-inner a')).map(function (a) { return a.textContent.trim(); });
+      lines.push('   nav: ' + navs.join(' / '));
+      var cert = d.querySelector('.hero-cert'), cm = d.querySelector('.contact-meta');
+      if (cert) lines.push('   hero-cert: "' + cert.textContent.replace(/\s+/g, ' ').trim() + '"');
+      if (d.querySelector('.hero')) lines.push('   contact-meta count: ' + d.querySelectorAll('.contact-meta').length + ' (있으면 1 이상)');
+      if (d.querySelector('.hero-actions')) {
+        var btns = [].slice.call(d.querySelectorAll('.hero-actions .btn')).map(function (b) {
+          var r = b.getBoundingClientRect();
+          return b.textContent.replace(/\s+/g, ' ').trim() + '[' + Math.round(r.left) + '-' + Math.round(r.right) + ' w' + Math.round(r.width) + ']';
+        });
+        lines.push('   hero buttons: ' + btns.join(' '));
+      }
+      var tabs = d.querySelectorAll('#promo-tabs .tab');
+      if (tabs.length) {
+        lines.push('   promo tabs(앞5): ' + [].slice.call(tabs).slice(0, 5).map(function (t) {
+          return t.textContent.replace(/\s+/g, ' ').trim() + (t.getAttribute('aria-selected') === 'true' ? '(선택)' : '');
+        }).join(' | '));
+        var note = d.querySelector('.pbar-note');
+        var tabbox = d.querySelector('.pbar-tabs .wrap') || d.querySelector('.pbar-tabs');
+        var seg = d.querySelector('.pv-seg:not([hidden]) .pv-wrap') || d.querySelector('.pv-seg .pv-wrap');
+        if (note && tabbox) {
+          var rn = note.getBoundingClientRect(), rt = tabbox.getBoundingClientRect();
+          lines.push('   note L/R: ' + Math.round(rn.left) + '/' + Math.round(rn.right) + '  tabs L/R: ' + Math.round(rt.left) + '/' + Math.round(rt.right));
+          if (seg) { var rs = seg.getBoundingClientRect(); lines.push('   table L/R: ' + Math.round(rs.left) + '/' + Math.round(rs.right)); }
+        }
+      }
+      if (d.querySelector('main.report')) {
+        var n2 = d.querySelector('.pbar-note'), body = d.querySelector('.report-body');
+        var h2 = body ? body.querySelector('.chk-title') : null;
+        var card = body ? body.querySelector('.info-card') : null;
+        lines.push('   report note L/R: ' + Math.round(n2.getBoundingClientRect().left) + '/' + Math.round(n2.getBoundingClientRect().right) +
+                   '  h2 L/R: ' + (h2 ? Math.round(h2.getBoundingClientRect().left) + '/' + Math.round(h2.getBoundingClientRect().right) : '-') +
+                   '  card L/R: ' + (card ? Math.round(card.getBoundingClientRect().left) + '/' + Math.round(card.getBoundingClientRect().right) : '-'));
+      }
+      var h3 = d.querySelectorAll('h3.show-name, h3.feature-title');
+      lines.push('   신차/전기 카드: ' + h3.length + '개 · 신차 show-card: ' + d.querySelectorAll('.show-card').length + ' · feature: ' + d.querySelectorAll('.feature').length);
+      if (d.querySelector('.site-footer')) {
+        var fb = d.querySelector('.footer-brand');
+        lines.push('   footer: ' + fb.textContent.replace(/\s+/g, ' ').trim());
+      }
+      lines.push('   11년 잔존: ' + (d.body.innerText.indexOf('11년') >= 0 ? 'YES' : '없음') + ' · 12년: ' + (d.body.innerText.indexOf('벤츠에서 12년') >= 0 ? 'YES' : '없음') + ' · C-sales: ' + (d.body.innerText.indexOf('C-sales 공식 인증사원') >= 0 ? 'YES' : '없음'));
+    });
+    document.getElementById('out').textContent = lines.join('\n');
+  }
+
+  var done = 0;
+  frames.forEach(function (fr) {
+    var f = fr.f;
+    f.onload = function () {
+      done++;
+      try {
+        var w = f.contentWindow, d = f.contentDocument;
+        if (fr.mode === 'bottom') w.scrollTo(0, d.body.scrollHeight);
+        else if (typeof fr.mode === 'string' && fr.mode.indexOf('sel:') === 0) {
+          var t = d.querySelector(fr.mode.slice(4));
+          if (t) w.scrollTo(0, t.getBoundingClientRect().top + w.pageYOffset - 6);
+        }
+      } catch (e) {}
+      if (done === frames.length) setTimeout(function () { measure(); frames.forEach(function (fr) {
+        try {
+          var w = fr.f.contentWindow, d = fr.f.contentDocument;
+          if (fr.mode === 'bottom') w.scrollTo(0, d.body.scrollHeight);
+          else if (typeof fr.mode === 'string' && fr.mode.indexOf('sel:') === 0) {
+            var t = d.querySelector(fr.mode.slice(4));
+            if (t) w.scrollTo(0, t.getBoundingClientRect().top + w.pageYOffset - 6);
+          }
+        } catch (e) {}
+      }); }, 900);
+    };
+  });
+})();
+</script>
+</body>
+</html>
