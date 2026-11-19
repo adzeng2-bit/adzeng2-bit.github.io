@@ -161,6 +161,7 @@
       }
 
       if (!values || !values.length) return;
+      values = values.map(function (v) { return String(v).replace(/^복합\s*/, ""); });
       rows.push({ label: label, values: values });
     });
 
@@ -169,7 +170,7 @@
       rows.forEach(function (r) {
         html += '<div class="spec-row"><div class="spec-key">' + esc(r.label) + '</div><div class="spec-vals">';
         r.values.forEach(function (v, i) {
-          var catName = (cats.length === r.values.length && cats[i]) ? cats[i] : "";
+          var catName = (cats.length > 1 && cats.length === r.values.length && cats[i]) ? cats[i] : "";
           html += '<div class="spec-val">' + (catName ? '<span class="sv-cat">' + esc(catName) + '</span>' : "") +
             '<span class="sv-num">' + esc(v) + "</span></div>";
         });
