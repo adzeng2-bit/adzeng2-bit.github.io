@@ -1292,7 +1292,7 @@ body[data-drawer="open"]{overflow:hidden}
 .sim *{min-width:0}
 .sim-input input{width:100%}
 
-/* ── 02 전국 재고 목록 (STS 지점 위탁 재고) ───────────────────── */
+/* ── 02 전국 재고 목록 (전국 판매 가능 재고) ───────────────────── */
 .stock-tool{margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
 .stock-head{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
 .stock-title{font-size:clamp(19px,2.4vw,25px);letter-spacing:-.03em;margin-top:6px}

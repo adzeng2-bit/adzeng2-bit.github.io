@@ -1,9 +1,9 @@
-/* 전국(효성더클래스 전 지점) 판매가능 재고 — 메르세데스-벤츠 사내 전산(STS) 지점 위탁 재고 기준 */
-/* 기준: 2026-11-19 16:07 (영업관리팀 일일 배포 STS 추출본). 차종·연식·외장/내장 색상·전시장·대수만 공개하며, 커미션 번호·차대번호·원가는 담지 않는다. */
+/* 전국(효성더클래스 전 지점) 판매 가능 재고 — 2026-11-19 기준 */
+/* 기준: 2026-11-19 16:07 (영업관리팀 일일 배포 재고 자료). 차종·연식·외장/내장 색상·전시장·대수만 공개하며, 커미션 번호·차대번호·원가는 담지 않는다. */
 window.STOCK_DATA = {
   asOf: "2026-11-19",
   asOfTime: "16:07",
-  source: "메르세데스-벤츠 STS 지점 위탁 재고",
+  source: "전국 판매 가능 재고",
   total: 180,
   showrooms: [["분당 정자", 42], ["송파", 27], ["천안", 24], ["안양 평촌", 17], ["강남대로", 16], ["구리", 16], ["청주", 14], ["동탄", 12], ["용인 수지", 10], ["출고 센터", 2]],
   models: [["C 200 AMG Line Special Edition", "2026", 9], ["CLE 200 Cabriolet", "2026", 5], ["E 200 AMG Line", "2027", 24], ["E 200 EXCLUSIVE", "2027", 29], ["E 220 d 4MATIC EXCLUSIVE", "2026", 1], ["E 300 4MATIC AMG Line", "2026", 4], ["E 300 4MATIC AMG Line", "2027", 15], ["E 300 4MATIC EXCLUSIVE", "2026", 7], ["E 300 4MATIC EXCLUSIVE", "2027", 14], ["E 350 e 4MATIC EXCLUSIVE with EQ Hybrid Technology", "2026", 1], ["GLC 300 4MATIC AMG Line AIRMATIC®", "2027", 10], ["GLC 300 4MATIC AVANTGARDE", "2027", 16], ["GLC 300 4MATIC Coupé AMG Line", "2027", 3], ["GLC 300 4MATIC Coupé AVANTGARDE", "2027", 15], ["GLE 350 4MATIC", "2026", 7], ["GLE 450 4MATIC Coupé AMG Line", "2026", 9], ["GLS 450 4MATIC AMG Line", "2026", 6], ["Mercedes-AMG G 63", "2026", 1], ["S 350 d 4MATIC", "2027", 1], ["S 450 4MATIC Long AMG Line", "2027", 2], ["S 450 4MATIC Long Exclusive", "2027", 1]],
