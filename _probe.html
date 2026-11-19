@@ -33,7 +33,7 @@
     var label = document.createElement('p');
     label.textContent = p[0] + ' · 390';
     var f = document.createElement('iframe');
-    f.width = 390; f.height = 844; f.src = p[1]; f.id = 'f-' + p[0];
+    f.width = 390; f.height = 844; f.src = p[1]; f.id = 'f-' + p[0]; f.setAttribute('scrolling','no');
     cell.appendChild(label); cell.appendChild(f);
     wrap.appendChild(cell);
     frames.push([p[0], f]);
@@ -45,7 +45,7 @@
   var labelD = document.createElement('p');
   labelD.textContent = 'index · 1440';
   var fD = document.createElement('iframe');
-  fD.width = 1440; fD.height = 900; fD.src = 'index.html?probe=1'; fD.id = 'f-desktop';
+  fD.width = 1440; fD.height = 900; fD.src = 'index.html?probe=1'; fD.id = 'f-desktop'; fD.setAttribute('scrolling','no');
   cellD.appendChild(labelD); cellD.appendChild(fD);
   wrap.appendChild(cellD);
   frames.push(['desktop', fD]);
