@@ -125,9 +125,12 @@
 
     if (countEl) {
       var filtered = modelSel.value || yearSel.value || extSel.value || intSel.value || locSel.value;
-      countEl.innerHTML = filtered
-        ? "전체 <b>" + D.total + "</b>대 중 <b>" + units + "</b>대 표시"
-        : "전체 <b>" + units + "</b>대";
+      var availTotal = D.items.filter(function (r) { return !r[7]; }).reduce(function (a, r) { return a + r[6]; }, 0);
+      if (filtered) {
+        countEl.innerHTML = "전체 <b>" + D.total + "</b>대 중 조건에 맞는 재고 <b>" + units + "</b>대";
+      } else {
+        countEl.innerHTML = "전체 <b>" + D.total + "</b>대 중 배정 가능 <b>" + availTotal + "</b>대 (배정 제한 " + (D.total - availTotal) + "대 제외)";
+      }
     }
   }
 
