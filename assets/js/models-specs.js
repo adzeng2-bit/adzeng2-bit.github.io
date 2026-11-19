@@ -409,5 +409,21 @@ window.MB_SPECS = {
   "size": "5,470 × 1,920 × 1,510mm",
   "trans": "9G-TRONIC (자동 9단)",
   "src": "메르세데스-벤츠 코리아 보도자료(2023.01.17) 마이바흐 S 580 4MATIC 제원 (S 680은 별도 확인)"
+ },
+ "g-class-amg": {
+  "cats": [
+   "AMG G 63"
+  ],
+  "engine": "V형 8기통 가솔린 (48V, 바이터보)",
+  "disp": "3,982cc",
+  "power": "585ps / 5,500rpm",
+  "torque": "86.7kgf·m / 2,500~3,500rpm",
+  "accel": "4.4초",
+  "top": "220km/h",
+  "eff": "복합 5.8km/ℓ",
+  "size": "4,875 × 1,985 × 1,980mm",
+  "wheelbase": "2,890mm",
+  "trans": "AMG SPEEDSHIFT TCT 9단",
+  "src": "메르세데스-벤츠 코리아 보도자료(2024.12.13) AMG G 63 제원"
  }
 };
