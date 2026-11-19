@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>probe</title>
+<style>
+  body{margin:0;background:#222;color:#eee;font:12px/1.5 -apple-system,sans-serif}
+  .row{display:flex;flex-wrap:wrap;gap:16px;padding:12px}
+  .cell{background:#333;padding:6px}
+  .cell p{margin:0 0 4px;font-size:11px;color:#9df}
+  iframe{border:0;background:#fff;display:block}
+  pre{padding:8px;background:#111;color:#8f8;font-size:11px;white-space:pre-wrap;margin:8px}
+</style>
+</head>
+<body>
+<div id="wrap" class="row"></div>
+<pre id="out">measuring…</pre>
+<script>
+(function () {
+  var pages = [
+    ['index', 'index.html?probe=1'],
+    ['promotion', 'promotion.html'],
+    ['stock', 'stock.html'],
+    ['report', 'report.html'],
+    ['cards', 'cards.html'],
+    ['mou', 'mou.html'],
+    ['models', 'models.html'],
+    ['model', 'model.html?id=v-class'],
+    ['glc', 'glc-electric.html']
+  ];
+  var wrap = document.getElementById('wrap');
+  var frames = [];
+
+  pages.forEach(function (p) {
+    var cell = document.createElement('div');
+    cell.className = 'cell';
+    var label = document.createElement('p');
+    label.textContent = p[0] + ' · 390';
+    var f = document.createElement('iframe');
+    f.width = 390; f.height = 844; f.src = p[1]; f.id = 'f-' + p[0];
+    f.setAttribute('scrolling', 'no');
+    cell.appendChild(label); cell.appendChild(f);
+    wrap.appendChild(cell);
+    frames.push([p[0] + '@390', f]);
+  });
+
+  var cellD = document.createElement('div');
+  cellD.className = 'cell';
+  var labelD = document.createElement('p');
+  labelD.textContent = 'index · 1440';
+  var fD = document.createElement('iframe');
+  fD.width = 1440; fD.height = 900; fD.src = 'index.html?probe=1'; fD.id = 'f-desktop';
+  fD.setAttribute('scrolling', 'no');
+  cellD.appendChild(labelD); cellD.appendChild(fD);
+  wrap.appendChild(cellD);
+  frames.push(['index@1440', fD]);
+
+  function measure(name, f) {
+    var w = f.contentWindow, d = f.contentDocument;
+    if (!d) return name + ': no document';
+    var root = d.documentElement, body = d.body;
+    var vw = w.innerWidth;
+    var sw = Math.max(root.scrollWidth, body ? body.scrollWidth : 0);
+
+    // 넘치는 요소 찾기
+    var over = [];
+    [].slice.call(d.querySelectorAll('body *')).forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.width > 0 && r.right > vw + 1 && !el.closest('.navbar-inner')) {
+        var cs = w.getComputedStyle(el);
+        if (cs.position === 'fixed' || cs.overflow === 'hidden') return;
+        over.push(el.tagName.toLowerCase() + '.' + (el.className || '').toString().split(' ')[0] + ':' + Math.round(r.right - vw));
+      }
+    });
+
+    var naverLinks = [].slice.call(d.querySelectorAll('a[href*="items/7088175"]'));
+    var naverInfo = naverLinks.map(function (a) {
+      var r = a.getBoundingClientRect();
+      var cs = w.getComputedStyle(a);
+      return (a.className || 'a').toString().trim().split(/\s+/).join('.') +
+        '|' + a.textContent.replace(/\s+/g, ' ').trim() +
+        '|' + Math.round(r.width) + 'x' + Math.round(r.height) +
+        '|right=' + Math.round(r.right) + '|t=' + (a.getAttribute('target') || '') + '|rel=' + (a.getAttribute('rel') || '') +
+        '|clip=' + (a.scrollWidth > a.clientWidth + 1) +
+        '|color=' + cs.color + '|bdr=' + cs.borderTopColor;
+    });
+
+    var mark = d.querySelector('.naver-n');
+    var markBox = '';
+    if (mark) {
+      var cs2 = w.getComputedStyle(mark), r2 = mark.getBoundingClientRect();
+      markBox = Math.round(r2.width) + 'x' + Math.round(r2.height) + ' bg=' + cs2.backgroundColor;
+    }
+
+    var text = (body ? body.innerText : '');
+    var ten = /10년|영업 10/.test(text) ? 'FOUND' : 'none';
+    var title = d.title;
+
+    var errors = 0, initErr = '';
+    try { if (typeof w.MB !== 'undefined' && w.MB.init) w.MB.init(); } catch (e) { initErr = String(e); errors++; }
+
+    var hero = d.querySelector('.hero-actions');
+    var heroRows = '';
+    if (hero) {
+      var kids = [].slice.call(hero.children).map(function (k) {
+        var r = k.getBoundingClientRect();
+        return k.textContent.replace(/\s+/g,' ').trim() + '(' + Math.round(r.width) + 'w,' + Math.round(r.top) + 'y)';
+      });
+      heroRows = kids.join(' / ') + ' containerW=' + Math.round(hero.getBoundingClientRect().width);
+    }
+    var band = d.querySelector('.cta-band-actions');
+    var bandRows = '';
+    if (band) {
+      bandRows = [].slice.call(band.children).map(function (k) {
+        var r = k.getBoundingClientRect();
+        return k.textContent.replace(/\s+/g,' ').trim() + '(' + Math.round(r.width) + 'w,' + Math.round(r.top) + 'y)';
+      }).join(' / ') + ' containerW=' + Math.round(band.getBoundingClientRect().width);
+    }
+
+    return [
+      '── ' + name,
+      '  viewport=' + vw + 'x' + w.innerHeight + '  scrollWidth=' + sw + '  overflow=' + Math.max(0, sw - vw) + 'px',
+      '  title=' + title,
+      '  naverLinks=' + naverLinks.length + (naverInfo.length ? '\n    ' + naverInfo.join('\n    ') : ''),
+      '  Nmark=' + (markBox || 'none'),
+      '  tenYearText=' + ten,
+      '  MB.init=' + (typeof w.MB !== 'undefined') + (initErr ? ' INIT_ERROR=' + initErr : ''),
+      '  hero=' + (heroRows || '-'),
+      '  ctaband=' + (bandRows || '-'),
+      '  overflowingEls=' + over.length + (over.length ? ' ' + over.slice(0, 6).join(', ') : '')
+    ].join('\n');
+  }
+
+  var done = 0;
+  frames.forEach(function (pair) {
+    var name = pair[0], f = pair[1];
+    f.addEventListener('load', function () {
+      done++;
+      var out = document.getElementById('out');
+      // 폰트/이미지 반영 대기
+      setTimeout(function () {
+        var txt = '';
+        try { txt = measure(name, f); } catch (e) { txt = name + ': ERROR ' + e; }
+        out.textContent = (out.textContent === 'measuring…' ? '' : out.textContent) + txt + '\n\n';
+        if (done === frames.length) out.textContent += 'ALL LOADED\n';
+      }, 900);
+    });
+  });
+})();
+</script>
+</body>
+</html>
