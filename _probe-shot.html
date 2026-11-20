@@ -11,7 +11,8 @@ f.onload=function(){
   var sel=q.get('sel')||'#options';
   setTimeout(function(){
     var d=f.contentDocument, el=d.querySelector(sel);
-    if(el){ var top=el.getBoundingClientRect().top + f.contentWindow.scrollY; f.contentWindow.scrollTo(0, Math.max(0,top)); }
+    var open=q.get('open'); if(open){ var t=d.querySelector(open); if(t){ t.open=true; } }
+    if(el){ var top=el.getBoundingClientRect().top + f.contentWindow.scrollY + (parseInt(q.get('off')||'0',10)); f.contentWindow.scrollTo(0, Math.max(0,top)); }
     window.shotReady=true;
   }, 800);
 };
