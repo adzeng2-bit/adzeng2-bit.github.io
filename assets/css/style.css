@@ -831,7 +831,7 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .search-field input::placeholder{color:var(--muted-2)}
 .search-clear{display:none;font-size:11px;color:var(--muted);border:1px solid var(--line);padding:4px 8px}
 .search-field[data-filled="true"] .search-clear{display:inline-block}
-.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;scrollbar-width:none;padding-bottom:2px}
 .tabs::-webkit-scrollbar{display:none}
 .tab{
   flex:0 0 auto;padding:9px 14px;border:1px solid var(--line);font-size:12px;
@@ -841,10 +841,38 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:600}
 .tab small{font-size:10px;opacity:.6;margin-left:4px}
 
+/* 모바일: 8개 탭을 4+4 두 줄로 — 필터바는 고정하지 않고 스크롤로 내려간다 */
+@media (max-width:700px){
+  .filterbar{position:static}
+  .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;width:100%}
+  .tab{padding:9px 3px;font-size:10.5px;text-align:center;letter-spacing:-.03em}
+}
+
 /* ---------- lineup grid ---------- */
 .lineup{padding:clamp(28px,4vw,44px) 0 clamp(56px,7vw,88px)}
-.lineup-count{font-size:11.5px;letter-spacing:.04em;color:var(--muted);margin-bottom:18px}
+.lineup-summary{margin-bottom:clamp(26px,4vw,42px)}
+.lineup-count{font-size:clamp(17px,3.6vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-bottom:9px}
 .lineup-count b{color:var(--ink);font-weight:600}
+.lineup-q{display:inline-block;font-size:11.5px;font-weight:400;letter-spacing:0;color:var(--muted-2)}
+.lineup-summary-text{max-width:34em;font-size:13.5px;line-height:1.8;color:var(--muted)}
+
+/* 섹션(차체 유형 그룹) */
+.group{scroll-margin-top:calc(var(--header-h) + 20px)}
+.group + .group{margin-top:clamp(44px,6vw,74px)}
+.group-head{margin-bottom:clamp(16px,2.4vw,24px)}
+.group-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.group-no{font-size:11px;letter-spacing:.1em;color:var(--brass);font-weight:600;font-variant-numeric:tabular-nums}
+.group-jump{
+  display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;
+  font-size:11px;letter-spacing:.02em;color:var(--muted);white-space:nowrap;
+  border-bottom:1px solid var(--line-strong);padding:5px 0 3px;margin-top:-5px;
+  transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.group-jump:hover,.group-jump:focus-visible{color:var(--ink);border-color:var(--ink)}
+.group-title{margin-top:10px;font-size:clamp(28px,5.6vw,40px);line-height:1.18;letter-spacing:-.045em;font-weight:600}
+.group-order{margin-top:9px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+.group-rule{display:block;margin-top:clamp(14px,2vw,18px);border-top:1px solid var(--line)}
+.lineup-duo{margin-top:clamp(48px,7vw,80px);padding-top:clamp(30px,4.6vw,52px);border-top:1px solid var(--line)}
 .lineup-grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
 .car-card{
   display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
