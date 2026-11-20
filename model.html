@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&amp;display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=20261120b">
+<link rel="stylesheet" href="assets/css/style.css?v=20261120c">
 <script>document.documentElement.className += ' js';</script>
 </head>
 <body>
@@ -56,6 +56,7 @@
 <div class="subnav" id="subnav">
   <div class="subnav-inner">
     <a class="subnav-item" href="#trim">트림·가격</a>
+    <a class="subnav-item" href="#options">옵션·사양</a>
     <a class="subnav-item" href="#spec">제원·색상</a>
     <a class="subnav-item" href="#points">차종 안내</a>
     <a class="subnav-item" href="#stock">재고·출고</a>
@@ -123,9 +124,25 @@
     </div>
   </section>
 
+  <section class="section section--tint" id="options">
+    <div class="wrap sec-grid">
+      <div class="sec-aside reveal"><p class="eyebrow">02 — 옵션·사양</p></div>
+      <div class="sec-body">
+        <h2 class="sec-title reveal">트림별<br>기본사양과 옵션.</h2>
+        <p class="sec-lead reveal">
+          HS효성더클래스 통합옵션표(2026.11.16) 기준으로, 트림마다 들어가는 기본 사양과 추가 사양,
+          유료 색상·시트 금액을 그대로 옮겼습니다. 표에 있던 작성자 표기와 사내 문서 코드는 빼고
+          고객에게 필요한 내용만 담았습니다.
+        </p>
+        <div id="m-options"></div>
+        <p class="trim-note" id="m-options-note"></p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="spec">
     <div class="wrap sec-grid">
-      <div class="sec-aside reveal"><p class="eyebrow">02 — 제원</p></div>
+      <div class="sec-aside reveal"><p class="eyebrow">03 — 제원</p></div>
       <div class="sec-body">
         <h2 class="sec-title reveal">성능과<br>차체 크기.</h2>
         <p class="sec-lead reveal">
@@ -141,7 +158,7 @@
 
   <section class="section section--tint" id="points">
     <div class="wrap sec-grid">
-      <div class="sec-aside reveal"><p class="eyebrow">03 — 차종 안내</p></div>
+      <div class="sec-aside reveal"><p class="eyebrow">04 — 차종 안내</p></div>
       <div class="sec-body">
         <h2 class="sec-title reveal">이 차종을<br>고르는 기준.</h2>
         <p class="sec-lead reveal" id="m-points-lead">
@@ -158,7 +175,7 @@
 
   <section class="section" id="stock">
     <div class="wrap sec-grid">
-      <div class="sec-aside reveal"><p class="eyebrow">04 — 재고·출고</p></div>
+      <div class="sec-aside reveal"><p class="eyebrow">05 — 재고·출고</p></div>
       <div class="sec-body">
         <h2 class="sec-title reveal">지금 배정 가능한<br>차량부터 확인합니다.</h2>
         <p class="sec-lead reveal">
@@ -185,7 +202,7 @@
 
   <section class="section section--tint" id="related">
     <div class="wrap sec-grid">
-      <div class="sec-aside reveal"><p class="eyebrow">05 — 관련 차종</p></div>
+      <div class="sec-aside reveal"><p class="eyebrow">06 — 관련 차종</p></div>
       <div class="sec-body">
         <h2 class="sec-title reveal">같이 비교하는<br>차종.</h2>
         <p class="sec-lead reveal">같은 분류에서 가격대가 비슷한 차종입니다. 나란히 놓고 비교해 보세요.</p>
@@ -197,7 +214,7 @@
   <section class="contact" id="contact">
     <div class="wrap contact-inner">
       <div class="reveal">
-        <p class="eyebrow eyebrow--light">06 — 상담</p>
+        <p class="eyebrow eyebrow--light">07 — 상담</p>
         <h2 class="contact-title" id="m-contact-title">이 차종,<br>얼마에 나올까요.</h2>
         <p class="contact-desc">
           트림과 색상, 구매 방법(현금·할부·리스·렌트)을 알려주시면
@@ -223,7 +240,7 @@
 
   <section class="section" id="consult-form">
     <div class="wrap sec-grid">
-      <div class="sec-aside reveal"><p class="eyebrow">07 — 간편 상담</p></div>
+      <div class="sec-aside reveal"><p class="eyebrow">08 — 간편 상담</p></div>
       <div class="sec-body">
         <h2 class="sec-title reveal">세 가지만<br>남겨 주세요.</h2>
         <p class="sec-lead reveal">차종은 이미 선택되어 있습니다. 성함과 연락처, 궁금한 점을 적고 문자로 보내시면 됩니다.</p>
@@ -285,10 +302,11 @@
   <a class="ab-btn" href="tel:010-8792-1080">전화 상담</a>
 </div>
 
-<script src="assets/js/models-data.js?v=20261119e"></script>
-<script src="assets/js/models-specs.js?v=20261119e"></script>
+<script src="assets/js/models-data.js?v=20261120a"></script>
+<script src="assets/js/models-specs.js?v=20261120a"></script>
+<script src="assets/js/model-options.js?v=20261120a"></script>
 <script src="assets/js/site.js"></script>
 <script src="assets/js/consult.js"></script>
-<script src="assets/js/model-page.js?v=20261119e"></script>
+<script src="assets/js/model-page.js?v=20261120a"></script>
 </body>
 </html>

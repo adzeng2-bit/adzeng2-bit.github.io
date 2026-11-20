@@ -496,5 +496,316 @@ window.MB_SPECS = {
    "MANUFAKTUR 파타고니아 레드(993U)"
   ],
   "src": "메르세데스-벤츠 코리아 카탈로그(2026.09.07) Technical Data·Colours (배터리 표기는 308Ah)"
+ },
+ "s-class-long-amg": {
+  "cats": [
+   "S 63 E PERFORMANCE"
+  ],
+  "disp": "3,982cc",
+  "power": "612ps",
+  "torque": "91.8kgf·m",
+  "trans": "자동 9단",
+  "drive": "사륜 구동(4MATIC+)",
+  "eff": "복합 2.7·6.8km/ℓ(표기값)",
+  "size": "5,290 × 1,920 × 1,505mm",
+  "wheelbase": "3,216mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "eqe-suv": {
+  "cats": [
+   "EQE 350+ SUV",
+   "EQE 500 4MATIC SUV"
+  ],
+  "battery": "88.4kWh · 88.8kWh",
+  "power": "288ps(215kW) · 402ps(300kW)",
+  "torque": "78Nm · 87.5Nm",
+  "drive": "사륜 구동",
+  "range": "404km · 401km(WLTP 최대 550km)",
+  "eff": "복합 3.9 · 3.8km/kWh",
+  "size": "4,870 × 1,920 × 1,685mm",
+  "wheelbase": "3,030mm",
+  "weight": "2,540kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "maybach-eqs-suv": {
+  "cats": [
+   "EQS 680"
+  ],
+  "battery": "118kWh",
+  "power": "484ps",
+  "range": "471km",
+  "eff": "복합 3.5km/kWh",
+  "drive": "사륜 구동",
+  "size": "5,125 × 2,035 × 1,720mm",
+  "wheelbase": "3,210mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "glc-coupe-amg": {
+  "cats": [
+   "GLC 53 4MATIC+ Coupé"
+  ],
+  "disp": "2,999cc",
+  "power": "421ps",
+  "torque": "51kgf·m",
+  "eff": "복합 8.5km/ℓ",
+  "drive": "사륜 구동(4MATIC)",
+  "size": "4,750 × 1,920 × 1,640mm",
+  "wheelbase": "2,890mm",
+  "weight": "1,995kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gle-amg": {
+  "cats": [
+   "GLE 53 4MATIC+"
+  ],
+  "disp": "2,999cc",
+  "power": "435ps",
+  "torque": "57.1kgf·m",
+  "trans": "AMG TCT 9단",
+  "drive": "사륜 구동",
+  "eff": "복합 8.0km/ℓ",
+  "size": "4,937 × 2,018 × 1,782mm",
+  "wheelbase": "2,995mm",
+  "weight": "2,410kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gle-coupe": {
+  "cats": [
+   "GLE 450 d 4MATIC Coupé",
+   "GLE 450 4MATIC Coupé"
+  ],
+  "disp": "2,989cc · 2,999cc",
+  "power": "367ps · 381ps",
+  "torque": "76.5 · 51kgf·m",
+  "drive": "사륜 구동",
+  "eff": "복합 10.4 · 8.5km/ℓ",
+  "size": "4,941 × 2,018 × 1,716mm · 4,940 × 2,020 × 1,715mm",
+  "wheelbase": "2,935mm",
+  "weight": "2,660kg · 2,465kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gle-coupe-amg": {
+  "cats": [
+   "GLE 53 4MATIC+ Coupé"
+  ],
+  "disp": "2,999cc",
+  "power": "435ps",
+  "torque": "57.1kgf·m",
+  "eff": "복합 8.0km/ℓ",
+  "drive": "사륜 구동",
+  "size": "4,945 × 2,020 × 1,715mm",
+  "wheelbase": "2,935mm",
+  "weight": "2,365kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gls": {
+  "cats": [
+   "GLS 450 d 4MATIC",
+   "GLS 450 4MATIC",
+   "GLS 580 4MATIC"
+  ],
+  "disp": "2,989cc · 2,999cc · 3,982cc",
+  "power": "367ps · 381ps · 557ps",
+  "torque": "76.5 · 51 · 78.5kgf·m",
+  "drive": "사륜 구동",
+  "eff": "복합 10.4 · 7.9 · 6.0km/ℓ",
+  "size": "5,210 × 2,030 × 1,840mm",
+  "wheelbase": "3,135mm",
+  "weight": "2,635~2,670kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gls-amg": {
+  "cats": [
+   "GLS 63 4MATIC+"
+  ],
+  "disp": "3,982cc",
+  "power": "557ps",
+  "torque": "78.5kgf·m",
+  "eff": "복합 6.0km/ℓ",
+  "drive": "사륜 구동",
+  "size": "5,210 × 2,030 × 1,840mm",
+  "wheelbase": "3,135mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "a-class-hatch-amg": {
+  "cats": [
+   "AMG A 45 S 4MATIC+"
+  ],
+  "disp": "1,991cc",
+  "power": "387ps",
+  "torque": "48.9kgf·m",
+  "trans": "AMG DCT 8단",
+  "drive": "사륜 구동",
+  "size": "4,445 × 1,850 × 1,410mm",
+  "weight": "1,650kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "cle-coupe-amg": {
+  "cats": [
+   "CLE 53 4MATIC+ Coupé"
+  ],
+  "disp": "2,998cc",
+  "power": "449ps",
+  "torque": "57.1kgf·m",
+  "trans": "AMG TCT 9단",
+  "drive": "사륜 구동",
+  "accel": "4.4초",
+  "eff": "복합 9.1km/ℓ",
+  "size": "4,855 × 1,935 × 1,435mm",
+  "wheelbase": "2,875mm",
+  "weight": "2,070kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "cle-cabriolet-amg": {
+  "cats": [
+   "CLE 53 4MATIC+ Cabriolet"
+  ],
+  "disp": "2,998cc",
+  "power": "449ps",
+  "torque": "57.1kgf·m",
+  "trans": "AMG TCT 9단",
+  "drive": "사륜 구동",
+  "accel": "4.4초",
+  "eff": "복합 9.1km/ℓ",
+  "size": "4,855 × 1,935 × 1,435mm",
+  "wheelbase": "2,875mm",
+  "weight": "2,070kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "gt-coupe": {
+  "cats": [
+   "AMG GT 43",
+   "AMG GT 55 4MATIC+",
+   "AMG GT 63 S E PERFORMANCE"
+  ],
+  "disp": "1,991cc · 3,982cc · 3,982cc",
+  "power": "421ps · 476ps · 577ps",
+  "torque": "51 · 71.4 · 85kgf·m",
+  "accel": "4.6 · 3.9 · 3.1초",
+  "top": "280 · 295 · 315km/h",
+  "drive": "후륜 · 사륜 · 사륜",
+  "eff": "복합 10.3 · 6.5 · 7.3km/ℓ",
+  "size": "4,728 × 1,984 × 1,354mm",
+  "wheelbase": "2,700mm",
+  "weight": "1,910kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "sl-roadster": {
+  "cats": [
+   "AMG SL 43",
+   "AMG SL 63 4MATIC+"
+  ],
+  "disp": "1,991cc · 3,982cc",
+  "power": "421ps · 585ps",
+  "torque": "51 · 81.5kgf·m",
+  "accel": "4.7 · 3.6초",
+  "top": "278km/h",
+  "drive": "후륜 · 사륜",
+  "eff": "복합 8.8 · 6.5km/ℓ",
+  "size": "4,705 × 1,915 × 1,365mm",
+  "wheelbase": "2,700mm",
+  "weight": "1,775kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "maybach-sl": {
+  "cats": [
+   "Maybach SL 680"
+  ],
+  "disp": "3,982cc",
+  "power": "585ps",
+  "torque": "81.6kgf·m",
+  "accel": "4.1초",
+  "top": "260km/h",
+  "drive": "후륜 구동",
+  "eff": "복합 6.5km/ℓ",
+  "size": "4,695 × 1,915 × 1,365mm",
+  "wheelbase": "2,700mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "eqa": {
+  "cats": [
+   "EQA 250"
+  ],
+  "battery": "65.9kWh",
+  "power": "140kW",
+  "range": "378km",
+  "eff": "복합 4.9km/kWh",
+  "drive": "전륜 구동",
+  "size": "4,465 × 1,835 × 1,625mm",
+  "wheelbase": "2,729mm",
+  "weight": "1,990kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "eqb": {
+  "cats": [
+   "EQB 300 4MATIC"
+  ],
+  "battery": "65.9kWh",
+  "power": "168kW",
+  "torque": "390Nm",
+  "range": "302km(WLTP 최대 459km)",
+  "eff": "복합 4.1km/kWh",
+  "drive": "사륜 구동",
+  "size": "4,685 × 1,835 × 1,700mm",
+  "wheelbase": "2,829mm",
+  "weight": "2,110kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "eqs": {
+  "cats": [
+   "EQS 350"
+  ],
+  "battery": "96.5kWh",
+  "power": "215kW",
+  "range": "464km",
+  "eff": "복합 4.1km/kWh",
+  "drive": "후륜 구동",
+  "size": "5,220 × 1,925 × 1,515mm",
+  "wheelbase": "3,210mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "cla-electric": {
+  "cats": [
+   "CLA 200 electric",
+   "CLA 250+ electric"
+  ],
+  "battery": "58kWh(LFP) · 85kWh(NCM)",
+  "power": "165kW · 200kW",
+  "range": "541km · 750km(WLTP)",
+  "eff": "복합 7.8 · 8.3km/kWh",
+  "drive": "후륜 구동",
+  "accel": "7.5초",
+  "top": "210km/h",
+  "size": "4,723 × 1,855 × 1,468mm",
+  "wheelbase": "2,790mm",
+  "weight": "1,970~1,990kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "glb-electric": {
+  "cats": [
+   "GLB 250+ electric"
+  ],
+  "battery": "85kWh(NCM)",
+  "range": "454km(상온) · 340km(저온)",
+  "eff": "복합 5.0~5.3km/kWh",
+  "size": "4,732 × 1,861 × 1,687mm",
+  "wheelbase": "2,889mm",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
+ },
+ "glc-electric": {
+  "cats": [
+   "GLC 300 4MATIC electric"
+  ],
+  "power": "421ps",
+  "torque": "81.6kgf·m",
+  "accel": "4.7초",
+  "top": "210km/h",
+  "range": "523~616km",
+  "eff": "복합 5.3~6.3km/kWh",
+  "drive": "사륜 구동",
+  "size": "4,845 × 1,913 × 1,644mm",
+  "wheelbase": "2,972mm",
+  "weight": "2,485kg",
+  "src": "HS효성더클래스 통합옵션표(2026.11.16) · 계약 시점 재확인"
  }
 };

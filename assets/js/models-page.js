@@ -76,10 +76,34 @@
     });
   }
 
+  var OPT = window.MB_OPTIONS || {};
+  var optHayCache = {};
+  function optionText(id) {
+    if (optHayCache[id] != null) return optHayCache[id];
+    var out = [];
+    (OPT[id] || []).forEach(function (sh) {
+      if (sh.common) {
+        if (sh.common.opt) out.push(sh.common.opt);
+        (sh.common.eng || []).forEach(function (x) { out.push(x); });
+        (sh.common.size || []).forEach(function (x) { out.push(x); });
+        (sh.common.base || []).forEach(function (c) { out.push(c[0] + " " + c[1]); });
+      }
+      sh.trims.forEach(function (t) {
+        ["name", "price", "opt", "ext", "int", "susp", "wheel"].forEach(function (f) { if (t[f]) out.push(t[f]); });
+        (t.eng || []).forEach(function (x) { out.push(x); });
+        (t.size || []).forEach(function (x) { out.push(x); });
+        (t.extra || []).forEach(function (x) { out.push(x); });
+        (t.base || []).forEach(function (c) { out.push(c[0] + " " + c[1]); });
+      });
+    });
+    optHayCache[id] = " " + out.join(" ").toLowerCase();
+    return optHayCache[id];
+  }
+
   function searchText(m) {
     var parts = [m.name, m.ko, m.brandLabel, m.year, (m.fuel || []).join(" "), CAT_LABEL[m.cat] || ""];
     (m.trims || []).forEach(function (t) { parts.push(t.n); });
-    return parts.join(" ").toLowerCase();
+    return (parts.join(" ").toLowerCase() + optionText(m.id));
   }
 
   function card(m) {
@@ -91,11 +115,14 @@
     var sub = trims
       ? esc(m.year) + " · " + trims + "개 트림"
       : "가격 확인은 상담으로";
+    if (OPT[m.id]) sub += " · 옵션표 수록";
     return '' +
       '<a class="car-card" href="model.html?id=' + encodeURIComponent(m.id) + '">' +
         '<div class="car-media">' +
           '<span class="' + badgeClass + '">' + esc(m.brandLabel) + '</span>' +
-          '<img src="' + esc(m.card) + '" alt="' + esc(m.name) + ' 공식 차량 이미지" loading="lazy" decoding="async">' +
+          (m.card
+            ? '<img src="' + esc(m.card) + '" alt="' + esc(m.name) + ' 공식 차량 이미지" loading="lazy" decoding="async">'
+            : '<span class="car-media-empty"><b>' + esc(m.name) + '</b><i>사진 준비 중</i></span>') +
         '</div>' +
         '<div class="car-body">' +
           '<span class="car-brand">' + esc(CAT_LABEL[m.cat] || "") + ' · ' + esc(m.year) + '</span>' +

@@ -68,8 +68,16 @@
 
   var img = $("#m-image");
   if (img) {
-    img.src = model.image;
-    img.alt = "메르세데스-벤츠 " + model.name + " 공식 차량 이미지";
+    if (model.image) {
+      img.src = model.image;
+      img.alt = "메르세데스-벤츠 " + model.name + " 공식 차량 이미지";
+    } else {
+      var media = img.parentNode;
+      if (media) {
+        media.className += " m-media--empty";
+        media.innerHTML = '<span class="m-media-empty"><b>' + esc(model.name) + '</b><i>차량 사진 준비 중</i></span>';
+      }
+    }
   }
 
   /* 상단 칩 */
@@ -104,6 +112,88 @@
   if (trimNote) {
     trimNote.innerHTML = "가격은 <b>메르세데스-벤츠 코리아 공식 차량 가격표(2026.11.17)</b> 기준 권장소비자가격입니다. " +
       "옵션·색상·구매 방법에 따라 실제 조건이 달라지며, 최종 가격은 계약 시점 기준으로 다시 확인해 드립니다.";
+  }
+
+  /* 트림별 옵션·사양 (통합옵션표) */
+  var OPT = (window.MB_OPTIONS || {})[model.id] || [];
+  var optEl = $("#m-options");
+  var optNote = $("#m-options-note");
+
+  function optLines(title, lines) {
+    if (!lines || !lines.length) return "";
+    return '<div class="opt-block"><h4>' + esc(title) + '</h4><ul class="opt-lines">' +
+      lines.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul></div>";
+  }
+
+  function optCats(title, pairs) {
+    if (!pairs || !pairs.length) return "";
+    return '<div class="opt-block"><h4>' + esc(title) + '</h4><dl class="opt-cats">' +
+      pairs.map(function (p) { return "<dt>" + esc(p[0]) + "</dt><dd>" + esc(p[1]) + "</dd>"; }).join("") +
+      "</dl></div>";
+  }
+
+  function optBase(title, cats) {
+    if (!cats || !cats.length) return "";
+    return optCats(title, cats.map(function (c) { return [c[0], c[1]]; }));
+  }
+
+  function optTrimBody(t, sh) {
+    var cm = sh.common || {};
+    var html = "";
+    html += optLines("엔진 · 성능", t.eng || cm.eng);
+    html += optLines("크기", t.size || cm.size);
+    var pairs = [];
+    if (t.opt || cm.opt) pairs.push(["옵션가", t.opt || cm.opt]);
+    if (t.ext) pairs.push(["외장", t.ext]);
+    if (t.int) pairs.push(["내장 · 트림", t.int]);
+    if (t.susp) pairs.push(["서스펜션", t.susp]);
+    if (t.wheel) pairs.push(["휠", t.wheel]);
+    html += optCats("옵션가 · 사양", pairs);
+    if (t.base) html += optBase("기본 사항", t.base);
+    if (t.extra && t.extra.length) {
+      html += '<div class="opt-block"><h4>추가 사항</h4><ul class="opt-chips">' +
+        t.extra.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>";
+    }
+    return html || '<p class="opt-none">이 트림의 세부 사양은 상담 시 옵션표로 확인해 드립니다.</p>';
+  }
+
+  if (optEl) {
+    if (!OPT.length) {
+      var sec = document.getElementById("options");
+      if (sec) sec.hidden = true;
+      var navOpt = document.querySelector('.subnav-item[href="#options"]');
+      if (navOpt) navOpt.hidden = true;
+    } else {
+      var ohtml = "";
+      OPT.forEach(function (sh, si) {
+        var n = sh.trims.length;
+        ohtml += '<div class="opt-sheet">' +
+          '<div class="opt-head"><span class="opt-my">' + esc(sh.my) + '</span>' +
+          "<h3>" + esc(sh.title) + "</h3>" +
+          '<span class="opt-count">트림 ' + n + "개</span></div>";
+        if (sh.common && sh.common.base) {
+          ohtml += '<details class="opt-common"><summary><span class="on">기본 사항 — 전 트림 공통</span>' +
+            '<span class="oi"></span></summary><div class="opt-body">' +
+            optBase("기본 사항", sh.common.base) + "</div></details>";
+        }
+        ohtml += '<div class="opt-list">';
+        sh.trims.forEach(function (t, i) {
+          var open = (si === 0 && i === 0 && n <= 3) ? " open" : "";
+          ohtml += '<details class="opt-trim"' + open + '><summary>' +
+            '<span class="on">' + esc(t.name) + "</span>" +
+            '<span class="op">' + esc(t.price || "가격 문의") + "</span>" +
+            '<span class="oi" aria-hidden="true"></span></summary>' +
+            '<div class="opt-body">' + optTrimBody(t, sh) + "</div></details>";
+        });
+        ohtml += "</div></div>";
+      });
+      optEl.innerHTML = ohtml;
+      if (optNote) {
+        optNote.innerHTML = "가격·사양은 <b>HS효성더클래스 통합옵션표(2026.11.16)</b> 기준입니다. " +
+          "위 트림·가격표(공식 가격표 2026.11.17)와 연식·정리 시점 차이로 금액이 다를 수 있고, " +
+          "실제 출고 사양은 계약 시점 기준으로 다시 확인해 드립니다.";
+      }
+    }
   }
 
   /* 제원·색상 */
