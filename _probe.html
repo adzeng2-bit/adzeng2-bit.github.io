@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>probe</title>
+<style>
+  html,body{margin:0;padding:0;background:#fff;font:12px/1.4 monospace}
+  iframe{border:0;display:block;background:#fff}
+  #out{white-space:pre-wrap;padding:8px}
+</style>
+</head>
+<body>
+<iframe id="f" src="report.html?probe=1" width="390" height="844"></iframe>
+<pre id="out">measuring…</pre>
+<script>
+var RES = [];
+var ERR = [];
+
+function hook(w) {
+  try {
+    w.addEventListener('error', function (e) {
+      ERR.push('error: ' + (e.message || e.type));
+    });
+    w.addEventListener('unhandledrejection', function (e) {
+      ERR.push('rejection: ' + (e.reason && e.reason.message ? e.reason.message : e.reason));
+    });
+  } catch (e) { ERR.push('hook: ' + e.message); }
+}
+
+function measure(w, h) {
+  return new Promise(function (resolve) {
+    var f = document.getElementById('f');
+    f.width = w; f.height = h;
+    f.src = 'report.html?probe=' + w + '&r=' + Math.random();
+    f.onload = function () {
+      setTimeout(function () {
+        var d = f.contentDocument, win = f.contentWindow;
+        var de = d.documentElement;
+        var over = [];
+        var all = d.querySelectorAll('body *');
+        for (var i = 0; i < all.length; i++) {
+          var el = all[i], r = el.getBoundingClientRect();
+          if (r.width > 0 && (r.right > de.clientWidth + 1 || r.left < -1)) {
+            over.push({ t: el.tagName, c: String(el.className || '').slice(0, 30), right: Math.round(r.right), fixed: d.defaultView.getComputedStyle(el).position });
+          }
+        }
+        over = over.filter(function (o) { return o.fixed !== 'fixed'; });
+        var txt = d.body.innerText;
+        var numDae = (txt.match(/[0-9]+\s*대/g) || []);
+        var jsErr = null;
+        try { win.eval('typeof MB === "object" ? MB.init() : null'); } catch (e) { jsErr = String(e); }
+        setTimeout(function () {
+          resolve({
+            w: w,
+            innerWidth: win.innerWidth,
+            scrollWidth: de.scrollWidth,
+            clientWidth: de.clientWidth,
+            bodyScroll: d.body.scrollWidth,
+            overflowPx: de.scrollWidth - de.clientWidth,
+            overflowEls: over.slice(0, 8),
+            overflowCount: over.length,
+            cardCount: d.querySelectorAll('.cmp-card').length,
+            hasStockColorCol: d.body.innerHTML.indexOf('재고·색상') > -1,
+            unitCounts: numDae.slice(0, 12),
+            unitCountTotal: numDae.length,
+            hasConsultLine: txt.indexOf('상담으로 바로 확인') > -1,
+            yearFilled: (d.querySelector('.js-year') || {}).textContent,
+            jsInitError: jsErr,
+            brokenImages: [].slice.call(d.images).filter(function (im) { return !im.complete || im.naturalWidth === 0; }).length,
+            resourceErrors: (win.performance.getEntriesByType('resource') || []).filter(function (e) { return e.responseStatus && e.responseStatus >= 400; }).map(function (e) { return e.name.split('/').pop() + ':' + e.responseStatus; })
+          });
+        }, 900);
+      }, 900);
+    };
+  });
+}
+
+(async function () {
+  var f = document.getElementById('f');
+  hook(f.contentWindow);
+  RES.push(await measure(390, 844));
+  RES.push(await measure(1440, 900));
+  RES.push(await measure(320, 700));
+  document.getElementById('out').textContent = JSON.stringify({ results: RES, errors: ERR, ua: navigator.userAgent }, null, 1);
+  document.title = 'probe-done';
+})();
+</script>
+</body>
+</html>
