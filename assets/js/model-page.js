@@ -164,10 +164,14 @@
       var navOpt = document.querySelector('.subnav-item[href="#options"]');
       if (navOpt) navOpt.hidden = true;
       /* 옵션 섹션이 없으면 뒤 섹션 번호를 하나씩 당긴다 (03 → 02 …) */
+      var seqNo = 0;
       Array.prototype.forEach.call(document.querySelectorAll(".eyebrow"), function (el) {
-        el.textContent = el.textContent.replace(/^0(\d)(\s*—)/, function (m, d, rest) {
-          return "0" + (parseInt(d, 10) - 1) + rest;
-        });
+        var m = /^(0\d)(\s*—)(.*)$/.exec(el.textContent);
+        if (!m) return;
+        var host = el.closest ? el.closest("[hidden]") : null;
+        if (host) return;
+        seqNo += 1;
+        el.textContent = (seqNo < 10 ? "0" + seqNo : String(seqNo)) + m[2] + m[3];
       });
     } else {
       var ohtml = "";
