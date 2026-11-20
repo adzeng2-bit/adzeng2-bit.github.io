@@ -63,7 +63,7 @@
   if (priceNote) {
     priceNote.textContent = model.priceNote
       ? model.priceNote
-      : "공식 권장소비자가격 기준이며, 실제 판매 가격은 옵션·색상·구매 방법에 따라 달라집니다.";
+      : "HS효성더클래스 통합옵션표 기준 금액이며, 실제 판매 가격은 옵션·색상·구매 방법에 따라 달라집니다.";
   }
 
   var img = $("#m-image");
@@ -110,7 +110,7 @@
 
   var trimNote = $("#m-trim-note");
   if (trimNote) {
-    trimNote.innerHTML = "가격은 <b>메르세데스-벤츠 코리아 공식 차량 가격표(2026.11.17)</b> 기준 권장소비자가격입니다. " +
+    trimNote.innerHTML = "가격은 <b>HS효성더클래스 통합옵션표(2026.11.16)</b> 기준 금액입니다. " +
       "옵션·색상·구매 방법에 따라 실제 조건이 달라지며, 최종 가격은 계약 시점 기준으로 다시 확인해 드립니다.";
   }
 
@@ -195,7 +195,7 @@
         ohtml += '<div class="opt-list">';
         sh.trims.forEach(function (t, i) {
           var open = (si === 0 && i === 0 && n <= 3) ? " open" : "";
-          var offPrice = OFFICIAL[normName(t.name)] || "";
+          var offPrice = t.price || OFFICIAL[normName(t.name)] || "";
           ohtml += '<details class="opt-trim"' + open + '><summary>' +
             '<span class="on">' + esc(t.name) + "</span>" +
             '<span class="op">' + esc(offPrice) + "</span>" +
@@ -206,9 +206,8 @@
       });
       optEl.innerHTML = ohtml;
       if (optNote) {
-        optNote.innerHTML = "사양은 <b>HS효성더클래스 통합옵션표(2026.11.16)</b> 기준이고, 트림 옆 금액은 " +
-          "위 <b>공식 가격표(2026.11.17)</b>와 같은 트림의 권장소비자가격입니다. " +
-          "옵션표에만 있는 트림은 금액을 비워 두었고, 실제 출고 사양과 조건은 계약 시점 기준으로 다시 확인해 드립니다.";
+        optNote.innerHTML = "금액은 위 <b>트림·가격</b>과 같은 기준(HS효성더클래스 통합옵션표 2026.11.16)입니다. " +
+          "실제 출고 사양과 조건은 계약 시점 기준으로 다시 확인해 드립니다.";
       }
     }
   }

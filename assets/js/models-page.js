@@ -160,7 +160,7 @@
 
   if (metaEl) {
     metaEl.textContent = "국내 판매 " + DATA.models.length + "개 모델 · 기준 " +
-      DATA.updated.replace(/-/g, ".") + " 공식 가격표 · 이미지 메르세데스-벤츠 공식 모델 페이지";
+      DATA.updated.replace(/-/g, ".") + " 통합옵션표 · 이미지 메르세데스-벤츠 공식 모델 페이지";
   }
 
   if (input) {
