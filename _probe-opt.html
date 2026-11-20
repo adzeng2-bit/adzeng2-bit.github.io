@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>probe</title>
+<style>body{margin:0;background:#888;display:flex;gap:4px}iframe{border:0;background:#fff}</style>
+</head><body>
+<iframe id="f390" width="390" height="844"></iframe>
+<iframe id="f1440" width="1440" height="900"></iframe>
+<script>
+var q=new URLSearchParams(location.search);
+var target=q.get('p')||'model.html?id=glc';
+document.getElementById('f390').src=target;
+document.getElementById('f1440').src=target;
+window.measure=function(){
+  function m(id){
+    var f=document.getElementById(id), d=f.contentDocument, w=f.contentWindow;
+    if(!d||!d.documentElement) return {err:'no doc'};
+    var de=d.documentElement;
+    var imgs=[].map.call(d.images,function(i){return {src:i.getAttribute('src')||'',nw:i.naturalWidth,cw:i.clientWidth};});
+    var broken=imgs.filter(function(i){return i.nw===0 && i.cw>0;});
+    var wide=[].slice.call(d.querySelectorAll('body *')).filter(function(e){return e.getBoundingClientRect().right>de.clientWidth+1;}).map(function(e){return e.tagName+'.'+(e.className||'').toString().slice(0,40);}).slice(0,6);
+    return {w:de.clientWidth, over:de.scrollWidth-de.clientWidth, total:imgs.length, broken:broken.length,
+      brokenSrc:broken.map(function(b){return b.src;}).slice(0,4), wide:wide,
+      trims:(d.getElementById('m-trims')||{}).children?d.getElementById('m-trims').children.length:0,
+      spec:(d.getElementById('m-spec')||{}).children?d.getElementById('m-spec').children.length:0,
+      rel:(d.getElementById('m-related')||{}).children?d.getElementById('m-related').children.length:0,
+      opt:(d.getElementById('m-options')||{}).children?d.getElementById('m-options').children.length:0,
+      optTrim:d.querySelectorAll('.opt-trim').length,
+      optHidden:!!(d.getElementById('options')||{}).hidden,
+      cards:d.querySelectorAll('.car-card').length,
+      cardEmpty:d.querySelectorAll('.car-media-empty').length,
+      note:(d.getElementById('m-options-note')||{}).textContent?d.getElementById('m-options-note').textContent.slice(0,60):'',
+      title:d.title};
+  }
+  return {m390:m('f390'), d1440:m('f1440')};
+};
+</script>
+</body></html>
