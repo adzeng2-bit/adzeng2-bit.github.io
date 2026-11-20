@@ -28,7 +28,7 @@
 <script>
 (function () {
   var h = (location.hash || "").replace("#", "");
-  var map = { stock: "stock.html", report: "report.html", cards: "cards.html", mou: "mou.html" };
+  var map = { stock: "index.html", report: "report.html", cards: "cards.html", mou: "mou.html" };
   var to = map[h] || "promotion.html";
   if (window.history && history.replaceState) history.replaceState(null, "", to);
   window.location.replace(to);

@@ -10,7 +10,7 @@ site/
 ├─ index.html            메인 (프로필·전기 GLC/CLA 계약·신차/사전예약·차종별 가이드·상담 연결)
 ├─ models.html           차종별 가이드 (분류 탭 + 실시간 검색)
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
-├─ benefits.html         가격·프로모션 / 전국 재고 조회 / 카드혜택·금융 / MOU 확인
+├─ benefits.html         구 링크 호환용 (자동 이동)
 ├─ glc-electric.html     GLC 300 4MATIC Electric 상세 가이드
 ├─ assets/
 │  ├─ css/style.css      공통 스타일 (모든 페이지가 함께 사용)
@@ -88,7 +88,7 @@ site/
 - `models.html` / `model.html` — 차종별 가이드
 - `glc-electric.html` — GLC Electric
 - `promotion.html` — 11월 프로모션 (차종 탭 · 권장가/현금/MBF/실구매가)
-- `stock.html` — 전국 재고 (검색 · 차종/연식/색상/전시장 필터)
+- `stock.html` — 내림 (2026-11-20). 예전 링크·북마크는 홈으로 자동 이동
 - `report.html` — 11월 구매전략리포트
 - `cards.html` — 신한카드 3종 비교 · 결제 계산기
 - `mou.html` — MOU 676개 기업 검색
@@ -100,7 +100,7 @@ site/
 
 - 임정빈 차장 네이버 예약 상품: `https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175`
   (업체 `HS효성더클래스 메르세데스 벤츠 분당정자 전시장`, 상품 `임정빈 차장`, 리뷰 2건)
-- 버튼 위치: 메인 히어로 + 메인 `#contact`(`.contact-line`) + `new-cars.html` `.cta-band` / `promotion`·`stock`·`report`·`cards`·`mou`는 `.cta-band` / `models`·`model`·`glc-electric`은 `#contact`(`.contact-line`).
-- `promotion/stock/report/cards/mou`의 버튼은 `_build/build.py`의 `NAVER_BOOKING` 상수와 `cta_band()`에서 생성되므로, 주소를 바꿀 때는 `build.py`를 고치고 다시 빌드한다. 나머지 페이지는 HTML에 직접 적혀 있다.
+- 버튼 위치: 메인 히어로 + 메인 `#contact`(`.contact-line`) + `new-cars.html` `.cta-band` / `promotion`·`report`·`cards`·`mou`는 `.cta-band` / `models`·`model`·`glc-electric`은 `#contact`(`.contact-line`).
+- `promotion/report/cards/mou`의 버튼은 `_build/build.py`의 `NAVER_BOOKING` 상수와 `cta_band()`에서 생성되므로, 주소를 바꿀 때는 `build.py`를 고치고 다시 빌드한다. 나머지 페이지는 HTML에 직접 적혀 있다.
 - 모든 버튼은 `target="_blank" rel="noopener"`로 새 창에서 네이버 예약을 연다.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""benz-pages 페이지 분리 빌드 — promotion / stock / report / cards / mou + benefits 리다이렉트 + 내비 링크 갱신."""
+"""benz-pages 페이지 분리 빌드 — promotion / report / cards / mou + stock 리다이렉트 + benefits 리다이렉트 + 내비 링크 갱신."""
 import json, re, html as H, io, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,7 +15,6 @@ NAV = [
     ('new-cars.html', '신차·사전예약', 'launches'),
     ('models.html', '차종별 가이드', 'models'),
     ('promotion.html', '가격·프로모션', 'promotion'),
-    ('stock.html', '전국 재고', 'stock'),
     ('report.html', '구매전략리포트', 'report'),
     ('cards.html', '카드혜택', 'cards'),
     ('mou.html', 'MOU 확인', 'mou'),
@@ -314,59 +313,41 @@ page += foot([
 ])
 wr('promotion.html', page)
 
-# ────────────────────────────────────────────── stock
-stock_body = f'''<main>
-
-  <div class="pbar">
-    <div class="wrap pbar-head">
-      <div>
-        <p class="pbar-kicker">2026년 11월 19일 기준 · 전국 판매 가능 재고</p>
-        <h1 class="pbar-title">지금 배정 가능한 재고 <b class="pbar-num" id="stock-total">180</b>대</h1>
-      </div>
-      <a class="pbar-call" href="sms:01087921080">임정빈 차장 {PHONE}</a>
-    </div>
-  </div>
-
-  <div class="wrap stock-body">
-    <div class="stock-filters">
-      <label class="stock-field stock-field--q">
-        <span>검색</span>
-        <input type="search" id="st-q" placeholder="차종 · 색상 · 전시장" aria-label="재고 검색" autocomplete="off">
-      </label>
-      <label class="stock-field">차종<select id="st-model"><option value="">차종 전체</option></select></label>
-      <label class="stock-field">연식<select id="st-year"><option value="">연식 전체</option></select></label>
-      <label class="stock-field">외장색<select id="st-ext"><option value="">외장색 전체</option></select></label>
-      <label class="stock-field">내장색<select id="st-int"><option value="">내장색 전체</option></select></label>
-      <label class="stock-field">전시장<select id="st-loc"><option value="">전시장 전체</option></select></label>
-      <label class="stock-check"><input type="checkbox" id="st-only-avail" checked> <span>배정 가능만 보기</span></label>
-      <button class="btn btn--ghost stock-reset" type="button" id="st-reset">조건 초기화</button>
-    </div>
-
-    <p class="stock-count" id="stock-count" aria-live="polite">전체 180대</p>
-    <div class="stock-list" id="stock-list"></div>
-
-    <noscript><p class="no-script">재고 목록은 자바스크립트가 필요합니다. 차종·색상을 문자로 주시면 재고를 확인해 회신드립니다. {PHONE}</p></noscript>
-
-    <p class="sr-note stock-note">
-      효성더클래스 전 지점의 판매 가능 재고를 차종·연식·외장/내장 색상 단위로 묶은 목록입니다.
-      재고는 계약·배정·이동으로 하루에도 여러 번 바뀌므로 보시는 시점과 실제 배정 가능 여부가 다를 수 있습니다.
-      전국 다른 전시장 재고와 생산 배정 일정은 문자 주시면 배정 가능 여부를 바로 조회해 드립니다.
-    </p>
-  </div>
-{cta_band("재고는 목록보다, 확보가 먼저입니다.", "같은 재고 목록을 봐도 원하는 색상과 출고일을 실제로 잡아 두는 것은 담당자 몫입니다. 희망 외장·시트 1·2순위를 알려주시면 배정 가능 여부를 확인해 후보 2~3대를 정리해 드리고, 금융 조건과 출고 후 정기점검·경고등·보증 케어까지 이어서 맡습니다.")}
-</main>
+# ────────────────────────────────────────────── stock.html → index.html 리다이렉트
+# 2026-11-20: 전국 재고 페이지를 사이트에서 내림(내부 위탁재고 자료 비공개).
+# 기존 북마크·외부 링크로 직접 열어도 재고 표가 보이지 않도록 홈으로 즉시 넘긴다.
+stock_redirect = f'''<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홈으로 이동합니다 | 임정빈 차장 · HS효성더클래스 분당</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="index.html">
+<meta http-equiv="refresh" content="0; url=index.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  html,body{{margin:0;height:100%;background:#F6F4EF;color:#12161B;
+    font-family:Pretendard,"Apple SD Gothic Neo",system-ui,sans-serif}}
+  .r{{max-width:520px;margin:0 auto;padding:18vh 24px 0;text-align:center}}
+  .r p{{font-size:13px;line-height:1.8;color:#5a6270}}
+  .r h1{{font-size:20px;letter-spacing:-.03em;margin:0 0 10px}}
+  .r a{{display:inline-block;margin-top:22px;padding:12px 20px;background:#12161B;color:#F6F4EF;
+    font-size:12.5px;letter-spacing:.02em;text-decoration:none}}
+</style>
+</head>
+<body>
+<div class="r">
+  <h1>홈으로 이동합니다</h1>
+  <p>차량 재고는 상담으로 안내드립니다. 원하시는 차종과 색상을 알려주시면 배정 가능 여부를 확인해 드립니다.<br>{PHONE}</p>
+  <a href="index.html">홈으로 가기</a>
+</div>
+<script>location.replace("index.html");</script>
+</body>
+</html>
 '''
-
-page = head('전국 재고 조회 | 임정빈 차장 · HS효성더클래스 분당',
-            '효성더클래스 전 지점 판매 가능 재고 180대를 차종·연식·외장·내장 색상·전시장으로 바로 조회. 2026-11-19 기준. 임정빈 차장 010-8792-1080.',
-            'stock')
-page += header('stock') + stock_body
-page += foot([
-    'assets/js/stock-data.js?v=20261119a',
-    'assets/js/site.js',
-    'assets/js/stock.js?v=20261119d',
-])
-wr('stock.html', page)
+wr('stock.html', stock_redirect)
 
 # ────────────────────────────────────────────── report
 report_body = f'''<main class="report">
@@ -785,7 +766,7 @@ redirect = f'''<!DOCTYPE html>
 <script>
 (function () {{
   var h = (location.hash || "").replace("#", "");
-  var map = {{ stock: "stock.html", report: "report.html", cards: "cards.html", mou: "mou.html" }};
+  var map = {{ stock: "index.html", report: "report.html", cards: "cards.html", mou: "mou.html" }};
   var to = map[h] || "promotion.html";
   if (window.history && history.replaceState) history.replaceState(null, "", to);
   window.location.replace(to);
