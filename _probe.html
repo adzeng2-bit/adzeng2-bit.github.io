@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>probe 2026-11-20 noindex·케어밴드 검증</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  body{margin:0;background:#1b1b1b;color:#eee;font:12px/1.5 -apple-system,sans-serif}
+  .row{display:flex;flex-wrap:wrap;gap:14px;padding:12px}
+  .cell{background:#2b2b2b;padding:6px}
+  .cell p{margin:0 0 5px;font-size:11px;color:#9df}
+  iframe{border:0;background:#fff;display:block}
+  pre{padding:10px;background:#0d0d0d;color:#8f8;font-size:11px;white-space:pre-wrap;margin:10px}
+</style>
+</head>
+<body>
+<div id="shotcell" class="cell" style="position:relative">
+  <p>SHOT · index 390 · care band</p>
+  <iframe id="shot" src="index.html" width="390" height="844"></iframe>
+</div>
+<div id="wrap" class="row"></div>
+<pre id="out">measuring…</pre>
+<script>
+(function () {
+  var shot = document.getElementById('shot');
+  shot.addEventListener('load', function () {
+    try {
+      var w = shot.contentWindow, d = shot.contentDocument;
+      w.setTimeout(function () {
+        var el = d.getElementById('after-care');
+        if (el) w.scrollTo(0, el.getBoundingClientRect().top + w.scrollY - 6);
+      }, 900);
+    } catch (e) {}
+  });
+
+  var specs = [
+    ['index', 'index.html'],
+    ['new-cars', 'new-cars.html'],
+    ['models', 'models.html'],
+    ['model', 'model.html?id=v-class'],
+    ['promotion', 'promotion.html'],
+    ['report', 'report.html'],
+    ['cards', 'cards.html'],
+    ['mou', 'mou.html'],
+    ['glc-electric', 'glc-electric.html'],
+    ['stock-redirect', 'stock.html'],
+    ['benefits-redirect', 'benefits.html']
+  ];
+  var sizes = [[390, 844], [1440, 900]];
+  var wrap = document.getElementById('wrap');
+  var recs = [];
+
+  specs.forEach(function (sp) {
+    sizes.forEach(function (sz) {
+      var name = sp[0] + '·' + sz[0];
+      var cell = document.createElement('div');
+      cell.className = 'cell';
+      var label = document.createElement('p');
+      label.textContent = name;
+      var f = document.createElement('iframe');
+      f.width = sz[0]; f.height = sz[1];
+      cell.appendChild(label); cell.appendChild(f);
+      wrap.appendChild(cell);
+
+      var rec = { name: name, errors: [], broken: [], loaded: false, w: sz[0] };
+      recs.push(rec);
+
+      try {
+        var win = f.contentWindow;
+        win.addEventListener('error', function (e) {
+          if (e && e.message) rec.errors.push('JS:' + e.message + ' @' + String(e.filename || '').split('/').pop() + ':' + e.lineno);
+          else if (e && e.target && e.target.tagName) rec.errors.push('RES:' + e.target.tagName + ' ' + String(e.target.src || e.target.href || '').split('/').pop());
+        }, true);
+        win.addEventListener('unhandledrejection', function (e) {
+          rec.errors.push('PROMISE:' + (e.reason && e.reason.message ? e.reason.message : e.reason));
+        });
+      } catch (e) {}
+
+      f.addEventListener('load', function () {
+        if (rec.loaded) return;
+        rec.loaded = true;
+        try {
+          var d = f.contentDocument, w = f.contentWindow;
+          rec.url = w.location.href;
+          rec.sw = Math.max(d.documentElement.scrollWidth, d.body.scrollWidth);
+          rec.iw = w.innerWidth;
+          rec.h = d.body.scrollHeight;
+          rec.title = d.title;
+          var rm = d.querySelector('meta[name="robots"]');
+          rec.robots = rm ? rm.getAttribute('content') : 'NONE';
+          var og = d.querySelector('meta[property="og:image"]');
+          rec.og = og ? (og.getAttribute('content') || '') : 'NONE';
+          rec.ogt = d.querySelector('meta[property="og:title"]') ? 'Y' : 'N';
+          rec.ogd = d.querySelector('meta[property="og:description"]') ? 'Y' : 'N';
+          rec.care = [].slice.call(d.querySelectorAll('#after-care .carestrip-grid li b')).map(function (b) { return b.textContent.trim(); });
+          rec.cols = (function () {
+            var g = d.querySelector('#after-care .carestrip-grid');
+            return g ? w.getComputedStyle(g).gridTemplateColumns : '';
+          })();
+          [].slice.call(d.images).forEach(function (im) {
+            if (im.complete && im.naturalWidth === 0) rec.broken.push(String(im.getAttribute('src')).split('/').pop());
+          });
+        } catch (e) { rec.errors.push('ACCESS:' + e.message); }
+      });
+      f.src = sp[1];
+    });
+  });
+
+  function report() {
+    var lines = [];
+    recs.forEach(function (r) {
+      lines.push('── ' + r.name + ' | vw=' + r.iw + ' scrollW=' + r.sw + ' overflow=' + (r.sw - r.iw) + 'px h=' + r.h +
+                 ' | JS오류 ' + r.errors.filter(function (x) { return x.indexOf('RES:') !== 0; }).length +
+                 ' · 리소스오류 ' + r.errors.filter(function (x) { return x.indexOf('RES:') === 0; }).length +
+                 ' · 깨진이미지 ' + r.broken.length);
+      lines.push('     robots=' + r.robots + ' | og:image=' + (r.og === 'NONE' ? 'NONE' : (r.og ? 'Y' : 'EMPTY')) +
+                 ' og:title=' + r.ogt + ' og:desc=' + r.ogd);
+      if (r.care && r.care.length) lines.push('     care=' + r.care.join(' / ') + ' | cols=' + r.cols);
+      lines.push('     final=' + (r.url || '?') + ' | title=' + (r.title || '?'));
+      if (r.errors.length) lines.push('     ' + r.errors.slice(0, 5).join(' || '));
+      if (r.broken.length) lines.push('     broken: ' + r.broken.slice(0, 5).join(', '));
+    });
+    document.getElementById('out').textContent = lines.join('\n');
+  }
+  setTimeout(report, 9000);
+})();
+</script>
+</body>
+</html>
