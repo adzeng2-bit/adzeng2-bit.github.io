@@ -68,6 +68,7 @@
           var d = f.contentDocument, w = f.contentWindow;
           rec.url = w.location.href;
           rec.sw = Math.max(d.documentElement.scrollWidth, d.body.scrollWidth);
+          rec.cw = d.documentElement.clientWidth;
           rec.iw = w.innerWidth;
           rec.h = d.body.scrollHeight;
           rec.title = d.title;
@@ -95,7 +96,7 @@
   function report() {
     var lines = [];
     recs.forEach(function (r) {
-      lines.push('── ' + r.name + ' | vw=' + r.iw + ' scrollW=' + r.sw + ' overflow=' + (r.sw - r.iw) + 'px h=' + r.h +
+      lines.push('── ' + r.name + ' | clientW=' + r.cw + ' scrollW=' + r.sw + ' overflow=' + (r.sw - r.cw) + 'px h=' + r.h +
                  ' | JS오류 ' + r.errors.filter(function (x) { return x.indexOf('RES:') !== 0; }).length +
                  ' · 리소스오류 ' + r.errors.filter(function (x) { return x.indexOf('RES:') === 0; }).length +
                  ' · 깨진이미지 ' + r.broken.length);
@@ -110,7 +111,9 @@
       document.getElementById('out').textContent = lines.join('\n');
     });
   }
+  window.__recs = recs;
   setTimeout(report, 7000);
+  setInterval(report, 3000);
 })();
 </script>
 </body>
