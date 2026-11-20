@@ -163,6 +163,12 @@
       if (sec) sec.hidden = true;
       var navOpt = document.querySelector('.subnav-item[href="#options"]');
       if (navOpt) navOpt.hidden = true;
+      /* 옵션 섹션이 없으면 뒤 섹션 번호를 하나씩 당긴다 (03 → 02 …) */
+      Array.prototype.forEach.call(document.querySelectorAll(".eyebrow"), function (el) {
+        el.textContent = el.textContent.replace(/^0(\d)(\s*—)/, function (m, d, rest) {
+          return "0" + (parseInt(d, 10) - 1) + rest;
+        });
+      });
     } else {
       var ohtml = "";
       OPT.forEach(function (sh, si) {
