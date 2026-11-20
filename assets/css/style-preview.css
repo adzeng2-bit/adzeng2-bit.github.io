@@ -865,11 +865,11 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .group-jump{
   display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;
   font-size:11px;letter-spacing:.02em;color:var(--muted);white-space:nowrap;
-  border-bottom:1px solid var(--line-strong);padding-bottom:2px;
+  border-bottom:1px solid var(--line-strong);padding:5px 0 3px;margin-top:-5px;
   transition:color .25s var(--ease),border-color .25s var(--ease);
 }
 .group-jump:hover,.group-jump:focus-visible{color:var(--ink);border-color:var(--ink)}
-.group-title{margin-top:10px;font-size:clamp(26px,5.4vw,38px);line-height:1.18;letter-spacing:-.045em;font-weight:600}
+.group-title{margin-top:10px;font-size:clamp(28px,5.6vw,40px);line-height:1.18;letter-spacing:-.045em;font-weight:600}
 .group-order{margin-top:9px;font-size:12.5px;line-height:1.7;color:var(--muted)}
 .group-rule{display:block;margin-top:clamp(14px,2vw,18px);border-top:1px solid var(--line)}
 .lineup-duo{margin-top:clamp(48px,7vw,80px);padding-top:clamp(30px,4.6vw,52px);border-top:1px solid var(--line)}
