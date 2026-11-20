@@ -96,6 +96,15 @@ site/
 
 `_build/` 는 프로모션 표 생성 스크립트이며 배포 대상이 아니다.
 
+## 검색 비공개 (2026-11-20)
+
+1:1 전달용 사이트라 **전 페이지에 `<meta name="robots" content="noindex, nofollow">`** 를 넣었습니다.
+
+- 직접 작성한 `index` · `models` · `model` · `new-cars` · `glc-electric` — HTML `<head>`에 직접 들어 있음
+- `promotion` · `report` · `cards` · `mou` · `stock` · `benefits` — `_build/build.py`의 `head()`와 리다이렉트 템플릿에서 생성되므로, 빌드하면 자동으로 붙음
+- 카카오톡 링크 공유 미리보기(`og:title` · `og:description` · `og:image`)는 그대로 동작함. `noindex`는 검색 색인만 막고 SNS 미리보기와는 무관함
+- `robots.txt`로 막지 않은 이유: 크롤러가 `noindex` 메타를 읽지 못하게 되어 이미 색인된 페이지가 계속 남을 수 있음
+
 ## 네이버 예약 직링크 (2026-11-19 연결)
 
 - 임정빈 차장 네이버 예약 상품: `https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175`

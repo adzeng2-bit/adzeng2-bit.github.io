@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 def wr(p, s): open(os.path.join(ROOT, p), 'w', encoding='utf-8').write(s)
 
-CSSV = '20261120a'
+CSSV = '20261120b'
 NAVER_BOOKING = 'https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175'
 
 NAV = [
@@ -31,6 +31,7 @@ def head(title, desc, page):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#0E161D">
+<meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -322,7 +323,7 @@ stock_redirect = f'''<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>홈으로 이동합니다 | 임정빈 차장 · HS효성더클래스 분당</title>
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="index.html">
 <meta http-equiv="refresh" content="0; url=index.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -742,7 +743,7 @@ redirect = f'''<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>가격·프로모션으로 이동합니다 | 임정빈 차장</title>
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="promotion.html">
 <meta http-equiv="refresh" content="0; url=promotion.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">

@@ -316,7 +316,7 @@ table{border-collapse:collapse;width:100%}
 .carestrip-grid b{font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
 .carestrip-grid span{font-size:11.5px;line-height:1.72;color:var(--muted)}
 @media (min-width:620px){ .carestrip-grid{grid-template-columns:1fr 1fr} }
-@media (min-width:980px){ .carestrip-grid{grid-template-columns:repeat(4,1fr)} }
+@media (min-width:980px){ .carestrip-grid{grid-template-columns:repeat(3,1fr)} }
 
 /* ---------- care cards ---------- */
 .care-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
