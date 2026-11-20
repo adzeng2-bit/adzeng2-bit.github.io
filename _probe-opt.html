@@ -2,38 +2,63 @@
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <title>probe</title>
-<style>body{margin:0;background:#888;display:flex;gap:4px}iframe{border:0;background:#fff}</style>
+<style>body{margin:0;background:#888;font:12px/1.4 sans-serif}#f{border:0;background:#fff;display:block}</style>
 </head><body>
-<iframe id="f390" width="390" height="844"></iframe>
-<iframe id="f1440" width="1440" height="900"></iframe>
+<iframe id="f" width="390" height="844"></iframe>
+<pre id="out"></pre>
 <script>
-var q=new URLSearchParams(location.search);
-var target=q.get('p')||'model.html?id=glc';
-document.getElementById('f390').src=target;
-document.getElementById('f1440').src=target;
-window.goto390=function(sel){var d=document.getElementById('f390').contentDocument;var e=d.querySelector(sel);if(e)e.scrollIntoView({block:'start'});return e?Math.round(e.getBoundingClientRect().top):null;};
-window.measure=function(){
-  function m(id){
-    var f=document.getElementById(id), d=f.contentDocument, w=f.contentWindow;
-    if(!d||!d.documentElement) return {err:'no doc'};
-    var de=d.documentElement;
-    var imgs=[].map.call(d.images,function(i){return {src:i.getAttribute('src')||'',nw:i.naturalWidth,cw:i.clientWidth};});
-    var broken=imgs.filter(function(i){return i.nw===0 && i.cw>0 && i.complete===true && i.src;});
-    var wide=[].slice.call(d.querySelectorAll('body *')).filter(function(e){return e.getBoundingClientRect().right>de.clientWidth+1;}).map(function(e){return e.tagName+'.'+(e.className||'').toString().slice(0,40);}).slice(0,6);
-    return {w:de.clientWidth, over:de.scrollWidth-de.clientWidth, total:imgs.length, broken:broken.length,
-      brokenSrc:broken.map(function(b){return b.src;}).slice(0,4), wide:wide,
-      trims:(d.getElementById('m-trims')||{}).children?d.getElementById('m-trims').children.length:0,
-      spec:(d.getElementById('m-spec')||{}).children?d.getElementById('m-spec').children.length:0,
-      rel:(d.getElementById('m-related')||{}).children?d.getElementById('m-related').children.length:0,
-      opt:(d.getElementById('m-options')||{}).children?d.getElementById('m-options').children.length:0,
-      optTrim:d.querySelectorAll('.opt-trim').length,
-      optHidden:!!(d.getElementById('options')||{}).hidden,
-      cards:d.querySelectorAll('.car-card').length,
-      cardEmpty:d.querySelectorAll('.car-media-empty').length,
-      note:(d.getElementById('m-options-note')||{}).textContent?d.getElementById('m-options-note').textContent.slice(0,60):'',
-      title:d.title};
-  }
-  return {m390:m('f390'), d1440:m('f1440')};
-};
+var PAGES=[
+ "model.html?id=a-class-hatch","model.html?id=e-class","model.html?id=glc","model.html?id=s-class",
+ "model.html?id=s-class-long","model.html?id=g-class","model.html?id=g-class-amg","model.html?id=maybach-s-class",
+ "model.html?id=gt-coupe","model.html?id=cla-electric","model.html?id=glb-electric","model.html?id=glc-electric",
+ "model.html?id=eqb","model.html?id=eqa","model.html?id=eqs","model.html?id=v-class","model.html?id=gls",
+ "model.html?id=gle-coupe-amg","model.html?id=sl-roadster","model.html?id=maybach-sl","model.html?id=cle-coupe",
+ "model.html?id=eqe-suv","model.html?id=maybach-eqs-suv","model.html?id=glc-coupe-amg","model.html?id=cls-does-not-exist",
+ "models.html","index.html","new-cars.html","promotion.html","report.html"
+];
+var WIDTHS=[390,1440];
+var RESULTS=[], i=0, w=0;
+var f=document.getElementById('f'), out=document.getElementById('out');
+
+function measure(){
+  var d=f.contentDocument, de=d.documentElement;
+  var imgs=[].map.call(d.images,function(i){return {src:i.getAttribute('src')||'',nw:i.naturalWidth,cw:i.clientWidth,complete:i.complete};});
+  var broken=imgs.filter(function(i){return i.nw===0 && i.cw>0 && i.complete && i.src;});
+  var empty=[].map.call(d.querySelectorAll('img'),function(i){return i.getAttribute('src')||'';}).filter(function(s){return s==='';}).length;
+  var over=de.scrollWidth-de.clientWidth;
+  var q=function(s){return d.querySelectorAll(s).length;};
+  return {w:de.clientWidth, over:over, imgs:imgs.length, broken:broken.length,
+    brokenSrc:broken.map(function(b){return b.src;}).slice(0,4), emptySrc:empty,
+    trims:q('#m-trims > *'), spec:q('#m-spec > *'), rel:q('#m-related > *'), optSheets:q('#m-options .opt-sheet'),
+    optTrims:q('.opt-trim'), optHidden:!!(d.getElementById('options')||{}).hidden,
+    cards:q('.car-card'), cardEmpty:q('.car-media-empty'), relEmpty:q('.rel-media-empty'),
+    title:(d.title||'').slice(0,40)};
+}
+
+function step(){
+  if(i>=PAGES.length){ out.textContent=JSON.stringify(RESULTS); window.RESULTS=RESULTS; return; }
+  var url=PAGES[i], width=WIDTHS[w];
+  f.width=width; f.height=(width===390?844:900);
+  f.onload=function(){
+    setTimeout(function(){
+      var r=measure(); r.url=url; r.vw=width;
+      RESULTS.push(r);
+      // also scroll through to trigger lazy images, then re-measure
+      f.contentWindow.scrollTo(0, f.contentDocument.body.scrollHeight);
+      setTimeout(function(){
+        var r2=measure();
+        RESULTS[RESULTS.length-1].brokenAfterScroll=r2.broken;
+        RESULTS[RESULTS.length-1].brokenSrc2=r2.brokenSrc;
+        RESULTS[RESULTS.length-1].over2=r2.over;
+        out.textContent=JSON.stringify(RESULTS);
+        window.RESULTS=RESULTS;
+        w++; if(w>=WIDTHS.length){w=0;i++;}
+        step();
+      }, 900);
+    }, 1000);
+  };
+  f.src=url;
+}
+step();
 </script>
 </body></html>
