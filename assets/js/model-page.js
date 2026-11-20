@@ -157,6 +157,12 @@
     return html || '<p class="opt-none">이 트림의 세부 사양은 상담 시 옵션표로 확인해 드립니다.</p>';
   }
 
+  function normName(v) {
+    return String(v || "").toLowerCase().replace(/[\s·]/g, "").replace(/^mercedes-?amg/, "").replace(/^mercedes-?maybach/, "");
+  }
+  var OFFICIAL = {};
+  (model.trims || []).forEach(function (t) { OFFICIAL[normName(t.n)] = t.price; });
+
   if (optEl) {
     if (!OPT.length) {
       var sec = document.getElementById("options");
@@ -189,9 +195,10 @@
         ohtml += '<div class="opt-list">';
         sh.trims.forEach(function (t, i) {
           var open = (si === 0 && i === 0 && n <= 3) ? " open" : "";
+          var offPrice = OFFICIAL[normName(t.name)] || "";
           ohtml += '<details class="opt-trim"' + open + '><summary>' +
             '<span class="on">' + esc(t.name) + "</span>" +
-            '<span class="op">' + esc(t.price || "가격 문의") + "</span>" +
+            '<span class="op">' + esc(offPrice) + "</span>" +
             '<span class="oi" aria-hidden="true"></span></summary>' +
             '<div class="opt-body">' + optTrimBody(t, sh) + "</div></details>";
         });
@@ -199,9 +206,9 @@
       });
       optEl.innerHTML = ohtml;
       if (optNote) {
-        optNote.innerHTML = "가격·사양은 <b>HS효성더클래스 통합옵션표(2026.11.16)</b> 기준입니다. " +
-          "위 트림·가격표(공식 가격표 2026.11.17)와 연식·정리 시점 차이로 금액이 다를 수 있고, " +
-          "실제 출고 사양은 계약 시점 기준으로 다시 확인해 드립니다.";
+        optNote.innerHTML = "사양은 <b>HS효성더클래스 통합옵션표(2026.11.16)</b> 기준이고, 트림 옆 금액은 " +
+          "위 <b>공식 가격표(2026.11.17)</b>와 같은 트림의 권장소비자가격입니다. " +
+          "옵션표에만 있는 트림은 금액을 비워 두었고, 실제 출고 사양과 조건은 계약 시점 기준으로 다시 확인해 드립니다.";
       }
     }
   }
