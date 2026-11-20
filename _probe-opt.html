@@ -11,13 +11,14 @@ var q=new URLSearchParams(location.search);
 var target=q.get('p')||'model.html?id=glc';
 document.getElementById('f390').src=target;
 document.getElementById('f1440').src=target;
+window.goto390=function(sel){var d=document.getElementById('f390').contentDocument;var e=d.querySelector(sel);if(e)e.scrollIntoView({block:'start'});return e?Math.round(e.getBoundingClientRect().top):null;};
 window.measure=function(){
   function m(id){
     var f=document.getElementById(id), d=f.contentDocument, w=f.contentWindow;
     if(!d||!d.documentElement) return {err:'no doc'};
     var de=d.documentElement;
     var imgs=[].map.call(d.images,function(i){return {src:i.getAttribute('src')||'',nw:i.naturalWidth,cw:i.clientWidth};});
-    var broken=imgs.filter(function(i){return i.nw===0 && i.cw>0;});
+    var broken=imgs.filter(function(i){return i.nw===0 && i.cw>0 && i.complete===true && i.src;});
     var wide=[].slice.call(d.querySelectorAll('body *')).filter(function(e){return e.getBoundingClientRect().right>de.clientWidth+1;}).map(function(e){return e.tagName+'.'+(e.className||'').toString().slice(0,40);}).slice(0,6);
     return {w:de.clientWidth, over:de.scrollWidth-de.clientWidth, total:imgs.length, broken:broken.length,
       brokenSrc:broken.map(function(b){return b.src;}).slice(0,4), wide:wide,
