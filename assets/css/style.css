@@ -853,7 +853,6 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
 .lineup-summary{margin-bottom:clamp(26px,4vw,42px)}
 .lineup-count{font-size:clamp(17px,3.6vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-bottom:9px}
 .lineup-count b{color:var(--ink);font-weight:600}
-.lineup-q{display:inline-block;font-size:11.5px;font-weight:400;letter-spacing:0;color:var(--muted-2)}
 .lineup-summary-text{max-width:34em;font-size:13.5px;line-height:1.8;color:var(--muted)}
 
 /* 섹션(차체 유형 그룹) */

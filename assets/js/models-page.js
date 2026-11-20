@@ -196,8 +196,9 @@
 
     groupsEl.innerHTML = html;
     if (countEl) {
-      countEl.innerHTML = "<b>" + total + "</b>개 차종 가이드" +
-        (q ? ' <span class="lineup-q">· ‘' + esc(state.q) + '’ 검색 결과</span>' : "");
+      countEl.innerHTML = q
+        ? "‘" + esc(state.q) + "’ 검색 결과 <b>" + total + "</b>개 차종"
+        : "<b>" + total + "</b>개 차종 가이드";
     }
     if (empty) empty.hidden = total > 0;
     if (field) field.setAttribute("data-filled", state.q ? "true" : "false");
