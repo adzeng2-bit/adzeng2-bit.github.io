@@ -8,7 +8,7 @@
 ```
 site/
 ├─ index.html            메인 (프로필·전기 GLC/CLA 계약·신차/사전예약·차종별 가이드·상담 연결)
-├─ models.html           차종별 가이드 (분류 탭 + 실시간 검색)
+├─ models.html           차종별 가이드 (차체 유형 7개 그룹 + 분류 탭 + 실시간 검색)
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
 ├─ benefits.html         구 링크 호환용 (자동 이동)
 ├─ glc-electric.html     GLC 300 4MATIC Electric 상세 가이드
@@ -41,7 +41,8 @@ site/
   name: "GLC", ko: "GLC",
   brand: "mb",                     // mb | amg | maybach
   brandLabel: "메르세데스-벤츠",
-  cat: "suv",                      // sedan | suv | hatchback | coupe | cabriolet | mpv
+  cat: "suv",                      // sedan | suv | hatchback | coupe | cabriolet | mpv (상세 페이지용)
+  group: "suv",                    // 목록 그룹: sedan | suv | mpv | ev | coupe | amg | maybach
   fuel: ["가솔린", "디젤"],
   year: "26·27년식",
   image: "assets/img/models/glc.jpg",        // 상세 상단 (1440px)
@@ -54,11 +55,13 @@ site/
 }
 ```
 
-- `cat` 값이 잘못되면 분류 탭에서 빠지고 "전체"에만 나옵니다.
+- `cat` 값이 잘못되면 상세 페이지 분류 표기가 비고, 같은 분류 추천에서 빠집니다.
+- 목록 정렬은 `models-data.js`의 `groups[]`(01 세단·해치백 → 07 Maybach)가 정합니다. 새 차종은 `group`을 지정하고 `groups[].ids` 배열의 원하는 자리에 id를 넣어야 그 자리에 나옵니다. `group`·`ids` 어디에도 없는 차종은 첫 그룹 맨 뒤로 밀립니다.
 - `trims`가 비어 있으면 목록에 "개별 견적 상담"으로 표시되고, `priceNote`에 사유를 적습니다.
 - 새 차종을 넣으면 이미지 두 장을 `assets/img/models/`에 추가합니다. 사진이 없으면 `image`·`card`를 빈 문자열로 두면 카드·상세 모두 "사진 준비 중" 자리표시자로 그려집니다.
 - 트림별 옵션·사양은 `assets/js/model-options.js`(`window.MB_OPTIONS[차종 id] = [{my,title,trims:[...]}]`)에 들어갑니다. 한 차종에 연식별 시트를 여러 개 둘 수 있고, `common.base`는 전 트림 공통 기본 사양으로 한 번만 표시됩니다.
 - 메인(`index.html`)의 분류별 개수 표기는 수동 값이므로, 차종 수가 바뀌면 함께 고칩니다.
+- 목록 페이지의 `N개 차종 가이드`·`01 · N개 차종` 숫자와 탭 개수는 데이터에서 자동 계산됩니다.
 
 ## 트림별 옵션·사양 (통합옵션표)
 
