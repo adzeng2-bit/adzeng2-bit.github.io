@@ -321,8 +321,11 @@
     }).slice(0, 4);
 
     relEl.innerHTML = rel.map(function (m) {
+      var media = m.card
+        ? '<img src="' + esc(m.card) + '" alt="' + esc(m.name) + ' 공식 차량 이미지" loading="lazy" decoding="async">'
+        : '<span class="rel-media-empty"><b>' + esc(m.name) + '</b></span>';
       return '<a class="rel-card" href="model.html?id=' + encodeURIComponent(m.id) + '">' +
-        '<img src="' + esc(m.card) + '" alt="' + esc(m.name) + ' 공식 차량 이미지" loading="lazy" decoding="async">' +
+        media +
         "<b>" + esc(m.name) + "</b>" +
         "<span>" + esc(m.priceFromLabel) + "</span>" +
         "</a>";

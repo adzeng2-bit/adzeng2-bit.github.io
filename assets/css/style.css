@@ -1544,3 +1544,5 @@ body[data-trim="plus"] .cmp td[data-col="plus"]{
   .opt-cats dd{margin-top:0}
   .opt-trim>summary .on{font-size:14px}
 }
+.rel-media-empty{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;background:linear-gradient(150deg,#EDE9E1,#DCD6CB);border:1px solid var(--line-soft)}
+.rel-media-empty b{font-family:var(--serif);font-size:12px;letter-spacing:.02em;color:var(--ink-soft)}
