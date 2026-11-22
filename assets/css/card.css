@@ -30,6 +30,16 @@
 .c-id-name span{font-size:.6em;font-weight:500;color:rgba(243,240,234,.78);margin-left:2px;letter-spacing:0}
 .c-id-role{margin-top:5px;font-size:11.5px;line-height:1.55;color:rgba(243,240,234,.6);letter-spacing:-.01em}
 
+.c-id-nameline{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:5px}
+.c-id-nameline .c-id-name{margin-top:0}
+.c-id-cbadge{
+  display:inline-block;flex:0 0 auto;align-self:center;
+  font-size:9px;font-weight:600;letter-spacing:.01em;line-height:1;white-space:nowrap;
+  color:#E7D8C2;border:1px solid rgba(199,174,138,.42);background:rgba(169,137,95,.12);
+  padding:4px 6px;
+}
+.c-id-cbadge b{font-weight:700;letter-spacing:.07em}
+
 .c-id-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .c-id-badges li{
   font-size:10px;letter-spacing:.02em;color:#E7D8C2;line-height:1;
