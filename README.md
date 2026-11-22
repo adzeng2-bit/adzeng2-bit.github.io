@@ -12,8 +12,10 @@ site/
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
 ├─ benefits.html         구 링크 호환용 (자동 이동)
 ├─ glc-electric.html     GLC 300 4MATIC Electric 상세 가이드
+├─ card.html             방문 고객용 모바일 명함 (소개·라인업·카탈로그/가격표·명함 이미지·연락처 저장)
 ├─ assets/
 │  ├─ css/style.css      공통 스타일 (모든 페이지가 함께 사용)
+│  ├─ css/card.css       card.html 전용 스타일
 │  ├─ js/models-data.js  차종 데이터 (가격·트림·이미지·설명)
 │  ├─ js/model-options.js 차종별 트림 옵션·사양 (통합옵션표 2026.11.16)
 │  ├─ js/models-specs.js 차종별 공식 제원·색상
@@ -25,6 +27,9 @@ site/
 │  ├─ js/index.js        메인 등장 애니메이션
 │  ├─ js/glc.js          GLC Electric: 트림 토글, 색상 조합기
 │  ├─ img/models/        차종별 공식 이미지 (원본 + -card 축소본)
+│  ├─ photo/             프로필(profile.jpg)·OG 공유 이미지·명함(business-card.jpg)
+│  ├─ pdf/               고객 배포용 공식 가격표 PDF
+│  ├─ vcard/             연락처 저장용 vCard (limjeongbin.vcf)
 │  └─ favicon.svg
 └─ README.md
 ```
