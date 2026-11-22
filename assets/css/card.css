@@ -91,6 +91,16 @@
 .c-about .c-id-greet{color:var(--muted)}
 .c-about .c-id-greet b{color:var(--ink)}
 
+/* ---------- 소개 아래 · 출고 후 사후관리 3항목 ---------- */
+.c-care{margin-top:20px}
+.c-care-label{display:flex;align-items:center;gap:9px;font-size:9.5px;font-weight:600;letter-spacing:.2em;color:var(--brass)}
+.c-care-label::after{content:"";flex:1 1 auto;height:1px;background:var(--line)}
+.c-care-list{display:grid;margin-top:12px}
+.c-care-list li{display:grid;gap:4px;padding-top:11px;border-top:1px solid var(--line-soft)}
+.c-care-list li + li{margin-top:12px}
+.c-care-list b{font-size:12.5px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.c-care-list span{font-size:11.5px;line-height:1.75;color:var(--muted);letter-spacing:-.01em;text-wrap:pretty}
+
 /* ---------- 공통 섹션 ---------- */
 .c-sec{padding:30px 0}
 .c-sec--tint{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -241,6 +251,9 @@
   .card-page main{box-shadow:0 0 80px rgba(18,22,27,.07)}
   .card-page .site-footer{background:#0A1116;border-color:rgba(10,17,22,.9)}
   .card-page .card-wrap{padding:0 30px}
+  .c-care{margin-top:22px}
+  .c-care-list{grid-template-columns:repeat(3,1fr);column-gap:22px}
+  .c-care-list li + li{margin-top:0}
   .c-hero{padding:44px 0 40px}
   .c-bar{
     left:50%;right:auto;transform:translateX(-50%);width:640px;
