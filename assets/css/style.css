@@ -371,9 +371,9 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- 소개 (명함 아래 · FROM CONTRACT TO CARE 상단) ---------- */
 .careintro{display:grid;gap:clamp(20px,3vw,26px)}
-.careintro-id{display:grid;grid-template-columns:74px minmax(0,1fr);gap:16px;align-items:center}
+.careintro-id{display:grid;grid-template-columns:108px minmax(0,1fr);gap:16px;align-items:center}
 .careintro-photo{
-  position:relative;width:74px;height:88px;overflow:hidden;
+  position:relative;width:108px;height:130px;overflow:hidden;
   border:1px solid rgba(169,137,95,.45);background:var(--paper);
 }
 .careintro-photo img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
@@ -394,8 +394,8 @@ table{border-collapse:collapse;width:100%}
 .careintro-quote em{font-family:var(--serif);font-style:normal;font-weight:400;color:var(--brass)}
 @media (min-width:900px){
   .careintro{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:clamp(32px,5vw,64px)}
-  .careintro-id{grid-template-columns:88px minmax(0,1fr);gap:20px}
-  .careintro-photo{width:88px;height:104px}
+  .careintro-id{grid-template-columns:124px minmax(0,1fr);gap:20px}
+  .careintro-photo{width:124px;height:148px}
   .careintro + .carestrip-head{margin-top:clamp(30px,4vw,42px)}
 }
 .carestrip-head{margin-top:clamp(26px,3.4vw,34px)}
