@@ -203,7 +203,9 @@ table{border-collapse:collapse;width:100%}
   background:linear-gradient(158deg,#0B1218 0%,#101A22 42%,#1A2632 100%);
   padding:clamp(16px,2.4vw,24px) 0 clamp(20px,2.8vw,28px);
 }
-.idhero-wrap{max-width:640px;margin:0 auto;padding:0 var(--gut)}
+.idhero-wrap{max-width:640px;margin:0 auto;padding:0 20px}
+@media (min-width:640px){ .idhero-wrap{max-width:680px;padding:0 24px} }
+@media (min-width:1000px){ .idhero-wrap{max-width:720px;padding:0 30px} }
 .idc-card{
   position:relative;display:block;overflow:hidden;
   border:1px solid rgba(199,174,138,.34);background:#0B1014;
