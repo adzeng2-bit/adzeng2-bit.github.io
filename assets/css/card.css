@@ -252,7 +252,7 @@
   .card-page .site-footer{background:#0A1116;border-color:rgba(10,17,22,.9)}
   .card-page .card-wrap{padding:0 30px}
   .c-care{margin-top:22px}
-  .c-care-list{grid-template-columns:repeat(3,1fr);column-gap:22px}
+  .c-care-list li{grid-template-columns:150px minmax(0,1fr);column-gap:16px;align-items:start}
   .c-care-list li + li{margin-top:0}
   .c-hero{padding:44px 0 40px}
   .c-bar{
