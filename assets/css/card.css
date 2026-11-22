@@ -53,6 +53,8 @@
 }
 .c-id-quote em{font-family:var(--serif);font-style:normal;font-weight:400;color:var(--brass-2);letter-spacing:.01em}
 .c-id-greet{margin-top:14px;font-size:14px;line-height:1.8;color:rgba(243,240,234,.66);letter-spacing:-.01em}
+.c-id-greet p{margin:0}
+.c-id-greet p + p{margin-top:.72em}
 .c-id-greet b{color:rgba(243,240,234,.9);font-weight:600}
 
 .c-id-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
