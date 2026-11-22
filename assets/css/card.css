@@ -155,6 +155,7 @@
 .c-cardbtns .is-solid:hover{background:#000}
 
 .c-info{margin-top:18px;border-top:1px solid var(--line)}
+.c-info li.ci-wide{grid-column:1/-1}
 .c-info li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line-soft)}
 .ci-k{flex:0 0 52px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
 .ci-v{flex:1 1 auto;min-width:0;font-size:12.5px;line-height:1.55;letter-spacing:-.01em;overflow-wrap:anywhere}
@@ -215,6 +216,29 @@ a.ci-v:hover{border-bottom-color:var(--brass)}
   .c-sec{padding:38px 0}
   .c-info{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
   .c-info li{padding:11px 0}
+}
+@media (max-width:419px){
+  .c-pdf{grid-template-columns:1fr;gap:8px}
+  .c-pdf-btns{justify-content:flex-start}
+  .c-pdf-btns a{flex:1 1 0}
+}
+
+/* 데스크톱: 모바일 명함 한 장처럼 중앙에 놓는다 */
+@media (min-width:720px){
+  .card-page{background:#E7E2D9}
+  .card-page main,
+  .card-page .site-footer{
+    max-width:640px;margin:0 auto;background:var(--paper);
+    border-left:1px solid var(--line);border-right:1px solid var(--line);
+  }
+  .card-page main{box-shadow:0 0 80px rgba(18,22,27,.07)}
+  .card-page .site-footer{background:#0A1116;border-color:rgba(10,17,22,.9)}
+  .card-page .card-wrap{padding:0 30px}
+  .c-hero{padding:44px 0 40px}
+  .c-bar{
+    left:50%;right:auto;transform:translateX(-50%);width:640px;
+    border-left:1px solid rgba(243,240,234,.14);border-right:1px solid rgba(243,240,234,.14);
+  }
 }
 @media (min-width:900px){
   .c-hero{padding:48px 0 44px}
