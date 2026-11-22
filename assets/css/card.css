@@ -155,7 +155,6 @@
 .c-cardbtns .is-solid:hover{background:#000}
 
 .c-info{margin-top:18px;border-top:1px solid var(--line)}
-.c-info li.ci-wide{grid-column:1/-1}
 .c-info li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line-soft)}
 .ci-k{flex:0 0 52px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
 .ci-v{flex:1 1 auto;min-width:0;font-size:12.5px;line-height:1.55;letter-spacing:-.01em;overflow-wrap:anywhere}
@@ -216,8 +215,6 @@ a.ci-v:hover{border-bottom-color:var(--brass)}
   .c-act--save small{display:none}
   .c-models{grid-template-columns:1fr 1fr;column-gap:26px}
   .c-sec{padding:38px 0}
-  .c-info{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
-  .c-info li{padding:11px 0}
 }
 @media (max-width:419px){
   .c-pdf{grid-template-columns:1fr;gap:8px}
