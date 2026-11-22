@@ -312,7 +312,7 @@ table{border-collapse:collapse;width:100%}
 }
 .carestrip-link span{color:var(--brass)}
 .carestrip-greeting{
-  display:grid;gap:9px;max-width:46em;margin-top:18px;padding-left:15px;
+  display:grid;gap:9px;max-width:38em;margin-top:18px;padding-left:15px;
   border-left:2px solid var(--brass);
 }
 .carestrip-greeting p{font-size:13px;line-height:1.95;color:var(--ink-soft);letter-spacing:-.01em;text-wrap:pretty}
