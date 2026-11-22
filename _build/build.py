@@ -690,7 +690,7 @@ mou_body = f'''<main>
   <div class="pbar">
     <div class="wrap pbar-head">
       <div>
-        <p class="pbar-kicker">벤츠코리아 MOU 체결 기업 · 2026년 9월 기준</p>
+        <p class="pbar-kicker">벤츠코리아 MOU 체결 기업 · 2026년 9월 체결분까지 반영</p>
         <h1 class="pbar-title">MOU 혜택 확인</h1>
       </div>
       <a class="pbar-call" href="tel:{PHONE}">임정빈 차장 {PHONE}</a>
@@ -712,12 +712,13 @@ mou_body = f'''<main>
       <div class="mou-more-wrap"><button class="mou-more" type="button" id="mou-more" hidden>더 보기</button></div>
       <div class="empty-state" id="mou-empty" hidden>
         <b>목록에서 찾지 못했습니다</b>
-        리스트에 없다고 제외되는 것은 아닙니다. 회사명을 문자로 보내주시면 제휴 여부를 직접 확인해 드립니다.
+        최근 체결된 기업은 리스트에 반영되기까지 시차가 있을 수 있습니다. 회사명을 문자로 보내주시면 제휴 여부를 직접 확인해 드립니다.
+        아직 체결 전인 기업은 사업자등록증과 담당자 명함을 보내주시면 법인영업팀에 MOU 체결을 신청해 드립니다.
         <a class="mou-empty-cta" data-mou-empty-sms href="sms:01087921080">임정빈 차장에게 문자로 확인</a>
       </div>
       <noscript><p class="no-script">회사명 검색은 자바스크립트가 필요합니다. {PHONE} 으로 회사명을 문자 주시면 제휴 여부를 확인해 드립니다.</p></noscript>
       <p class="sr-note mou-note">
-        2026년 9월 기준 벤츠코리아 MOU 체결 기업 리스트 · 임직원 추가할인 2% 적용 대상.
+        2026년 9월 체결분까지 반영된 벤츠코리아 MOU 체결 기업 리스트 · 임직원 추가할인 2% 적용 대상. 이후 신규 체결분은 반영에 시차가 있습니다.
         업종 구분은 회사명을 기준으로 묶은 참고 분류입니다. 같은 계열사라도 법인·구매 명의에 따라 적용이 달라질 수 있어,
         최종 적용 여부는 계약 시 확인합니다.
       </p>
@@ -732,7 +733,7 @@ page = head('MOU 혜택 확인 | 임정빈 차장 · HS효성더클래스 분당
             'mou')
 page += header('mou') + mou_body
 page += foot([
-    'assets/js/mou-data.js?v=20261119c',
+    'assets/js/mou-data.js?v=20261122a',
     'assets/js/site.js',
     'assets/js/mou-search.js?v=20261119b',
 ])
