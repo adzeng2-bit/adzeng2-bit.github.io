@@ -1152,6 +1152,28 @@
   "fin_price": 115420000
  },
  {
+  "seg": "pv-gle",
+  "seg_title": "GLE · GLS",
+  "my": "27",
+  "name": "GLE 450 4MATIC AMG Line",
+  "new": "신형",
+  "msrp": "136,700,000원",
+  "cash": {
+   "rate": "5%",
+   "amt": "−6,835,000원",
+   "zero": null,
+   "none": null
+  },
+  "fin": {
+   "rate": "MBF 1%",
+   "amt": "−8,202,000원",
+   "zero": null,
+   "none": null
+  },
+  "price": "129,865,000원",
+  "consult": false
+ },
+ {
   "seg": "pv-gls",
   "seg_title": "GLS",
   "my": "26",

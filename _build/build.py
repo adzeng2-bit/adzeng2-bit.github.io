@@ -231,7 +231,7 @@ def group_section(gid, gtitle, grs):
     elif gid == 'etc':
         lead = ('<p class="pv-seg-lead">11월 공통 할인 프로그램이 공지되지 않은 트림입니다. 권장 소비자가만 공식 가격표 기준으로 표기하고, 조건은 상담 시점 재고·금융 심사로 확정합니다.</p>')
     elif gid == 'maybach':
-        lead = ('<p class="pv-seg-lead">MY26 S 680·GLS 600은 재구매 +9%와 타브랜드 +7% 중 하나를 선택합니다. 재고·출고 일정은 개별 확인이 필요합니다.</p>')
+        lead = ('<p class="pv-seg-lead">MY26 S 680·GLS 600·EQS 680 SUV는 재구매 +9%와 타브랜드 +7% 중 하나를 선택합니다. 색상·출고 일정은 개별 확인이 필요합니다.</p>')
     return f'''        <section class="pv-seg" data-grp="{gid}" id="g-{gid}">
           <div class="pv-seg-head">
             <h2 class="pv-seg-title">{gtitle}</h2>
@@ -240,7 +240,7 @@ def group_section(gid, gtitle, grs):
           {lead}
           <div class="pv-wrap">
             <table class="pv-table">
-              <caption class="pv-cap">{gtitle} · 2026년 11월 기준</caption>
+              <caption class="pv-cap">{gtitle} · 2026년 11월~12월 기준</caption>
               <thead>
                 <tr><th scope="col">모델 (연식)</th><th scope="col">권장 소비자가</th><th scope="col">기본(현금) 할인</th><th scope="col">금융(MBF) 할인</th><th scope="col">실구매가</th></tr>
               </thead>
@@ -271,7 +271,9 @@ tabs = '\n'.join(tabs)
 
 PROMO_NOTE = '''        <div class="pv-foot">
           <p><b>1.</b> 재구매 <b>+1~2%</b>(마이바흐 S 680·GLS 600은 재구매 <b>+9%</b> 또는 타브랜드 <b>+7%</b> 중 택 1) · 트레이드인 <b>+1%+1%</b> · 콘퀘스트(타브랜드 보유) <b>+1%</b>는 표 가격에 추가로 적용되는 조건입니다. 보유 차량·구매 이력·명의 확인이 필요합니다.</p>
-          <p><b>2.</b> 2026년 11월 1일~30일 접수·출고 기준, 부가세 포함 금액입니다. 기본 할인과 금융 할인은 함께 적용되며 실구매가는 두 할인을 모두 적용한 금액입니다. 무이자는 선수금 비율(24개월 40~42% · 36개월 55~57%)과 심사 결과에 따라 달라지고, 취득세·등록비·금융비용은 별도입니다.</p>
+          <p><b>2.</b> 본사 11월~12월 통합 프로모션(2026년 11월 20일 공지) 기준, 부가세 포함 금액입니다. 기본 할인과 금융 할인은 함께 적용되며 실구매가는 두 할인을 모두 적용한 금액입니다. 무이자는 선수금 비율(24개월 40~42% · 36개월 55~57%)과 심사 결과에 따라 달라지고, 취득세·등록비·금융비용은 별도입니다.</p>
+          <p><b>3.</b> 전시차·즉시 출고 가능 차량은 위탁·전시 조건이 따로 붙습니다. MY27 E 300은 <b>8% → 10%</b>, MY27 GLC 300은 <b>7% → 11%</b>까지 적용되고, MY27 E 300 전시·위탁 차량에는 특별 저금리, MY27 S-Class에는 재구매 고객 대상 취득세 지원 프로그램이 함께 운영됩니다. 해당 차량 조건은 계약 전에 확인해 드립니다.</p>
+          <p><b>4.</b> MY27 GLB electric을 계약하시면 MY27 GLC electric 우선 배정권이 함께 나옵니다. 물량과 배정 순서는 상담 시점 기준으로 확인해 드립니다.</p>
         </div>
 '''
 
@@ -280,8 +282,8 @@ promo_body = f'''<main class="promo">
   <div class="pbar">
     <div class="wrap pbar-head">
       <div>
-        <p class="pbar-kicker">2026년 11월 1일 ~ 11월 30일 · 부가세 포함 · 원</p>
-        <h1 class="pbar-title">11월 프로모션</h1>
+        <p class="pbar-kicker">2026년 11월 ~ 12월 · 부가세 포함 · 원</p>
+        <h1 class="pbar-title">11월~12월 프로모션</h1>
       </div>
       <a class="pbar-call" href="tel:{PHONE}">임정빈 차장 {PHONE}</a>
     </div>
@@ -304,8 +306,8 @@ promo_body = f'''<main class="promo">
 </main>
 '''
 
-page = head('11월 가격·프로모션 | 임정빈 차장 · HS효성더클래스 분당',
-            '2026년 11월 메르세데스-벤츠 차종별 권장 소비자가와 현금·MBF 금융 할인, 실구매가를 차종 탭으로 한눈에. HS효성더클래스 분당 임정빈 차장 010-8792-1080.',
+page = head('11월~12월 가격·프로모션 | 임정빈 차장 · HS효성더클래스 분당',
+            '2026년 11월~12월 메르세데스-벤츠 차종별 권장 소비자가와 현금·MBF 금융 할인, 실구매가를 차종 탭으로 한눈에. HS효성더클래스 분당 임정빈 차장 010-8792-1080.',
             'promotion')
 page += header('promotion') + promo_body
 page += foot([
