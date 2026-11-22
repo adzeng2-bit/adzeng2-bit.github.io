@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&amp;display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=20261122a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261122b">
 <script>document.documentElement.className += ' js';</script>
 </head>
 <body>
@@ -55,50 +55,63 @@
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow eyebrow--light">MERCEDES-BENZ SC · 분당 정자 전시장</p>
-        <p class="hero-cert"><b>C-SALES</b> 공식 인증사원<span class="hero-cert-sep">·</span>벤츠에서 12년</p>
-        <h1 class="hero-title">
-          차는 같아도,<br>
-          끝까지 남는 사람은 <span class="serif hero-title-accent">다릅니다.</span>
-        </h1>
-        <div class="hero-actions">
-          <a class="btn btn--light" href="tel:010-8792-1080">
-            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M6.6 3.5c.7-.2 1.4.2 1.7.8l1.2 2.6c.3.6.1 1.3-.4 1.7l-1.1.9c-.3.3-.4.7-.2 1 .9 1.7 2.4 3.2 4.1 4.1.3.2.7.1 1-.2l.9-1.1c.4-.5 1.1-.7 1.7-.4l2.6 1.2c.6.3 1 1 .8 1.7l-.5 2c-.2.8-.9 1.4-1.7 1.4C9.9 19.7 4.3 14.1 4.3 7.7c0-.8.6-1.5 1.4-1.7l.9-.5Z" fill="currentColor"/></svg>
-            전화 상담
-          </a>
-          <a class="btn btn--outline-light" href="sms:01087921080" data-sms-default>
-            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 5.5h16c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1v-11c0-.6.4-1 1-1Zm.8 1.6 7.2 5.4 7.2-5.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            문자 상담
-          </a>
-          <a class="btn btn--outline-light btn--naver" href="https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175" target="_blank" rel="noopener">
-            <span class="naver-n" aria-hidden="true">N</span>
-            네이버 방문·시승 예약
-          </a>
-        </div>
-        <ul class="hero-facts">
-          <li><span class="fact-label">경력</span>벤츠에서 12년</li>
-          <li><span class="fact-label">인증</span>C-sales 공식 인증사원</li>
-          <li><span class="fact-label">사후관리</span>정기점검 · 입고 · 보증 직접 케어</li>
-          <li><span class="fact-label">위치</span>분당 정자 전시장</li>
-        </ul>
-      </div>
+  <!-- HERO · 명함 (card.html 첫 화면과 동일 구성) -->
+  <section class="idhero" id="card">
+    <div class="idhero-wrap">
+      <a class="idc-card" href="assets/photo/business-card.jpg?v=20261122b" target="_blank" rel="noopener" aria-label="임정빈 차장 명함 이미지 크게 보기">
+        <img src="assets/photo/business-card.jpg?v=20261122b" alt="임정빈 차장 명함 — 메르세데스-벤츠 코리아 공식 파트너 HS효성 더클래스, 분당 정자 전시장 영업2팀, T 031-786-6000, M 010-8792-1080, jb.lim@hshyosungtheclass.com" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
+        <span class="idc-card-hint">탭하면 크게 보기</span>
+      </a>
 
-      <div class="hero-portrait">
-        <div class="profile-photo" id="profile-photo">
-          <img src="assets/photo/profile.jpg" alt="임정빈 차장 · HS효성더클래스 분당지점 영업2팀" loading="eager" decoding="async">
-        </div>
-        <p class="portrait-caption">임정빈 차장 · 벤츠에서 12년 · C-sales 공식 인증사원</p>
+      <div class="idc-actions">
+        <a class="idc-act idc-act--primary" href="tel:010-8792-1080">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6.6 3.5c.7-.2 1.4.2 1.7.8l1.2 2.6c.3.6.1 1.3-.4 1.7l-1.1.9c-.3.3-.4.7-.2 1 .9 1.7 2.4 3.2 4.1 4.1.3.2.7.1 1-.2l.9-1.1c.4-.5 1.1-.7 1.7-.4l2.6 1.2c.6.3 1 1 .8 1.7l-.5 2c-.2.8-.9 1.4-1.7 1.4C9.9 19.7 4.3 14.1 4.3 7.7c0-.8.6-1.5 1.4-1.7l.9-.5Z" fill="currentColor"/></svg>
+          전화 상담
+        </a>
+        <a class="idc-act idc-act--line" href="sms:01087921080" data-sms-default>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 5.5h16c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1v-11c0-.6.4-1 1-1Zm.8 1.6 7.2 5.4 7.2-5.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          문자 상담
+        </a>
+        <a class="idc-act idc-act--line" href="https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175" target="_blank" rel="noopener">
+          <span class="naver-n" aria-hidden="true">N</span>
+          네이버 예약
+        </a>
+        <a class="idc-act idc-act--save" href="assets/photo/business-card.jpg?v=20261122b" download="임정빈차장_명함.jpg">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M4 20h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          명함 이미지 저장
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CARE BAND (계약부터 출고 후까지 한 사람이) -->
+  <!-- CARE BAND (소개 · 계약부터 출고 후까지 한 사람이) -->
   <div class="carestrip" id="after-care">
     <div class="wrap">
+      <div class="careintro">
+        <div class="careintro-id">
+          <div class="careintro-photo">
+            <img src="assets/photo/profile.jpg" alt="임정빈 차장 · HS효성더클래스 분당지점 영업2팀" width="88" height="104" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <p class="careintro-kicker">MERCEDES-BENZ SC · 분당 정자 전시장</p>
+            <div class="careintro-nameline">
+              <h1 class="careintro-name">임정빈 <span>차장</span></h1>
+              <span class="careintro-badge"><b>C-SALES</b> 공식 인증사원</span>
+            </div>
+            <p class="careintro-role">Sales Consultant · 분당 정자 전시장 영업2팀</p>
+          </div>
+        </div>
+        <div class="careintro-say">
+          <p class="careintro-quote">차는 같아도,<br>끝까지 남는 사람은 <em>다릅니다.</em></p>
+          <ul class="careintro-facts">
+            <li><span>경력</span>벤츠에서 12년</li>
+            <li><span>인증</span>C-sales 공식 인증사원</li>
+            <li><span>사후관리</span>정기점검 · 입고 · 보증 직접 케어</li>
+            <li><span>위치</span>분당 정자 전시장</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="carestrip-head">
         <p class="carestrip-label">FROM CONTRACT TO CARE</p>
         <p class="carestrip-title">차는 인도한 날부터 제 일이 됩니다.</p>

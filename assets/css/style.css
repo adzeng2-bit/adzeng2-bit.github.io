@@ -197,6 +197,48 @@ table{border-collapse:collapse;width:100%}
 }
 .portrait-caption::before{content:"";width:16px;height:1px;background:rgba(243,240,234,.35)}
 
+/* ---------- hero · 명함형 첫 화면 (index / card.html 과 같은 구성) ---------- */
+.idhero{
+  position:relative;overflow:hidden;color:#F3F0EA;
+  background:linear-gradient(158deg,#0B1218 0%,#101A22 42%,#1A2632 100%);
+  padding:clamp(16px,2.4vw,24px) 0 clamp(20px,2.8vw,28px);
+}
+.idhero-wrap{max-width:640px;margin:0 auto;padding:0 var(--gut)}
+.idc-card{
+  position:relative;display:block;overflow:hidden;
+  border:1px solid rgba(199,174,138,.34);background:#0B1014;
+  box-shadow:0 16px 36px rgba(0,0,0,.34);
+  transition:border-color .3s var(--ease),transform .3s var(--ease);
+}
+.idc-card:hover{border-color:rgba(199,174,138,.6);transform:translateY(-1px)}
+.idc-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.idc-card-hint{
+  position:absolute;right:8px;bottom:8px;padding:5px 9px;
+  background:rgba(10,16,20,.72);color:rgba(243,240,234,.86);
+  font-size:9.5px;letter-spacing:.04em;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+}
+.idc-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.idc-act{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  min-height:50px;padding:0 8px;font-size:12.5px;font-weight:600;letter-spacing:-.02em;
+  border:1px solid transparent;
+  transition:transform .25s var(--ease),background .25s var(--ease);
+}
+.idc-act:active{transform:scale(.985)}
+.idc-act svg{flex:0 0 auto}
+.idc-act--primary{background:#F3F0EA;color:var(--ink)}
+.idc-act--primary:hover{background:#fff}
+.idc-act--line{border-color:rgba(243,240,234,.36);color:#F3F0EA}
+.idc-act--line:hover{background:rgba(243,240,234,.08)}
+.idc-act--save{background:rgba(169,137,95,.18);border-color:rgba(199,174,138,.6);color:#F0E3D0}
+.idc-act--save:hover{background:rgba(169,137,95,.26)}
+.idc-act .naver-n{width:17px;height:17px;font-size:10.5px;margin:0}
+@media (min-width:560px){
+  .idc-actions{grid-template-columns:repeat(4,1fr)}
+  .idc-act{font-size:12px;padding:0 4px;white-space:nowrap}
+}
+
 /* ---------- section frame ---------- */
 .section{padding:clamp(56px,8vw,104px) 0;position:relative}
 .section--tint{background:var(--paper-2)}
@@ -302,7 +344,7 @@ table{border-collapse:collapse;width:100%}
 .step-desc{font-size:13px;line-height:1.82;color:var(--muted);max-width:40em}
 
 /* ---------- care strip (출고 후 사후관리 · 상단 통합) ---------- */
-.carestrip{background:var(--paper-3);border-bottom:1px solid var(--line);padding:clamp(20px,3vw,30px) 0}
+.carestrip{background:var(--paper-3);border-bottom:1px solid var(--line);padding:clamp(26px,3.6vw,40px) 0 clamp(22px,3vw,30px)}
 .carestrip-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
 .carestrip-label{font-size:9px;letter-spacing:.22em;color:var(--brass);flex:0 0 auto}
 .carestrip-title{font-size:clamp(15px,2.2vw,18px);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
@@ -324,6 +366,46 @@ table{border-collapse:collapse;width:100%}
 .carestrip-grid span{font-size:11.5px;line-height:1.72;color:var(--muted)}
 @media (min-width:620px){ .carestrip-grid{grid-template-columns:1fr 1fr} }
 @media (min-width:980px){ .carestrip-grid{grid-template-columns:repeat(3,1fr)} }
+
+/* ---------- 소개 (명함 아래 · FROM CONTRACT TO CARE 상단) ---------- */
+.careintro{display:grid;gap:clamp(20px,3vw,26px)}
+.careintro-id{display:grid;grid-template-columns:74px minmax(0,1fr);gap:16px;align-items:center}
+.careintro-photo{
+  position:relative;width:74px;height:88px;overflow:hidden;
+  border:1px solid rgba(169,137,95,.45);background:var(--paper);
+}
+.careintro-photo img{width:100%;height:100%;object-fit:cover;object-position:center 16%}
+.careintro-kicker{font-size:9px;font-weight:600;letter-spacing:.19em;color:var(--brass);line-height:1.6}
+.careintro-nameline{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:5px}
+.careintro-name{font-size:clamp(23px,6vw,28px);line-height:1.18;letter-spacing:-.03em;font-weight:600;color:var(--ink)}
+.careintro-name span{font-size:.6em;font-weight:500;color:var(--muted);margin-left:2px;letter-spacing:0}
+.careintro-badge{
+  display:inline-block;flex:0 0 auto;font-size:9px;font-weight:600;line-height:1;white-space:nowrap;
+  color:#6B5127;border:1px solid rgba(169,137,95,.4);background:rgba(169,137,95,.1);
+  padding:4px 6px;
+}
+.careintro-badge b{font-weight:700;letter-spacing:.07em}
+.careintro-role{margin-top:5px;font-size:11.5px;line-height:1.55;color:var(--muted);letter-spacing:-.01em}
+.careintro-quote{
+  font-size:clamp(22px,5.4vw,27px);line-height:1.4;letter-spacing:-.035em;font-weight:600;color:var(--ink);
+}
+.careintro-quote em{font-family:var(--serif);font-style:normal;font-weight:400;color:var(--brass)}
+.careintro-facts{
+  display:grid;gap:8px 18px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:12px;color:var(--ink-soft);
+}
+.careintro-facts li{display:flex;gap:10px;align-items:baseline}
+.careintro-facts span{
+  flex:0 0 42px;font-size:9px;letter-spacing:.16em;color:var(--brass);text-transform:uppercase;
+}
+@media (min-width:620px){ .careintro-facts{grid-template-columns:1fr 1fr} }
+@media (min-width:900px){
+  .careintro{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:clamp(32px,5vw,64px)}
+  .careintro-id{grid-template-columns:88px minmax(0,1fr);gap:20px}
+  .careintro-photo{width:88px;height:104px}
+  .careintro + .carestrip-head{margin-top:clamp(30px,4vw,42px)}
+}
+.carestrip-head{margin-top:clamp(26px,3.4vw,34px)}
 
 /* ---------- care cards ---------- */
 .care-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
