@@ -7,7 +7,7 @@
 
 ```
 site/
-├─ index.html            메인 (프로필·전기 GLC/CLA 계약·신차/사전예약·차종별 가이드·상담 연결)
+├─ index.html            메인 (명함형 첫 화면·소개·전기 GLC/CLA 계약·상담 연결)
 ├─ models.html           차종별 가이드 (차체 유형 7개 그룹 + 분류 탭 + 실시간 검색)
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
 ├─ benefits.html         구 링크 호환용 (자동 이동)
@@ -103,14 +103,13 @@ site/
 - 상담 신청서는 서버로 전송하지 않습니다. `sms:010-87921080` 링크(iOS는 `&body=`, 안드로이드는 `?body=`)로 문자 본문을 채우고, 복사 버튼은 `navigator.clipboard` → `execCommand('copy')` 순서로 시도합니다.
 - 자바스크립트가 꺼져 있으면 라인업·상세 목록이 보이지 않으므로, 각 페이지에 안내 문구(`noscript`)를 넣어 두었습니다.
 
-**프로필 사진 교체** — `index.html`의 `id="profile-photo"` 블록 안 주석을 풀고 `.profile-placeholder` 블록을 지웁니다.
-사진은 세로 4:5 비율(예: 800×1000px)을 권장합니다.
+**프로필 사진 교체** — 메인의 소개 블록 `index.html`의 `.careintro-photo` 안 `img`(그리고 card.html의 `.c-id-photo` 안 `img`) `src`만 `assets/photo/profile.jpg`로 두면 됩니다. 사진은 세로 4:5 비율(예: 800×1000px)을 권장합니다.
 
 **폰트** — Pretendard(CDN) + Marcellus(Google Fonts)를 불러옵니다. 외부 요청이 막힌 환경에서는 시스템 폰트로 대체되며 레이아웃은 유지됩니다.
 
 ## 페이지 구성 (2026-11-20 개편)
 
-- `index.html` — 홈 (히어로 → 사후관리 밴드 → 전기 GLC·CLA 계약 → 상담 영역으로 마무리)
+- `index.html` — 홈 (명함형 첫 화면(명함 이미지 + 전화·문자·네이버 예약·명함 저장 4버튼) → 소개 · 사후관리 밴드 → 전기 GLC·CLA 계약 → 상담 영역으로 마무리)
 - `new-cars.html` — 신차·사전예약 (페이지 최상단에서 바로 시작, 사전예약 7종 + 전기 GLC·CLA, 상담 CTA)
 - `models.html` / `model.html` — 차종별 가이드
 - `glc-electric.html` — GLC Electric
