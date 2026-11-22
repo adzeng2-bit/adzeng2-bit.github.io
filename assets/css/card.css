@@ -212,6 +212,8 @@ a.ci-v:hover{border-bottom-color:var(--brass)}
   .c-id-top{grid-template-columns:88px 1fr;gap:20px}
   .c-id-photo{width:88px;height:104px}
   .c-id-actions{grid-template-columns:repeat(4,1fr)}
+  .c-act{font-size:12px;padding:0 4px;white-space:nowrap}
+  .c-act--save small{display:none}
   .c-models{grid-template-columns:1fr 1fr;column-gap:26px}
   .c-sec{padding:38px 0}
   .c-info{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
