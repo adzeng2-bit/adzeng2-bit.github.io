@@ -12,7 +12,7 @@ site/
 ├─ model.html            차종 상세 템플릿 — model.html?id=<차종 id>
 ├─ benefits.html         구 링크 호환용 (자동 이동)
 ├─ glc-electric.html     GLC 300 4MATIC Electric 상세 가이드
-├─ card.html             방문 고객용 모바일 명함 (소개·라인업·카탈로그/가격표·명함 이미지·연락처 저장)
+├─ card.html             방문 고객용 모바일 명함 (첫 화면 명함 이미지·저장 버튼 → 소개 → 라인업 → 카탈로그/가격표 → 연락처)
 ├─ assets/
 │  ├─ css/style.css      공통 스타일 (모든 페이지가 함께 사용)
 │  ├─ css/card.css       card.html 전용 스타일
