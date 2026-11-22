@@ -392,15 +392,6 @@ table{border-collapse:collapse;width:100%}
   font-size:clamp(22px,5.4vw,27px);line-height:1.4;letter-spacing:-.035em;font-weight:600;color:var(--ink);
 }
 .careintro-quote em{font-family:var(--serif);font-style:normal;font-weight:400;color:var(--brass)}
-.careintro-facts{
-  display:grid;gap:8px 18px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
-  font-size:12px;color:var(--ink-soft);
-}
-.careintro-facts li{display:flex;gap:10px;align-items:baseline}
-.careintro-facts span{
-  flex:0 0 42px;font-size:9px;letter-spacing:.16em;color:var(--brass);text-transform:uppercase;
-}
-@media (min-width:620px){ .careintro-facts{grid-template-columns:1fr 1fr} }
 @media (min-width:900px){
   .careintro{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:clamp(32px,5vw,64px)}
   .careintro-id{grid-template-columns:88px minmax(0,1fr);gap:20px}
