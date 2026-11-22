@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 def wr(p, s): open(os.path.join(ROOT, p), 'w', encoding='utf-8').write(s)
 
-CSSV = '20261120b'
+CSSV = '20261122a'
 NAVER_BOOKING = 'https://m.booking.naver.com/booking/13/bizes/1471458/items/7088175'
 
 NAV = [
