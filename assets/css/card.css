@@ -67,7 +67,6 @@
 .c-act--line{border-color:rgba(243,240,234,.36);color:#F3F0EA}
 .c-act--line:hover{background:rgba(243,240,234,.08)}
 .c-act--save{background:rgba(169,137,95,.18);border-color:rgba(199,174,138,.6);color:#F0E3D0}
-.c-act--save small{font-size:9px;letter-spacing:.1em;opacity:.75;font-weight:600}
 .c-act .naver-n{margin:0}
 
 /* ---------- 첫 화면: 명함 먼저 ---------- */
@@ -220,7 +219,6 @@
   .c-id-photo{width:88px;height:104px}
   .c-id-actions{grid-template-columns:repeat(4,1fr)}
   .c-act{font-size:12px;padding:0 4px;white-space:nowrap}
-  .c-act--save small{display:none}
   .c-models{grid-template-columns:1fr 1fr;column-gap:26px}
   .c-sec{padding:38px 0}
 }
